@@ -23,7 +23,7 @@
 - **Nitrogen Dioxide Sensor – MIKROE-3700**
   - MIKROE-3700 needs between 3.3-5V to operate efficiently.
   - The sensor must turn on every 5 minutes to measure the amount of nitrogen dioxide present in the greenhouse.
-  - Must alert when above Nitrogen Dioxide level exceeds 5 ppm.
+  - Must alert when above Nitrogen Dioxide level exceeds 5 ppm. [2]
 
 - **Silicon Conformal Coating**
   - Service temperature range of -40-200℃
