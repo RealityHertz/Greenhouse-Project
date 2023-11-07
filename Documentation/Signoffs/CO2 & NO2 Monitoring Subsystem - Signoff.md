@@ -4,7 +4,7 @@
 
 ## **Function of the Subsystem:**
 
-  The function of this subsystem is to relay the CO2 and NO2 levels to the Arduino via their respective sensors. The subsystem will use a series of sensors to transfer the percentage levels of CO and NO in the air to the Arduino. The sensors will constantly monitor the changes of the carbon dioxide and nitrogen dioxide levels in the greenhouse’s atmosphere and will wirelessly report these numbers and changes to the Arduino via Bluetooth.
+  The function of this subsystem is to relay the CO<sub>2</sub> and NO<sub>2</sub> levels to the Arduino via their respective sensors. The subsystem will use a series of sensors to transfer the percentage levels of CO<sub>2</sub> and NO<sub>2</sub> in the air to the Arduino. The sensors will constantly monitor the changes of the carbon dioxide and nitrogen dioxide levels in the greenhouse’s atmosphere and will report these numbers and changes to the Arduino.
 
 ## **Constraints:**
 
@@ -17,7 +17,7 @@
 - **Arduino Nano 33 BLE**
   - The communication between the sensors and PLC must be wireless. This will save time and money on wiring, while also allowing the system to be scalable.
   - The transfer of data between the sensors and the Arduino must be nearly instantaneous for accurate and reliable monitoring of the CO and NO levels in the atmosphere.
-  - BLE (Bluetooth Low Energy) is lower in cost than the classic Bluetooth as BLE is currently rising in use and has market competition. BLE decreases the distance a signal can be transmitted, but the signals transmitted through the greenhouse will not be far. The use of BLE allows for a cost-eﬃcient alternative compared to classic Bluetooth.
+  - BLE (Bluetooth Low Energy) is lower in cost than the classic Bluetooth as BLE is currently rising in use and has market competition. BLE decreases the distance a signal can be transmitted, but the signals transmitted through the greenhouse will not be far apart. The use of BLE allows for a cost-eﬃcient alternative compared to standard Bluetooth.
 
 
 - **Nitrogen Dioxide Sensor – MIKROE-3700**
@@ -68,7 +68,7 @@
   ![PWM Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/PPM.png)
 
 - **CO2 and NO2 Levels**
-  - The average concentration of CO<sub>2</sub> found in the atmosphere is around 400 parts per million (ppm), but greenhouses often produce greater concentrations. This is due to a greater plant yield at higher levels. [1]
+  - The average concentration of CO<sub>2</sub> found in the atmosphere is around 400 parts per million (ppm), but greenhouses often produce greater concentrations. This is due to a greater plant yield at higher levels. If the level of CO<sub>2</sub> in the greenhouse is between 400-2000 ppm, the plants are able to have a greater increase in growth. However, any ranges outside of these parameters result in a negative growth rate for the plants. [1].
   - According to the CDC, anything over 5ppm is considered dangerous for an extended period of time. [2]
 
 - **Power Supply for MIKROE-3700**
