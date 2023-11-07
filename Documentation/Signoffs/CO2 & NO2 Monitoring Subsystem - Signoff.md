@@ -12,7 +12,7 @@
   - MH-Z19B needs between 4.5-5.5V and at least 20mA to operate eﬃciently.
   - The sensor must turn on every 5 minutes to measure the amount of carbon
     dioxide present in the greenhouse.
-  - Must alert when above or below 400-2000ppm to ensure proper plant growth.
+  - Must alert the communications applications when above or below 400-2000ppm to ensure proper plant growth.
 
 - **Arduino Nano 33 BLE**
   - The communication between the sensors and PLC must be wireless. This will save time and money on wiring, while also allowing the system to be scalable.
