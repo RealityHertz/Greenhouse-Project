@@ -29,6 +29,7 @@
   - Service temperature range of -40-200℃
   - Resistivity of 3.5 x 1013 Ω·cm
   - Drying time of 15 minutes for 2 coats
+  - Will be used to keep electrical components safe from water
 
 ## **Buildable Schematic:**
 
