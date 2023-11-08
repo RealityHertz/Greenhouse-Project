@@ -8,28 +8,27 @@
 
 ## **Constraints:**
 
-- **Carbon Dioxide Sensor – MH-Z19B**
-  - MH-Z19B needs between 4.5-5.5V and at least 20mA to operate eﬃciently.
-  - The sensor must turn on every 5 minutes to measure the amount of carbon
-    dioxide present in the greenhouse.
-  - Must alert the communications applications when above or below 400-2000ppm to ensure proper plant growth.
+1. **Carbon Dioxide Sensor – MH-Z19B**
+    - MH-Z19B needs between 4.5-5.5V and at least 20mA to operate eﬃciently.
+    - The sensor must turn on every 5 minutes to measure the amount of carbon dioxide present in the greenhouse.
+    - Must alert the communications applications when above or below 400-2000ppm to ensure proper plant growth.
 
-- **Arduino Nano 33 IoT**
-  - The communication between the sensors and PLC must be wireless. This will save time and money on wiring, while also allowing the system to be scalable, meaning if the greenhouse was to be expanded then this subsystem would be easily expanded to account for more plants.
-  - The transfer of data between the sensors and the Arduino must be nearly instantaneous for accurate and reliable monitoring of the CO and NO levels in the atmosphere.
-  - BLE (Bluetooth Low Energy) is lower in cost than the classic Bluetooth as BLE is currently rising in use and has market competition. BLE decreases the distance a signal can be transmitted, but the signals transmitted through the greenhouse will not be far apart. The use of BLE allows for a cost-eﬃcient alternative compared to standard Bluetooth.
+2. **Arduino Nano 33 IoT**
+    - The communication between the sensors and PLC must be wireless. This will save time and money on wiring, while also allowing the system to be scalable, meaning if the greenhouse was to be expanded then this subsystem would be easily expanded to account for more plants.
+    - The transfer of data between the sensors and the Arduino must be nearly instantaneous for accurate and reliable monitoring of the CO and NO levels in the atmosphere.
+    - BLE (Bluetooth Low Energy) is lower in cost than the classic Bluetooth as BLE is currently rising in use and has market competition. BLE decreases the distance a signal can be transmitted, but the signals transmitted through the greenhouse will not be far apart. The use of BLE allows for a cost-eﬃcient alternative compared to standard Bluetooth.
 
 
-- **Nitrogen Dioxide Sensor – MIKROE-3700**
-  - MIKROE-3700 needs between 3.3-5V to operate efficiently.
-  - The sensor must turn on every 5 minutes to measure the amount of nitrogen dioxide present in the greenhouse.
-  - Must alert when above Nitrogen Dioxide level exceeds 5 ppm. [1]
+3. **Nitrogen Dioxide Sensor – MIKROE-3700**
+    - MIKROE-3700 needs between 3.3-5V to operate efficiently.
+    - The sensor must turn on every 5 minutes to measure the amount of nitrogen dioxide present in the greenhouse.
+    - Must alert when above Nitrogen Dioxide level exceeds 5 ppm. [1]
 
-- **Silicon Conformal Coating**
-  - Service temperature range of -40-200℃
-  - Resistivity of 3.5 x 1013 Ω·cm
-  - Drying time of 15 minutes for 2 coats
-  - Will be used to keep electrical components safe from water
+4. **Silicon Conformal Coating**
+    - Service temperature range of -40-200℃
+    - Resistivity of 3.5 x 1013 Ω·cm
+    - Drying time of 15 minutes for 2 coats
+    - Will be used to keep electrical components safe from water
 
 ## **Buildable Schematic:**
 
@@ -43,60 +42,63 @@
 
 ## **Analysis:**
 
-- **Power Supply for Arduino Nano 33 IoT**
-  - The power used will need to supply 5 volts to the Pin 15 on the Nano 33 IoT.
-  - The Pin 14 on the Nano 33 IoT will need to be connected to the ground from the power supply.
-  - The Ardiuno will need to be cycled in and out of sleep mode to conserve battery life. This will be done by using the Arduino-Libraries Github and use the provided files and functions in the ArduinoLowPower folder. For example, we can use the function LowPower.sleep() and input the amount of time we want it to sleep in ms. Implementing this in a loop will then allow the microcontroller to continuously fall asleep and wake up for the desired time. [2]
-  - The Aruino will be powered by 4 AA batteries which supplies 3500mAh and 1.5V each
-  - The total mWh supplied is equal to (1.5V*4)*3500 = 21,000mWh
-  - The time the Arduino will be on is 10 seconds every 5 minutes
-  - Therefore, the energy used during the "while on" mode is (28mA * 5V)*(10s/3600s) = .07778mWh
-  - The average power is .07778/(5min/60min) = 0.933mW
-  - The total power used by both sensors and the Arduino is .933mW + .33mW + .0828mW = 1.346mW
-  - This means the batteries will last (21,000mWh/ 1.346mW) = 15,601 hours or 21.7 months
-
-- **Power Supply for MH-Z19B**
-  - The MH-Z19B will use Pin 4 connected to the Nano 33 IoT’s Pin 12 supplying 5 volts to the sensor.
-  - MH-Z19B’s Pin 3 will be used as its ground and shall be connected to the Nano 33 IoT’s Pin 19, completing the power circuit, and powering the sensor.
-  - The working voltage will be 4.5 ~ 5.5 V DC
-  - Average Current < 20mA with a 5V power supply
-  - Response Time of T<sub>90</sub> < 120 s
-  - Working Humidity of 0 ~ 95% RH (No condensation)
-  - The time the sensor will be on is 10 seconds every 5 minutes
-  - The average current draw is 20mA
-  - Therefore, the energy used during the "while on" mode is (20mA*5V)*(10s/3600s) = .028mWh
-  - The average power drawn is .028/(5min/60min) = .33mW
+1. **Carbon Dioxide Sensor – MH-Z19B**
+  - **Power Supply for MH-Z19B**
+    - The MH-Z19B will use Pin 4 connected to the Nano 33 IoT’s Pin 12 supplying 5 volts to the sensor.
+    - MH-Z19B’s Pin 3 will be used as its ground and shall be connected to the Nano 33 IoT’s Pin 19, completing the power circuit, and powering the sensor.
+    - The working voltage will be 4.5 ~ 5.5 V DC
+    - Average Current < 20mA with a 5V power supply
+    - Response Time of T<sub>90</sub> < 120 s
+    - Working Humidity of 0 ~ 95% RH (No condensation)
+    - The time the sensor will be on is 10 seconds every 5 minutes
+    - The average current draw is 20mA
+    - Therefore, the energy used during the "while on" mode is (20mA*5V)*(10s/3600s) = .028mWh
+    - The average power drawn is .028/(5min/60min) = .33mW
 
 - **Communication for MH-Z19B**
-  - MH-Z19B will use Pin 5 for UART (Rx) TTL Level data input which will be connected to the Nano 33 IoT’s Pin 17 which is used as an USART Digital Rx
-  - MH-Z19B will use Pin 6 for UART (Tx) TTL Level data input which will be connected to the Nano 33 IoT’s Pin 16 which is used as an USART Digital Tx
-  - The Carbon Dioxide detection range consists of options 400-2000ppm, 400-5000ppm, or 400-10,000ppm. It has an accuracy of ±(50ppm+5% reading value)
-  - PWM Output consists of the following:
-    - Cycle of 1004ms±5%
-    - Cycle start high level output of 2ms, theoretically.
-    - Middle Cycle of 1000ms±5%
-    - Cycle end high level output of 2ms, theoretically.
+    - MH-Z19B will use Pin 5 for UART (Rx) TTL Level data input which will be connected to the Nano 33 IoT’s Pin 17 which is used as an USART Digital Rx
+    - MH-Z19B will use Pin 6 for UART (Tx) TTL Level data input which will be connected to the Nano 33 IoT’s Pin 16 which is used as an USART Digital Tx
+    - The Carbon Dioxide detection range consists of options 400-2000ppm, 400-5000ppm, or 400-10,000ppm. It has an accuracy of ±(50ppm+5% reading value)
+    - PWM Output consists of the following:
+      - Cycle of 1004ms±5%
+      - Cycle start high level output of 2ms, theoretically.
+      - Middle Cycle of 1000ms±5%
+      - Cycle end high level output of 2ms, theoretically.
 
   ![PWM Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/PPM.png)
 
-- **CO2 and NO2 Levels**
-  - The average concentration of CO<sub>2</sub> found in the atmosphere is around 400 parts per million (ppm), but greenhouses often produce greater concentrations. This is due to a greater plant yield at higher levels. If the level of CO<sub>2</sub> in the greenhouse is between 400-2000 ppm, the plants are able to have a greater increase in growth. However, any ranges outside of these parameters result in a negative growth rate for the plants. [3].
-  - According to the CDC, anything over 5ppm is considered dangerous for an extended period of time. [1]
+2. **Arduino Nano 33 IoT**
+   - **Power Supply for Arduino Nano 33 IoT**
+    - The power used will need to supply 5 volts to the Pin 15 on the Nano 33 IoT.
+    - The Pin 14 on the Nano 33 IoT will need to be connected to the ground from the power supply.
+    - The Ardiuno will need to be cycled in and out of sleep mode to conserve battery life. This will be done by using the Arduino-Libraries Github and use the provided files and functions in the ArduinoLowPower folder. For example, we can use the function LowPower.sleep() and input the amount of time we want it to sleep in ms. Implementing this in a loop will then allow the microcontroller to continuously fall asleep and wake up for the desired time. [2]
+    - The Aruino will be powered by 4 AA batteries which supplies 3500mAh and 1.5V each
+    - The total mWh supplied is equal to (1.5V*4)*3500 = 21,000mWh
+    - The time the Arduino will be on is 10 seconds every 5 minutes
+    - Therefore, the energy used during the "while on" mode is (28mA * 5V)*(10s/3600s) = .07778mWh
+    - The average power is .07778/(5min/60min) = 0.933mW
+    - The total power used by both sensors and the Arduino is .933mW + .33mW + .0828mW = 1.346mW
+    - This means the batteries will last (21,000mWh/ 1.346mW) = 15,601 hours or 21.7 months
 
-- **Power Supply for MIKROE-3700**
-  - The MIKROE-3700 will use Pin 10 connected to the Nano 33 IoT’s Pin 2 as a 3.3V power supply. This will run through a 10k ohm and 20k ohm voltage divider to ensure the voltage level is brought down.
-  - MIKROE-3700’s Pin 8 will be connected to the Nano 33 IoT’s Pin 19 as a ground to complete the power circuit and be able to supply the 3.3V needed.
-  - The measurement range has a minimum of 0ppm and a maximum of 10ppm.
-  - The response time is 200s.
-  - Operating Humidity Range is 5 ~ 95% RH (No condensation).
-  - The time the sensor will be on is 10 seconds every 5 minutes
-  - The average current draw is .5mA
-  - Therefore, the energy used during the "while on" mode is (.5mA*5V)*(10s/3600s) = .0069mWh
-  - The average power is .0069/(5min/60min) = .0828mW
+- **CO2 and NO2 Levels**
+    - The average concentration of CO<sub>2</sub> found in the atmosphere is around 400 parts per million (ppm), but greenhouses often produce greater concentrations. This is due to a greater plant yield at higher levels. If the level of CO<sub>2</sub> in the greenhouse is between 400-2000 ppm, the plants are able to have a greater increase in growth. However, any ranges outside of these parameters result in a negative growth rate for the plants. [3].
+    - According to the CDC, anything over 5ppm is considered dangerous for an extended period of time. [1]
+
+3. **MIKROE-3700**
+  - **Power Supply for MIKROE-3700**
+    - The MIKROE-3700 will use Pin 10 connected to the Nano 33 IoT’s Pin 2 as a 3.3V power supply. This will run through a 10k ohm and 20k ohm voltage divider to ensure the voltage level is brought down.
+    - MIKROE-3700’s Pin 8 will be connected to the Nano 33 IoT’s Pin 19 as a ground to complete the power circuit and be able to supply the 3.3V needed.
+    - The measurement range has a minimum of 0ppm and a maximum of 10ppm.
+    - The response time is 200s.
+    - Operating Humidity Range is 5 ~ 95% RH (No condensation).
+    - The time the sensor will be on is 10 seconds every 5 minutes
+    - The average current draw is .5mA
+    - Therefore, the energy used during the "while on" mode is (.5mA*5V)*(10s/3600s) = .0069mWh
+    - The average power is .0069/(5min/60min) = .0828mW
 
 - **Communication for MIKROE-3700**
-  - The MIKROE-3700’s Pin 5 will be used as a SPI Data Out connected to the Nano 33 IoT’s Pin 30 which is used as a Digital SPI MISO.
-  - The MIKROE-3700’s Pin 4 will be used as a SPI Clock connected to the Nano 33 IoT’s Pin 11 which is used as a signal sent to mimic a clock and when to grab the data.
+    - The MIKROE-3700’s Pin 5 will be used as a SPI Data Out connected to the Nano 33 IoT’s Pin 30 which is used as a Digital SPI MISO.
+    - The MIKROE-3700’s Pin 4 will be used as a SPI Clock connected to the Nano 33 IoT’s Pin 11 which is used as a signal sent to mimic a clock and when to grab the data.
 
 ## **Bill of Materials**
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
