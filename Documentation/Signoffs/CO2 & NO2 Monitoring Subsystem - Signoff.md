@@ -52,9 +52,14 @@
   - MH-Z19B’s Pin 3 will be used as its ground and shall be connected to the Nano 33 BLE’s Pin 19, completing the power circuit, and powering the sensor.
   - The working voltage will be 4.5 ~ 5.5 V DC
   - Average Current < 20mA with a 5V power supply
-  - Peak Current 150 mA with a 5V power supply
   - Response Time of T<sub>90</sub> < 120 s
   - Working Humidity of 0 ~ 95% RH (No condensation)
+  - 4AA Batteries will be used to power the sensor, which supplies 3500mAh and 1.5V each
+  - The total mWh supplied is equal to (1.5V*4)*3500 = 21,000mWh
+  - The time the sensor will be on is 10 seconds every 5 minutes
+  - Therefore, the energy used during the while on is (20mA*5V)*(10s/3600s) = .028mWh
+  - The average power is .028/(5min/60min) = .33mW
+  - This means the batteries will last (21,000mWh/.33mW) = 63,000 hours or 2,625 days
 
 - **Communication for MH-Z19B**
   - MH-Z19B will use Pin 5 for UART (Rx) TTL Level data input which will be connected to the Nano 33 BLE’s Pin 17 which is used as an USART Digital Rx
