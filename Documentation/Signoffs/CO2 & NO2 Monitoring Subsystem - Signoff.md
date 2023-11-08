@@ -60,7 +60,7 @@
   - The time the sensor will be on is 10 seconds every 5 minutes
   - Therefore, the energy used during the while on is (20mA*5V)*(10s/3600s) = .028mWh
   - The average power is .028/(5min/60min) = .33mW
-  - This means the batteries will last (21,000mWh/.33mW) = 63,000 hours or 2,625 days
+  - This means the batteries will last (21,000mWh/.33mW) = 63,636 hours or 2,651 days
 
 - **Communication for MH-Z19B**
   - MH-Z19B will use Pin 5 for UART (Rx) TTL Level data input which will be connected to the Nano 33 IoT’s Pin 17 which is used as an USART Digital Rx
@@ -84,6 +84,12 @@
   - The measurement range has a minimum of 0ppm and a maximum of 10ppm.
   - The response time is 200s.
   - Operating Humidity Range is 5 ~ 95% RH (No condensation).
+  - 4AA Batteries will be used to power the sensor, which supplies 3500mAh and 1.5V each
+  - The total mWh supplied is equal to (1.5V*4)*3500 = 21,000mWh
+  - The time the sensor will be on is 10 seconds every 5 minutes
+  - Therefore, the energy used during the while on is (.5mA*5V)*(10s/3600s) = .0069mWh
+  - The average power is .0069/(5min/60min) = .0828mW
+  - This means the batteries will last (21,000mWh/.0828mW) = 253,623 hours or around 29 years
 
 - **Communication for MIKROE-3700**
   - The MIKROE-3700’s Pin 5 will be used as a SPI Data Out connected to the Nano 33 IoT’s Pin 30 which is used as a Digital SPI MISO.
