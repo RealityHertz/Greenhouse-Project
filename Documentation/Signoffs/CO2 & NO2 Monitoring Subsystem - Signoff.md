@@ -47,6 +47,13 @@
   - The power used will need to supply 5 volts to the Pin 15 on the Nano 33 IoT.
   - The Pin 14 on the Nano 33 IoT will need to be connected to the ground from the power supply.
   - The Ardiuno will need to be cycled in and out of sleep mode to conserve battery life. This will be done by using the Arduino-Libraries Github and use the provided files and functions in the ArduinoLowPower folder. For example, we can use the function LowPower.sleep() and input the amount of time we want it to sleep in ms. Implementing this in a loop will then allow the microcontroller to continuously fall asleep and wake up for the desired time. [2]
+  - The Aruino will be powered by 4 AA batteries which supplies 3500mAh and 1.5V each
+  - The total mWh supplied is equal to (1.5V*4)*3500 = 21,000mWh
+  - The time the Arduino will be on is 10 seconds every 5 minutes
+  - Therefore, the energy used during the "while on" mode is (28mA * 5V)*(10s/3600s) = .07778mWh
+  - The average power is .07778/(5min/60min) = 0.933mW
+  - The total power used by both sensors and the Arduino is .933mW + .33mW + .0828mW = 1.346mW
+  - This means the batteries will last (21,000mWh/ 1.346mW) = 15,601 hours or 21.7 months
 
 - **Power Supply for MH-Z19B**
   - The MH-Z19B will use Pin 4 connected to the Nano 33 IoT’s Pin 12 supplying 5 volts to the sensor.
@@ -55,12 +62,10 @@
   - Average Current < 20mA with a 5V power supply
   - Response Time of T<sub>90</sub> < 120 s
   - Working Humidity of 0 ~ 95% RH (No condensation)
-  - 4AA Batteries will be used to power the sensor, which supplies 3500mAh and 1.5V each
-  - The total mWh supplied is equal to (1.5V*4)*3500 = 21,000mWh
   - The time the sensor will be on is 10 seconds every 5 minutes
-  - Therefore, the energy used during the while on is (20mA*5V)*(10s/3600s) = .028mWh
-  - The average power is .028/(5min/60min) = .33mW
-  - This means the batteries will last (21,000mWh/.33mW) = 63,636 hours or 2,651 days
+  - The average current draw is 20mA
+  - Therefore, the energy used during the "while on" mode is (20mA*5V)*(10s/3600s) = .028mWh
+  - The average power drawn is .028/(5min/60min) = .33mW
 
 - **Communication for MH-Z19B**
   - MH-Z19B will use Pin 5 for UART (Rx) TTL Level data input which will be connected to the Nano 33 IoT’s Pin 17 which is used as an USART Digital Rx
@@ -84,12 +89,10 @@
   - The measurement range has a minimum of 0ppm and a maximum of 10ppm.
   - The response time is 200s.
   - Operating Humidity Range is 5 ~ 95% RH (No condensation).
-  - 4AA Batteries will be used to power the sensor, which supplies 3500mAh and 1.5V each
-  - The total mWh supplied is equal to (1.5V*4)*3500 = 21,000mWh
   - The time the sensor will be on is 10 seconds every 5 minutes
-  - Therefore, the energy used during the while on is (.5mA*5V)*(10s/3600s) = .0069mWh
+  - The average current draw is .5mA
+  - Therefore, the energy used during the "while on" mode is (.5mA*5V)*(10s/3600s) = .0069mWh
   - The average power is .0069/(5min/60min) = .0828mW
-  - This means the batteries will last (21,000mWh/.0828mW) = 253,623 hours or around 29 years
 
 - **Communication for MIKROE-3700**
   - The MIKROE-3700’s Pin 5 will be used as a SPI Data Out connected to the Nano 33 IoT’s Pin 30 which is used as a Digital SPI MISO.
