@@ -68,7 +68,7 @@
   ![PWM Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/PPM.png)
 
 2. **Arduino Nano 33 IoT**
-   - **Power Supply for Arduino Nano 33 IoT**
+- **Power Supply for Arduino Nano 33 IoT**
     - The power used will need to supply 5 volts to the Pin 15 on the Nano 33 IoT.
     - The Pin 14 on the Nano 33 IoT will need to be connected to the ground from the power supply.
     - The Ardiuno will need to be cycled in and out of sleep mode to conserve battery life. This will be done by using the Arduino-Libraries Github and use the provided files and functions in the ArduinoLowPower folder. For example, we can use the function LowPower.sleep() and input the amount of time we want it to sleep in ms. Implementing this in a loop will then allow the microcontroller to continuously fall asleep and wake up for the desired time. [2]
