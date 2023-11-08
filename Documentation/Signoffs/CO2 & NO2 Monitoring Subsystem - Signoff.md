@@ -23,7 +23,7 @@
 - **Nitrogen Dioxide Sensor – MIKROE-3700**
   - MIKROE-3700 needs between 3.3-5V to operate efficiently.
   - The sensor must turn on every 5 minutes to measure the amount of nitrogen dioxide present in the greenhouse.
-  - Must alert when above Nitrogen Dioxide level exceeds 5 ppm. [2]
+  - Must alert when above Nitrogen Dioxide level exceeds 5 ppm. [1]
 
 - **Silicon Conformal Coating**
   - Service temperature range of -40-200℃
@@ -44,12 +44,12 @@
 ## **Analysis:**
 
 - **Power Supply for Arduino Nano 33 IoT**
-  - The power used will need to supply 5 volts to the Pin 15 on the Nano 33 BLE.
+  - The power used will need to supply 5 volts to the Pin 15 on the Nano 33 IoT.
   - The Pin 14 on the Nano 33 IoT will need to be connected to the ground from the power supply.
-  - The Ardiuno will need to be cycled in and out of sleep mode to conserve battery life. This will be done by using the Arduino-Libraries Github and use the provided files and functions in the ArduinoLowPower folder. For example, we can use the function LowPower.sleep() and input the amount of time we want it to sleep in ms. Implementing this in a loop will then allow the microcontroller to continuously fall asleep and wake up for the desired time.
+  - The Ardiuno will need to be cycled in and out of sleep mode to conserve battery life. This will be done by using the Arduino-Libraries Github and use the provided files and functions in the ArduinoLowPower folder. For example, we can use the function LowPower.sleep() and input the amount of time we want it to sleep in ms. Implementing this in a loop will then allow the microcontroller to continuously fall asleep and wake up for the desired time. [2]
 
 - **Power Supply for MH-Z19B**
-  - The MH-Z19B will use Pin 4 connected to the Nano 33 BLE’s Pin 12 supplying 5 volts to the sensor.
+  - The MH-Z19B will use Pin 4 connected to the Nano 33 IoT’s Pin 12 supplying 5 volts to the sensor.
   - MH-Z19B’s Pin 3 will be used as its ground and shall be connected to the Nano 33 IoT’s Pin 19, completing the power circuit, and powering the sensor.
   - The working voltage will be 4.5 ~ 5.5 V DC
   - Average Current < 20mA with a 5V power supply
@@ -75,8 +75,8 @@
   ![PWM Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/PPM.png)
 
 - **CO2 and NO2 Levels**
-  - The average concentration of CO<sub>2</sub> found in the atmosphere is around 400 parts per million (ppm), but greenhouses often produce greater concentrations. This is due to a greater plant yield at higher levels. If the level of CO<sub>2</sub> in the greenhouse is between 400-2000 ppm, the plants are able to have a greater increase in growth. However, any ranges outside of these parameters result in a negative growth rate for the plants. [1].
-  - According to the CDC, anything over 5ppm is considered dangerous for an extended period of time. [2]
+  - The average concentration of CO<sub>2</sub> found in the atmosphere is around 400 parts per million (ppm), but greenhouses often produce greater concentrations. This is due to a greater plant yield at higher levels. If the level of CO<sub>2</sub> in the greenhouse is between 400-2000 ppm, the plants are able to have a greater increase in growth. However, any ranges outside of these parameters result in a negative growth rate for the plants. [3].
+  - According to the CDC, anything over 5ppm is considered dangerous for an extended period of time. [1]
 
 - **Power Supply for MIKROE-3700**
   - The MIKROE-3700 will use Pin 10 connected to the Nano 33 IoT’s Pin 2 as a 3.3V power supply. This will run through a 10k ohm and 20k ohm voltage divider to ensure the voltage level is brought down.
@@ -101,11 +101,15 @@
 
 **References**
 
-[1] “Nitrification and Maintenance in Media Bed Aquaponics - Oklahoma State
-University,” *extension.okstate.edu*, Oct. 15, 2021[.](https://extension.okstate.edu/fact-sheets/nitrification-and-maintenance-in-media-bed-aquaponics.html)[ ](https://extension.okstate.edu/fact-sheets/nitrification-and-maintenance-in-media-bed-aquaponics.html)[https://extension.okstate.edu/fact-](https://extension.okstate.edu/fact-sheets/nitrification-and-maintenance-in-media-bed-aquaponics.html)
-[sheets/nitrification-and-maintenance-in-media-bed-aquaponics.html](https://extension.okstate.edu/fact-sheets/nitrification-and-maintenance-in-media-bed-aquaponics.html)
 
-[2] “CDC - Immediately Dangerous to Life or Health Concentrations (IDLH): Nitrogen
+[1] “CDC - Immediately Dangerous to Life or Health Concentrations (IDLH): Nitrogen
 dioxide - NIOSH Publications and Products,” *www.cdc.gov*, Nov. 02, 2018.
 <https://www.cdc.gov/niosh/idlh/10102440.html>
+
+[2] “Arduino Low Power - Arduino Reference,” www.arduino.cc, Nov. 08, 2023).
+‌<https://www.arduino.cc/reference/en/libraries/arduino-low-power/>
+
+[3] “Greenhouse Carbon Dioxide Supplementation - Oklahoma State University,” extension.okstate.edu. 
+<https://extension.okstate.edu/fact-sheets/greenhouse-carbon-dioxide-supplementation.html>
+
 
