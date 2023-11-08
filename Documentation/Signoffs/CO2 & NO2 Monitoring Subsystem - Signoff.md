@@ -15,7 +15,7 @@
   - Must alert the communications applications when above or below 400-2000ppm to ensure proper plant growth.
 
 - **Arduino Nano 33 IoT**
-  - The communication between the sensors and PLC must be wireless. This will save time and money on wiring, while also allowing the system to be scalable.
+  - The communication between the sensors and PLC must be wireless. This will save time and money on wiring, while also allowing the system to be scalable, meaning if the greenhouse was to be expanded then this subsystem would be easily expanded to account for more plants.
   - The transfer of data between the sensors and the Arduino must be nearly instantaneous for accurate and reliable monitoring of the CO and NO levels in the atmosphere.
   - BLE (Bluetooth Low Energy) is lower in cost than the classic Bluetooth as BLE is currently rising in use and has market competition. BLE decreases the distance a signal can be transmitted, but the signals transmitted through the greenhouse will not be far apart. The use of BLE allows for a cost-eﬃcient alternative compared to standard Bluetooth.
 
