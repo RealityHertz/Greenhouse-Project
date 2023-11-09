@@ -22,7 +22,7 @@
 - **Nitrogen Dioxide Sensor – MIKROE-3700**
   1. MIKROE-3700 needs between 3.3-5V to operate efficiently.
   2. Must alert when above Nitrogen Dioxide level exceeds 9 ppb. [2]
-  3. In order to use the 12-bit ADC, which is the output of the sensor, a reference voltage of 3.3V will need to be used for calibration. We can use the following analog voltage to digital value formula to compute that a digital value of .009 to be approximately 7.62mV. This signal will alert the Arduino of unsafe Nitrogen Dioxide levels. 
+  3. In order to use the 12-bit ADC, which is the output of the sensor, a reference voltage of 3.3V will need to be used for calibration. We can use the following equation, V = ( D / 2^12 -1) x Vref. This is the analog voltage to digital value formula to compute that a digital value of .009 will be approximately 7.62mV. This signal will alert the Arduino of unsafe Nitrogen Dioxide levels. 
 
 ## **Buildable Schematic:**
 
