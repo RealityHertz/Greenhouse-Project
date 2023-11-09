@@ -47,7 +47,6 @@
     - Average Current < 20mA with a 5V power supply
     - Response Time of T<sub>90</sub> < 120 s
     - Working Humidity of 0 ~ 95% RH (No condensation)
-    - The time the sensor will be on is 10 seconds every 5 minutes
     - The average current draw is 20mA
     - Therefore, the energy used during the "while on" mode is (20mA x 5V) x (10s / 3600s) = .028mWh
     - The average power drawn is .028 / (5min / 60min) = .33mW
@@ -74,7 +73,6 @@
     - The Pin 14 on the Nano 33 IoT will need to be connected to the ground from the power supply.
     - The Arduino will be powered by 4 AA batteries which supplies 3500mAh and 1.5V each
     - The total mWh supplied is equal to (1.5V x 4) x 3500 = 21,000mWh
-    - The time the Arduino will be on is 10 seconds every 5 minutes
     - Therefore, the energy used during the "while on" mode is (28mA x 5V) x (10s / 3600s) = .07778mWh
     - The average power is .07778 / (5min / 60min) = 0.933mW
     - The total power used by both sensors and the Arduino is .933mW + .33mW + .0828mW = 1.346mW
