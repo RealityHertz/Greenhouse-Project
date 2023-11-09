@@ -11,7 +11,7 @@
 - **Carbon Dioxide Sensor – MH-Z19B**
   1. MH-Z19B needs between 4.5-5.5V and at least 20mA to operate eﬃciently.
   2. The sensor must turn on every 5 minutes to measure the amount of carbon dioxide present in the greenhouse.
-  3. Must alert the communications applications when above or below 400-2000ppm to ensure proper plant growth.
+  3. Must alert the communications applications when above or below 400-2000ppm to ensure proper plant growth. [1]
 
 - **Arduino Nano 33 IoT**
   1. The communication between the sensors and PLC must be wireless. This will save time and money on wiring, while also allowing the system to be scalable, meaning if the greenhouse was to be expanded then this subsystem would be easily expanded to account for more plants.
@@ -21,8 +21,8 @@
 
 - **Nitrogen Dioxide Sensor – MIKROE-3700**
   1. MIKROE-3700 needs between 3.3-5V to operate efficiently.
-  2. The sensor must turn on every 5 minutes to measure the amount of nitrogen dioxide present in the greenhouse.
-  3. Must alert when above Nitrogen Dioxide level exceeds 5 ppm. [1]
+  2. Must alert when above Nitrogen Dioxide level exceeds 9 ppb. [2]
+  3. In order to use the 12-bit ADC, which is the output of the sensor, a reference voltage of 3.3V will need to be used for calibration. We can use the following analog voltage to digital value formula to compute that a digital value of .009 to be approximately 7.62mV. This signal will alert the Arduino of unsafe Nitrogen Dioxide levels. 
 
 ## **Buildable Schematic:**
 
@@ -37,8 +37,8 @@
 ## **Analysis:**
 
 - **Carbon Dioxide Sensor – MH-Z19B**
-  1. First
-  2. Second
+  1. The sensor will be supplied 5V from the AA battery pack
+  2. It will turn on for 10 seconds every 5 minutes, this gives the system enough time to send the data to the PLC.
   3. Third
      
   - **Power Supply for MH-Z19B**
@@ -67,13 +67,12 @@
 
 - **Arduino Nano 33 IoT**
   1. First
-  2. Second
+  2. The Ardiuno will need to be cycled in and out of sleep mode to conserve battery life. This will be done by using the Arduino-Libraries Github and use the provided files and functions in the ArduinoLowPower folder. For example, we can use the function LowPower.sleep() and input the amount of time we want it to sleep in ms. Implementing this in a loop will then allow the microcontroller to continuously fall asleep and wake up for the desired time. We have decided to do a system where the Ardiuno runs for 10 seconds for every 5 minutes. [3]
   3. BLE (Bluetooth Low Energy) is lower in cost than the classic Bluetooth as BLE is currently rising in use and has market competition. BLE decreases the distance a signal can be transmitted, but the signals transmitted through the greenhouse will not be far apart. The use of BLE allows for a cost-eﬃcient alternative compared to standard Bluetooth.
 
   - **Power Supply for Arduino Nano 33 IoT**
     - The power used will need to supply 5 volts to the Pin 15 on the Nano 33 IoT.
     - The Pin 14 on the Nano 33 IoT will need to be connected to the ground from the power supply.
-    - The Arduino will need to be cycled in and out of sleep mode to conserve battery life. This will be done by using the Arduino-Libraries Github and use the provided files and functions in the ArduinoLowPower folder. For example, we can use the function LowPower.sleep() and input the amount of time we want it to sleep in ms. Implementing this in a loop will then allow the microcontroller to continuously fall asleep and wake up for the desired time. [2]
     - The Arduino will be powered by 4 AA batteries which supplies 3500mAh and 1.5V each
     - The total mWh supplied is equal to (1.5V*4)*3500 = 21,000mWh
     - The time the Arduino will be on is 10 seconds every 5 minutes
@@ -83,13 +82,12 @@
     - This means the batteries will last (21,000mWh/ 1.346mW) = 15,601 hours or 21.7 months
 
 - **CO2 and NO2 Levels**
-    - The average concentration of CO<sub>2</sub> found in the atmosphere is around 400 parts per million (ppm), but greenhouses often produce greater concentrations. This is due to a greater plant yield at higher levels. If the level of CO<sub>2</sub> in the greenhouse is between 400-2000 ppm, the plants are able to have a greater increase in growth. However, any ranges outside of these parameters result in a negative growth rate for the plants. [3].
-    - According to the CDC, anything over 5ppm is considered dangerous for an extended period of time. [1]
+    - The average concentration of CO<sub>2</sub> found in the atmosphere is around 400 parts per million (ppm), but greenhouses often produce greater concentrations. This is due to a greater plant yield at higher levels. If the level of CO<sub>2</sub> in the greenhouse is between 400-2000 ppm, the plants are able to have a greater increase in growth. However, any ranges outside of these parameters result in a negative growth rate for the plants. [4].
+    - According to the CDC, anything over 5ppm is considered dangerous for an extended period of time. [2]
 
 - **MIKROE-3700**
   1. First
   2. Second
-  3. Third
      
   - **Power Supply for MIKROE-3700**
     - The MIKROE-3700 will use Pin 10 connected to the Nano 33 IoT’s Pin 2 as a 3.3V power supply. This will run through a 10k ohm and 20k ohm voltage divider to ensure the voltage level is brought down.
@@ -124,15 +122,16 @@
 
 **References**
 
+[1]“Supplemental carbon dioxide in greenhouses | ontario.ca,” www.ontario.ca. https://www.ontario.ca/page/supplemental-carbon-dioxide-greenhouses#:~:text=A%20typical%20greenhouse%20with%20a (accessed Nov. 09, 2023).
+‌
 
-[1] “CDC - Immediately Dangerous to Life or Health Concentrations (IDLH): Nitrogen
-dioxide - NIOSH Publications and Products,” *www.cdc.gov*, Nov. 02, 2018.
-<https://www.cdc.gov/niosh/idlh/10102440.html>
+[2] Q. Sheng and Z. Zhu, “Effects of Nitrogen Dioxide on Biochemical Responses in 41 Garden Plants,” Plants, vol. 8, no. 2, p. 45, Feb. 2019, doi: https://doi.org/10.3390/plants8020045.
+‌
 
-[2] “Arduino Low Power - Arduino Reference,” www.arduino.cc, Nov. 08, 2023).
+[3] “Arduino Low Power - Arduino Reference,” www.arduino.cc, Nov. 08, 2023).
 ‌<https://www.arduino.cc/reference/en/libraries/arduino-low-power/>
 
-[3] “Greenhouse Carbon Dioxide Supplementation - Oklahoma State University,” extension.okstate.edu. 
+[4] “Greenhouse Carbon Dioxide Supplementation - Oklahoma State University,” extension.okstate.edu. 
 <https://extension.okstate.edu/fact-sheets/greenhouse-carbon-dioxide-supplementation.html>
 
 
