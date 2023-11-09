@@ -15,7 +15,7 @@
 
 - **Arduino Nano 33 IoT**
   1. The communication between the sensors and PLC must be wireless. This will save time and money on wiring, while also allowing the system to be scalable, meaning if the greenhouse was to be expanded then this subsystem would be easily expanded to account for more plants.
-  2. The transfer of data between the sensors and the Arduino must be below 3 seconds for accurate and reliable monitoring of the CO and NO levels in the atmosphere and to allow plenty of time for communication with the PLC while looping in and out of sleep mode.
+  2. The transfer of data between the sensors and the Arduino must be below 3 seconds for accurate and reliable monitoring of the CO<sub>2</sub> and NO<sub>2</sub> levels in the atmosphere and to allow plenty of time for communication with the PLC while looping in and out of sleep mode.
   3. The system needs to be capable of wirelessly communicating the collected data back to the PLC in an inexpensive, yet reliable way.
 
 
@@ -36,7 +36,7 @@
 ## **Analysis:**
 
 - **Carbon Dioxide Sensor – MH-Z19B**
-  1. The sensor will be supplied 5V from the AA battery pack
+  1. The sensor will be supplied 5V from the AA battery pack.
   2. It will turn on for 10 seconds every 5 minutes, this gives the system enough time to send the data to the PLC.
   3. The sensor will be set with the detection range option of 400-2000ppm and will send alerts if carbon dioxide concentrations fall above or below that range.
      
@@ -80,8 +80,8 @@
     - The total power used by both sensors and the Arduino is .933mW + .33mW + .0828mW = 1.346mW
     - This means the batteries will last (21,000mWh/ 1.346mW) = 15,601 hours or 21.7 months
 
-- **CO2 and NO2 Levels**
-    - The average concentration of CO<sub>2</sub> found in the atmosphere is around 400 parts per million (ppm), but greenhouses often produce greater concentrations. This is due to a greater plant yield at higher levels. If the level of CO<sub>2</sub> in the greenhouse is between 400-2000 ppm, the plants are able to have a greater increase in growth. However, any ranges outside of these parameters result in a negative growth rate for the plants. [4].
+- **CO<sub>2</sub> and NO<sub>2</sub> Levels**
+    - The average concentration of CO<sub>2</sub> found in the atmosphere is around 400 parts per million (ppm), but greenhouses often produce greater concentrations. This is due to a greater plant yield at higher levels. If the level of CO<sub>2</sub> in the greenhouse is between 400-2000 ppm, the plants are able to have a greater increase in growth. However, any ranges outside of these parameters result in a negative growth rate for the plants. [4]
     - According to the CDC, anything over 5ppm is considered dangerous for an extended period of time. [2]
 
 - **MIKROE-3700**
