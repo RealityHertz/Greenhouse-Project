@@ -4,7 +4,7 @@
 
 ## **Function of the Subsystem:**
 
-  The function of this subsystem is to relay the CO<sub>2</sub> and NO<sub>2</sub> levels to the Arduino via their respective sensors. The subsystem will use a series of sensors to transfer the percentage levels of CO<sub>2</sub> and NO<sub>2</sub> in the air to the Arduino. The sensors will constantly monitor the changes of the carbon dioxide and nitrogen dioxide levels in the greenhouse’s atmosphere and will report these numbers and changes to the Arduino.
+  The function of this subsystem is to relay the CO<sub>2</sub> and NO<sub>2</sub> levels to the Arduino via their respective sensors. The subsystem will use a series of sensors to transfer the percentage levels of CO<sub>2</sub> and NO<sub>2</sub> in the air to the Arduino. The sensors will monitor the changes of the carbon dioxide and nitrogen dioxide levels in the greenhouse’s atmosphere and will report these numbers and changes to the Arduino.
 
 ## **Constraints:**
 
