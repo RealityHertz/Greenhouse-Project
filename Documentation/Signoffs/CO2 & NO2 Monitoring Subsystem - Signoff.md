@@ -16,7 +16,7 @@
 - **Arduino Nano 33 IoT**
   1. The communication between the sensors and PLC must be wireless. This will save time and money on wiring, while also allowing the system to be scalable, meaning if the greenhouse was to be expanded then this subsystem would be easily expanded to account for more plants.
   2. The transfer of data between the sensors and the Arduino must be below 3 seconds for accurate and reliable monitoring of the CO and NO levels in the atmosphere and to allow plenty of time for communication with the PLC while looping in and out of sleep mode.
-  3. The system needs a capable of wirelessly communicating the collected data back to the PLC in an inexpensive, yet reliable way.
+  3. The system needs to be capable of wirelessly communicating the collected data back to the PLC in an inexpensive, yet reliable way.
 
 
 - **Nitrogen Dioxide Sensor – MIKROE-3700**
@@ -73,8 +73,8 @@
   - **Power Supply for Arduino Nano 33 IoT**
     - The power used will need to supply 5 volts to the Pin 15 on the Nano 33 IoT.
     - The Pin 14 on the Nano 33 IoT will need to be connected to the ground from the power supply.
-    - The Ardiuno will need to be cycled in and out of sleep mode to conserve battery life. This will be done by using the Arduino-Libraries Github and use the provided files and functions in the ArduinoLowPower folder. For example, we can use the function LowPower.sleep() and input the amount of time we want it to sleep in ms. Implementing this in a loop will then allow the microcontroller to continuously fall asleep and wake up for the desired time. [2]
-    - The Aruino will be powered by 4 AA batteries which supplies 3500mAh and 1.5V each
+    - The Arduino will need to be cycled in and out of sleep mode to conserve battery life. This will be done by using the Arduino-Libraries Github and use the provided files and functions in the ArduinoLowPower folder. For example, we can use the function LowPower.sleep() and input the amount of time we want it to sleep in ms. Implementing this in a loop will then allow the microcontroller to continuously fall asleep and wake up for the desired time. [2]
+    - The Arduino will be powered by 4 AA batteries which supplies 3500mAh and 1.5V each
     - The total mWh supplied is equal to (1.5V*4)*3500 = 21,000mWh
     - The time the Arduino will be on is 10 seconds every 5 minutes
     - Therefore, the energy used during the "while on" mode is (28mA * 5V)*(10s/3600s) = .07778mWh
