@@ -38,7 +38,7 @@
 - **Carbon Dioxide Sensor – MH-Z19B**
   1. The sensor will be supplied 5V from the AA battery pack
   2. It will turn on for 10 seconds every 5 minutes, this gives the system enough time to send the data to the PLC.
-  3. Third
+  3. The sensor will be set with the detection range option of 400-2000ppm and will send alerts if carbon dioxide concentrations fall above or below that range.
      
   - **Power Supply for MH-Z19B**
     - The MH-Z19B will use Pin 4 connected to the Nano 33 IoT’s Pin 12 supplying 5 volts to the sensor.
@@ -65,7 +65,7 @@
   ![PWM Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/PPM.png)
 
 - **Arduino Nano 33 IoT**
-  1. First
+  1. The Arduino's BLE capabilities could be broadened by using an array of bluetooth extenders if required for larger projects.
   2. The Ardiuno will need to be cycled in and out of sleep mode to conserve battery life. This will be done by using the Arduino-Libraries Github and use the provided files and functions in the ArduinoLowPower folder. For example, we can use the function LowPower.sleep() and input the amount of time we want it to sleep in ms. Implementing this in a loop will then allow the microcontroller to continuously fall asleep and wake up for the desired time. We have decided to do a system where the Ardiuno runs for 10 seconds for every 5 minutes. [3]
   3. BLE (Bluetooth Low Energy) is lower in cost than the classic Bluetooth as BLE is currently rising in use and has market competition. BLE decreases the distance a signal can be transmitted, but the signals transmitted through the greenhouse will not be far apart. The use of BLE allows for a cost-eﬃcient alternative compared to standard Bluetooth.
 
@@ -85,7 +85,7 @@
     - According to the CDC, anything over 5ppm is considered dangerous for an extended period of time. [2]
 
 - **MIKROE-3700**
-  1. First
+  1. The sensor will receive an input voltage of 3.3V from the Arduino's output pin which is within the sensor's operating voltage range.
   2. In order to use the 12-bit ADC, which is the output of the sensor, a reference voltage of 3.3V will need to be used for calibration. We can use the following equation, V = ( D / 2^12 -1) x Vref. This is the analog voltage to digital value formula to compute that a digital value of .009 will be approximately 7.62mV. This signal will alert the Arduino of unsafe Nitrogen Dioxide levels. 
      
   - **Power Supply for MIKROE-3700**
