@@ -25,7 +25,7 @@
 
 ## **Buildable Schematic:**
 
-![Buildable Schematic CO2 and NO2](https://github.com/RealityHertz/Greenhouse-Project/blob/Team2-Signoff-CO2%26NO2Monitoring-2/Documentation/Images/CADDrawingNitrogenSubsystem.jpg)
+![Buildable Schematic CO2 and NO2](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADSchematicNitrogenSubsystem.jpg)
 
 *Figure 1. Wiring Schematic for Power to Sensors*
 
