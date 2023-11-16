@@ -20,7 +20,7 @@ The function of this subsystem is to measure the temperature and the humidity le
   5. Sensor must alert the communications application when temperature is below 60°F and when the relative humdity is below 50%.
 
 ## **Buildable Schematic:**
-![Buildable Schematic Temperature & Humidity Monitoring]()
+![Buildable Schematic Temperature & Humidity Monitoring](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADTemperatureHumiditySubsystem.jpg)
 ## **Analysis:**
 - **Arduino Nano 33 IoT**
   1. The power supply will be four AA batteries. Each battery contains 1.1-1.5 volts, which will give the Arduino the required 5 volts.
