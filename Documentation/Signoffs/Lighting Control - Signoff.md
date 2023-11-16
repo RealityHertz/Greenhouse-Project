@@ -20,7 +20,8 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
 |----|-----------|-----------|------------|--------|----------------|-----|
 |Lulukee|Photocell|Amazon|095MTW82J|1|$10.99|$10.99|
-|Novelty Place|Led Bulbs|Walmart|UV LED Diode Lights|3(Each Color)|$10.95|$10.95|
+|Novelty Place|Led Bulbs|Walmart|UV LED Diode Lights|1 pack (100)|$10.95|$10.95|
+|ALITOVE|Wall-Wart|Amazon|ALT-1205|1|$11.99|$11.99|
 
 ## **References:**
 [1]
