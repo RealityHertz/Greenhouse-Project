@@ -42,7 +42,7 @@ timer to fill a local reserve tank and regulate the watering cycle of plants.
    3. BLE (Bluetooth Low Energy) is lower in cost than the classic Bluetooth as BLE is currently rising in use and has market competition. BLE decreases the distance a signal can be transmitted, but the signals transmitted through the greenhouse will not be far apart. The use of BLE allows for a cost-eﬃcient alternative compared to standard Bluetooth.
  
 - **Soil NPK and Moisture Sensor - Anggrek RS485**
-   1. The sensor will be supplied 15V from the AA battery pack which is ran through the Pololu step-up regulator.
+   1. The sensor will be supplied 15V from the Arduino pin 12 which provides a 5V output and will be passed through the pololu step-up regulator to produce the required 15V this will allow the sensor to be enabled and disabled as the Arduino cycles through sleep cycles.
    2. The sensor has a response time of less than 1 second and it will be enabled for 10 seconds every 5 minutes to allow the system time to commumicate with the PLC.
    3. The sensor measures soil moisture with a range of 0-100% with an accuracy of ±3% within the 0-53% moisture range and ±5% within the 53-100% range and a resolution of 0.10%.
    4. The sensor measures nitrogen levels within a range of 0-1999mg/kg with an accuracy of ±2% full scale and a resolution of 1mg/kg.
