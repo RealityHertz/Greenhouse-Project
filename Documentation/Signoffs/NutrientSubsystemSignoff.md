@@ -30,7 +30,7 @@ timer to fill a local reserve tank and regulate the watering cycle of plants.
   2. The regulator shall be enabled at the start of the system in order to power the sensor.
 
 ## **Buildable Schematic:**
-![Nutrient Schematic](https://github.com/RealityHertz/Greenhouse-Project/assets/128845671/4d5b31a7-3687-481e-851a-0f250ea1ee3f)
+![Nutrient Schematic](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Nutrient%20Schematic%20V3.png)
 
 *Figure 1. Buildable Schematic for Powering Arduino and Sensors*
 
