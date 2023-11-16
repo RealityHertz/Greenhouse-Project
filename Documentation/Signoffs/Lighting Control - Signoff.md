@@ -10,7 +10,7 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 - Light Intensity
 	Most plants need between 200-400 µmol/m²/s of light intensity. To achieve this measure of success, the distance of the light from the plant will have to be adjusted. 
 ## **Buildable Schematic:**
-![Lighting Control Schematic](https://github.com/RealityHertz/Greenhouse-Project/blob/Team2-Signoff-LightingControl/Documentation/Images/CADLightingSubsystem.jpg)
+![Lighting Control Schematic](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADLightingSubsystem.jpg)
 ## **Analysis:**
 - Power Supply and Connection for Photocell:
 	The ground from the Wall-Wart will feed into Pin 1 (black) on the photocell, the voltage out feeds into Pin 2 (white), and Pin 3 (red) will connect to the voltage in on the LED lights.
