@@ -3,59 +3,24 @@
 ## **Function of the Subsystem:**
 
 <div style="margin-left: 20px">The Communcations Application Subsystem 
-will be designed to collect, organize,
-and process data that is recieved by the PLC which includes nutrient 
-levels, 
-humidity, temperature, CO2, and NO2 levels from sensors. All of these 
-sensors
-will send the data to Arduino Nano 33 BLE chips to the PLC using 
-Bluetooth Low
-Energy. The purpose of the Communications subsystem to the make sure 
-it can 
-take in the undisturbed sensor data and reorganize it into the way 
-that will 
-be easy for a user to read and understand. The subsystem acts as 
-bridge 
-between the raw data and the visualization interface. It will be used 
-to see
-real-time data and allow for proper decision-making.
+will be designed to collect, organize, and process data that is recieved by the PLC which includes nutrient levels, humidity, temperature, CO2, and NO2 levels from sensors. All of these sensors will send the data to Arduino Nano 33 BLE chips to the PLC using Bluetooth LowEnergy. The purpose of the Communications subsystem to the make sure it can take in the undisturbed sensor data and reorganize it into the way that will be easy for a user to read and understand. The subsystem acts as bridge between the raw data and the visualization interface. It will be used to see real-time data and allow for proper decision-making. Essentially the data from the PLC will be taken and put on the NHD-5.0-800480FT-CSXP-CTP screen and shown in readings and graphs to allow for the data to be easy to understand.
 
 ## **Constraints:**
 
-- **NHD-5.0-800480FT-CSXP-CTP**
-
-  - The NHD-5.0-800480FT-CSXP-CTP needs a voltage of 3.3-5V supplied in order to 
-  operate and typically uses 100mA of current.
-
-  - Voltage supplied for LED Blacklight Driver shall be a minimum of 2.8V and a 
-  maximum of 5.5V.
-
-  - Supply Current for LED Blacklight Driver for 3.3V is typically 770mA and for 
-  5V is 350mA so this system shall uphold this.
-
-  - Blacklight PWM Frequency shall be a minimum of 800Hz and a maximum of 10,000Hz
-
 - **Arduino Nano 33 BLE**
 
-  - The communication between the Arduino Nano 33 BLE and PLC must be wireless. This will save
+  - **Arduino Nano 33 IoT**
+  1. The communication between the Arduino and PLC must be wireless. This will save time and money on wiring, while also allowing the system to be scalable, meaning if the greenhouse was to be expanded then this subsystem would be easily expanded to account for more plants.
 
-    time and money on wiring, while also allowing the system to be scalable.
+  2. The transfer of data between the PLC and the Arduino must be below 3 seconds for accurate and reliable monitoring of all sensor levels in the atmosphere and to allow plenty of time for grabbing information wirelessly from the PLC.
 
-  - The transfer of data between the PLC and the Arduino must be nearly
+- **NHD-5.0-800480FT-CSXP-CTP**
 
-    instantaneous for accurate and reliable monitoring of all sensor levels in
+  1. The NHD-5.0-800480FT-CSXP-CTP needs a voltage of 3.3-5V supplied in order to 
+  operate and typically uses 100mA of current.
 
-    the greenhouse.
-
-  - BLE (Bluetooth Low Energy) is lower in cost than the classic Bluetooth as BLE is
-
-    currently rising in use and has market competition. BLE decreases the distance a
-
-    signal can be transmitted, but the signals transmitted through the greenhouse
-
-    will not be far. The use of BLE allows for a cost-eﬃcient alternative compared to
-
-    classic Bluetooth.
+  2. Voltage supplied for LED Blacklight Driver shall be a minimum of 2.8V and a 
+  maximum of 5.5V. Supply Current for LED Blacklight Driver for 3.3V is typically 770mA and for 5V is 350mA. The power system shall uphold this.
 
 ## **Buildable Schematic:**
 
@@ -73,30 +38,22 @@ real-time data and allow for proper decision-making.
 
 ## **Analysis:**
 
-- **Power Supply for Arduino Nano 33 BLE**
+**Arduino Nano 33 IoT**
+  1. The Arduino's BLE capabilities could be broadened by using an array of bluetooth extenders if required for larger projects. 
 
-  - The power used will need to supply 5 volts to the Pin 15 on the Nano 33 BLE.
+  2. The data that is needed to be able to turn this system into a useful tool will be recieved via BLE from the PLC. The PLC used in this system has BLE compatabilities so it will be easy to send over the required data that can then be turned into readable and useful data that the greenhouse employees will be able to use. The MISO pin will be the output of this data that will be sent onto the display.
+  - **Power Supply for Arduino Nano 33 IoT**
+    - The power will be USB from 110 volt wall outlet and will to supply 5 volts to the Pin 15 on the Nano 33 IoT. The Pin 14 on the Nano 33 IoT will need to be connected to the ground from the USB ground wire.
 
-  - The Pin 14 on the Nano 33 BLE will need to be connected to the ground from the
-    power supply.
+    - The USB cable and plug used have a max current of 1 amp and 2 amp respectively. This will allow for a safe current supply to the board.
 
-- **Communication for Arduino Nano 33 BLE**
+**NHD-5.0-800480FT-CSXP-CTP**
 
-  - The data that is needed to be able to turn this system into a useful tool 
-  will be recieved via BLE from the PLC. The PLC used in this system has BLE 
-  compatabilities so it will be easy to send over the required data that can 
-  then be turned into readable and useful data that the greenhouse employees 
-  will be able to use. The MISO pin will be the output of this data that will 
-  be sent onto the display.
-
-- **Power Supply for NHD-5.0-800480FT-CSXP-CTP**
-
-  - The NHD-5.0-800480FT-CSXP-CTP has a supply voltage of 3.0-3.6V and
+  1. The NHD-5.0-800480FT-CSXP-CTP has a supply voltage of 3.0-3.6V and
   will have power supplied through a wall outlet with a USB 2.0 cord 
   powering the voltage in and ground
-  - The NHD-5.0-800480FT-CSXP-CTP will also be supplied the proper Idd 
-  from a Vdd of 3.3V or within the previous voltage parameters. The 
-  current should fall around 100mA. [1]
+  
+  2. The NHD-5.0-800480FT-CSXP-CTP will also be supplied the proper Idd from a Vdd of 3.3V or within the previous voltage parameters. The current should fall around 100mA. [1]
 
 - **Communication for NHD-5.0-800480FT-CSXP-CTP**
 
