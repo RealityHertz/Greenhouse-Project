@@ -6,32 +6,47 @@
 The function of this subsystem is to measure the temperature and the humidity levels in the greenhouse. The DHT11 sensor will measure both values, then relay the information to the Arduino Nano 33 BLE device. 
 
 ## **Constraints:**
-- Bluetooth Low Energy (BLE) must be used to reduce power consumption.
-- Arduino must turn on every 5 minutes to measure and update the temperature and humidity.
+
+- **Arduino Nano 33 IoT**
+  1. The communication between the Arduino and the PLC must be wireless. This will allow for the system to be scalable, meaning that the greenhouse can be expanded to add more zones if needed.
+  2. The data transfer from the sensors to the Arduino must be below 5 seconds to allow an adequate amount of time before the Arduino returns to its sleep mode.
+  3. The Arduino shall be able to wirelessly transmit the data to the PLC in a cost effective way.
+
+- **DHT11 Temperature & Humidity Sensor**
+  1. The sensor shall have 3.5-5.5 V to operate correctly.
+  2. Sensor has 0.3 mA when on, and 60 μA when in sleep mode.
+  3. Temperature range of 0-50°C (32-122°F) and humidity range of 20-90%.
+  4. Sampling period of greater than or equal to 2 seconds.
+  5. Sensor must alert the communications application when temperature is below 60°F and when the relative humdity is below 50%.
 
 ## **Buildable Schematic:**
-![Buildable Schematic Temperature & Humidity Monitoring](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Temp%26HumiditySchematic.png)
+![Buildable Schematic Temperature & Humidity Monitoring]()
 ## **Analysis:**
-- **Power Supply and Connection for Arduino Nano 33 BLE**
-    - The power supply will be four AA batteries. Each battery contains 1.1-1.5 volts, which will give the Arduino the required 5 volts.
-    - The 5V supply will be connected to pin 14 on the Arduino. The ground will be connected to the pin 19 on the Arduino.
-    - The power supply will be connected to the LM7805 voltage regulator, which will be used to step down the voltage to 3.3 V for the 555 timer.
-- **Power Supply and Connection for DHT11**
-    - The DHT11 temperature and humidity sensor is powered by the Arduino. An output voltage of 5 V is sent to the DHT11 via the Arduino.
-    - The data produced by the DHT11 is sent to the D8 pin of the Arduino.
-- **555 Timer**
-    - For the 555 timer to turn on every 5 minutes, certain resistor and capacitor values must be chosen to obtain the correct time. To determine the period of the timer, the equation t = 0.7(R1 + 2R2) x C is used [1]. Using resistor values of 330kΩ and 47kΩ with a 1mF capacitor results in a period of 296.8 seconds, which is sufficient to the desired period of 300 seconds (5 minutes).
-
+- **Arduino Nano 33 IoT**
+  1. The power supply will be four AA batteries. Each battery contains 1.1-1.5 volts, which will give the Arduino the required 5 volts.
+  2. The Arduino will turn on for 10 seconds once every 5 minutes. This can be done using functions from the Arduino-Libraries Github [1]. By instructing the Arduino to go into sleep mode using the LowPower.sleep() function, the desired time range can be achieved.
+  3. Using Bluetooth Low Energy (BLE) allows for a cost efficient manner to transmit data throughout the greenhouse. A disadvantage of BLE is the decreased distance that information can be transmitted. Most BLE devices can trasmit/recieve data at a max rate of 50 meters [2]. However, the distance between the Arduino and the PLC will only be 15 feet, or 4.57 meters.
+ 
+- **DHT11 Temperature & Humidity Sensor**
+    1. The DHT11 temperature and humidity sensor is powered by the Arduino. An output voltage of 5 V is sent to the DHT11 via the Arduino.. The power consumed
+    2. The DHT11 does not consume much power at all from the batteries. The amount of power from the DHT11 and Arduino are as follows:
+       - AA batteries supply 1.5V and 3500mAh each. P = (1.5V*3500mAh) * 4 batteries = 21Wh
+       - Arduino uses 5V and 28mA while in the "on" mode. P = (5V * 28mA) * (10s/3600s) = .07778mWh.
+       - Sensor uses 0.3mA while on, and 60μA while off. P = (5V * 0.3mA) * (10s/3600s) + (5V * 60μA) * (300s/3600s) = 29.17μWh
+       - Total power consumed: P = 0.07778mWh + 29.17μWh = 0.81mWh. 21Wh/0.81mWh = 26,023 days.
+    3. The temperature and humidity ranges are ideal for greenhouses. When speaking to the greenhouse coordinator, the temperature ranges from 60-85°, and humidity ranges from 50-80% in this specific greenhouse. Anything greater than or less than these ranges shall send an alert to the communications app to notify the manager that something abnormal is occuring in the greenhouse. 
+    4. The DHT11 must be on for at least 2 seconds in order to detect the temperature and humidity, as well as send the data to the Arduino. By leaving the Arduino on for 10 seconds, the sensor will have a sufficient amount of time to measure and transmit the data.
+    
 ## **Bill of Materials:**
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
 |----|-----------|-----------|------------|--------|----------------|-----|
 |Songhe|Temperature and Humidity Sensor|Amazon|DHT11|5 (Pack)|$1.58|$7.88|
 |Arduino|Bluetooth Board|Arduino|Nano 33 BLE|1|$26.30|$26.30|
-|onsemi 555 Chip|DigiKey|NCV1455BDR2G|1|$0.62|$0.62|
-|Texas Instruments|Voltage Regulator|DigiKey|296-47192-ND|1|$1.41|$1.41|
 |LAMPVPATH|4 AA Battery Holder|Amazon|B07L9M6VZK|1|$7.49|$7.49|
 |Duracell|AA Batteries|Amazon|DURMN1500B10Z|1|$8.79|$8.79|
 
 
 ## **References:**
-[1] G. Lambert, "Introduction to the 555 Timer," Circuit Basics, Nov. 28, 2021. https://www.circuitbasics.com/what-is-a-555-timer/
+[1]  “Arduino Low Power - Arduino Reference,” www.arduino.cc, Nov. 08, 2023). ‌https://www.arduino.cc/reference/en/libraries/arduino-low-power/
+[2] “Advantages of BLE (Bluetooth Low Energy) | disadvantages of BLE (Bluetooth Low Energy),” www.rfwireless-world.com. https://www.rfwireless-world.com/Terminology/Advantages-and-Disadvantages-of-BLE-Bluetooth-Low-Energy.html
+‌
