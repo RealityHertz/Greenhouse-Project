@@ -48,5 +48,6 @@ The function of this subsystem is to measure the temperature and the humidity le
 
 ## **References:**
 [1]  “Arduino Low Power - Arduino Reference,” www.arduino.cc, Nov. 08, 2023). ‌https://www.arduino.cc/reference/en/libraries/arduino-low-power/
+
 [2] “Advantages of BLE (Bluetooth Low Energy) | disadvantages of BLE (Bluetooth Low Energy),” www.rfwireless-world.com. https://www.rfwireless-world.com/Terminology/Advantages-and-Disadvantages-of-BLE-Bluetooth-Low-Energy.html
 ‌
