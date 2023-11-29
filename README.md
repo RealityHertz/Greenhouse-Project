@@ -28,19 +28,24 @@ Below the video link show some well-taken, appropriately sized images of the pro
 
 ### Team
 
-Give a brief bio for each team member and their broad contribution to the project (no need to be terribly specifc).
 
+Team 2 is a 5 member Capstone Design Project Team at Tennessee Technological University who began Version 1 of the Greenhouse Automation Project in the Fall semester of 2023. The group members are Robert Jones, Jared Hooker, Jaxson Billings, Bryan Rhoton, and Grant Hooper. All members contributed to the C02 and N02 Monitoring System.
+- **Robert Jones:**
+  - Electrical Engineering Major
+  - Hardware
+  - Controls
+  - Lighting Control System
 ### Faculty Supervisor
 
-Tell who the faculty supervisor was for the project
+The faculty advisor for the project is Jesse Roberts.
 
 ### Stakeholders
 
-Tell a bit about the customer for the project. Also discuss any other groups (specific or general) that are expected to be impacted by the project.
+The customer for this project is the Agricultural Department at Tennessee Technological University. A scalable version of this design would be useful for agricultural researchers, farmers, and/or urban growers.
 
 ### Recognitions
 
-Use this space to recognize anyone that you feel has had an impact on the project. Be sure to recognize the work of previous teams if you referenced it for style or content. 
+Team 2 would like to recognize the sponsor for this project, EOSYS. They have worked closely with the group to help provide feedback, troubleshoot, and brainstorm ideas for the project. 
 
 ## Repo Organization
 
