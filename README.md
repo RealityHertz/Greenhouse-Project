@@ -25,7 +25,7 @@ There are no demonstrations currently available.
 
 
 Team 2 is a 5 member Capstone Design Project Team at Tennessee Technological University who began Version 1 of the Greenhouse Automation Project in the Fall semester of 2023. The group members are Robert Jones, Jared Hooker, Jaxson Billings, Bryan Rhoton, and Grant Hooper. All members contributed to the C02 and N02 Monitoring System.
-- **Robert Jones:**
+- **Robert Jones**
   - Electrical Engineering Major
   - Hardware
   - Controls
@@ -33,6 +33,10 @@ Team 2 is a 5 member Capstone Design Project Team at Tennessee Technological Uni
 - **Bryan Rhoton**
   - Computer Engineering Major
   - Soil Detection System
+- **Jared Hooker**
+  - Electrical Engineering Major
+  - Controls
+  - Temperature & Humidity Monitoring System
 ### Faculty Supervisor
 
 The faculty advisor for the project is Jesse Roberts.
