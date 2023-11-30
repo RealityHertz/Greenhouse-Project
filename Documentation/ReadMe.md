@@ -1,74 +1,46 @@
-# What should be in the documentation folder
+# Documentation
 
+The `Documentation` folder serves as a comprehensive repository of essential project documentation and artifacts for the Autonomous Greenhouse project. This README aims to provide guidance and an overview of the contents within this directory.
 
-## Signoffs
+## Contents
 
-An important part of engineering is analysis. Designs must be analyzed to show that the subsystem is **likely** to function (sometimes things still don't work). This reduces the overall risk that a client or firm will have wasted money on a solution that was destined to fail. For information about what must be included in each signof file, refer to the readme file in the signoff directory. 
+### Signoffs
 
-A signoff must be completed and approved for each subsystem before the components for the subsystem may be ordered. Each of the signoff documents should be an appropriately named markdown file in the signoff directory. 
+This directory contains markdown files for signoffs of subsystems. Each signoff document details the subsystem's purpose, constraints, buildable schematic, analysis, Bill of Materials (BOM), and more. Refer to the README in the "Signoffs" directory for detailed guidelines on creating and updating signoff files.
 
+### Final Set of Prints (Final Design Artifacts)
 
-## Final set of prints (final design artifacts)
+All schematics and design artifacts, including 3D models, wiring schematics, PCB files, final BOM, datasheets, project poster, detailed project photos, and any additional relevant documents, are stored here.
 
-All schematics and artifacts should be in an appropriate file type. 
+#### 3D Models
 
-### 3D Models
+Stored in `.stl` format, these models provide complete, buildable 3D representations of the various systems within the project.
 
-Required format: 
-- .stl
+#### Wiring Schematics
 
-3D models should be stored in the proper file type to facilitate editing, viewing, and printing. The best filetype for this is .stl, so all 3d models should be pushed to the repo as stl files. Stl files can be converted to solidworks models or autocad 3d models as necessary, can be 3d printed easily, and are 3d viewable natively in github. File (Documentation/3D Models)
+Electrical systems' wiring schematics, created using AutoCAD or AutoCAD Electrical, are stored here. Source files and PDF versions of the schematics must be included.
 
-Every constructed system of the project must have a complete (buildable) 3d model schematic.
+#### PCB Files
 
+KiCad is used for all PCB design, with source files and complete gerber files included. PCB-related documents are housed within this section.
 
-### Wiring Schematics
+#### Final BOM
 
-Required software: 
-- autocad or autocad electrical
+A PDF output of the Excel-based Bill of Materials (BOM) file along with the Excel file itself is included here.
 
-For wiring schematics, use autocad or autocad electrical. All the source files must be included in the github repo along with pdf versions of all schematics. File (Documentation/Electrical/Schematics/Sources)
+#### Datasheet
 
-Every electrical system must have a complete (buildable) pdf circuit schematic. File (Documentation/Electrical/Schematics)
+This document contains vital information necessary for interfacing with the project, including power expectations, interfacing details, compliance information, experimental results, and their interpretations.
 
-Autocad is freely available to students with versions for mac, windows, and linux.
+#### Project Poster
 
-#### PCB files
+The project poster, visually representing key project details and components, is stored in this section.
 
-Required Software:
-- kicad 
+#### Detailed Photos
 
-KiCad should be used for all PCB design. All source files must be deposited in the repo. File (Documentation/Electrical/PCB/Sources)
+A folder of detailed project photos provides visual documentation of the project's various aspects.
 
-Along with the source files, a complete set of gerber files for each PCB must also be included in the repo. These should be included in a folder called gerber files. File (Documentation/Electrical/PCB)
+#### Additional Documents
 
-kiCad is a free and open source software.
+Any other pertinent documents relevant to understanding, working on, or with the project are included in this section.
 
-
-## Final BOM
-
-The final version of the BOM should be uploaded as a pdf output of the excel BOM file. The excel BOM file should also be included.
-
-
-## Datasheet 
-
-This must give all the information necessary for other systems to interface with your project in the intended manner. This must include the power expectations, interfacing, and compliance.
-	
-This must also include the results from all experimentation and the interpretation of the results.
-  
-  
-  
-  
-## The project poster
-
-Include the project poster
-
-
-## Detailed photos of the project
-
-Include a folder of a set of detailed photos of the project. File (Documentation/Images)
-
-
-## Any additional documents that are appropriate to include
-
-If there are additional items that are important to understanding and working on or with the project, include them as well. 
