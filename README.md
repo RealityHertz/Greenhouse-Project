@@ -2,21 +2,21 @@
 
 ## Executive Summary
 
-With this project Team 2 proposes to create a greenhouse that can wirelessly and autonomously detect soil moisture, pH level, and nutrient level as well as carbon dioxide and nitrogen monoxide in the greenhouse's atmosphere along with the greenhoue's temperature and humidity. The greenhouse will also be able to autonomously detect the water level of an exterior water source and fill said resevoir when the level is too low as well as running a timed watering cycle for the plants. 
+With this project Team 2 proposes to create a greenhouse that can wirelessly and autonomously detect soil moisture, pH level, and nutrient level as well as carbon dioxide and nitrogen monoxide in the greenhouse's atmosphere along with the greenhouse's temperature and humidity. The greenhouse will also be able to autonomously detect the water level of an exterior water source and fill said reservoir when the level is too low as well as running a timed watering cycle for the plants. 
 
 
 ## Capabilities
 
-This version of the project will be able to accurately measure the levels of nitrogen, phosphorus and potassium in the greenhouse soil as well as the temperature, humidity, carbon dioxide and nitrogen monoxide levels in the atmosphere. The project will also be able to detect the water level of an external resevoir that will alert when low and be able to refill when the alert is sent.
+This version of the project will be able to accurately measure the levels of nitrogen, phosphorus, and potassium in the greenhouse soil as well as the temperature, humidity, carbon dioxide, and nitrogen monoxide levels in the atmosphere. The project will also be able to detect the water level of an external reservoir that will alert when low and be able to refill when the alert is sent.
 
 
 ## Salient Outcomes
 
-Currently there are no outcomes for the Autonomous Greenhouse project.
+Currently, there are no outcomes for the Autonomous Greenhouse project.
 
 ## Project Demonstration & Images
 
-There is no demonstrations currently available.
+There are no demonstrations currently available.
 
 
 ## About Us
@@ -47,17 +47,14 @@ Team 2 would like to recognize the sponsor for this project, EOSYS. They have wo
 
 ## Repo Organization
 
-Give the layout of the repo and what can be found where. Make it easy on those who are interested by making the headings of the various things in this section clickable links to the relevant folder or file in the repo.
+### [Reports](https://github.com/RealityHertz/Greenhouse-Project/tree/main/Reports)
 
+Finalized reports can be found by going to the Reports folder or by clicking the link above.
 
-### Reports
+### [Documentation](https://github.com/RealityHertz/Greenhouse-Project/tree/main/Documentation)
 
-In the reports section of this repository information about the individual expectations for the reports and how they should be housed is provided.
+Group documentation can be found by going to the Documentation folder or by clicking the link above.
 
-### Documentation
+### [Software](https://github.com/RealityHertz/Greenhouse-Project/tree/main/Software)
 
-In the documentaion section information regarding the documentation that is required and how it should be organized is given.
-
-### Software
-
-In the software directory of the repo information regarding how each team is expected to document software can be found.
+Software can be found by going to the Software folder or by clicking the link above.
