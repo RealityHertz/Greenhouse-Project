@@ -1,27 +1,22 @@
-# {Name of the Project} - Your project should have a catchy and functional name
-
-The descriptions and information in all readme files in the starter repo (including this one) must be edited. All section descriptions must be deleted. Any failure to remove the description information (like the statement that you are currently reading) will be heavily penalized!
+# Autonomous Greenhouse Project
 
 ## Executive Summary
 
-Give the elevator pitch and abstract for the project. It should allow interested visitors to broadly understand the motivation for the project and what the project has accomplished.
+With this project Team 2 proposes to create a greenhouse that can wirelessly and autonomously detect soil moisture, pH level, and nutrient level as well as carbon dioxide and nitrogen monoxide in the greenhouse's atmosphere along with the greenhoue's temperature and humidity. The greenhouse will also be able to autonomously detect the water level of an exterior water source and fill said resevoir when the level is too low as well as running a timed watering cycle for the plants. 
 
 
 ## Capabilities
 
-Here explain in more detail (though not as much as will be given in the datasheet) what the version of this project in this repo is capable of doing.
+This version of the project will be able to accurately measure the levels of nitrogen, phosphorus and potassium in the greenhouse soil as well as the temperature, humidity, carbon dioxide and nitrogen monoxide levels in the atmosphere. The project will also be able to detect the water level of an external resevoir that will alert when low and be able to refill when the alert is sent.
 
 
 ## Salient Outcomes
 
-Projects often have some outcomes that are more interesting than others. Here, highlight those things that you found interesting!
-
+Currently there are no outcomes for the Autonomous Greenhouse project.
 
 ## Project Demonstration & Images
 
-Give a link to a video of the project being demonstrated. The video should be hosted on the capstone youtube.
-
-Below the video link show some well-taken, appropriately sized images of the project.
+There is no demonstrations currently available.
 
 
 ## About Us
@@ -35,6 +30,9 @@ Team 2 is a 5 member Capstone Design Project Team at Tennessee Technological Uni
   - Hardware
   - Controls
   - Lighting Control System
+- **Bryan Rhoton**
+  - Computer Engineering Major
+  - Soil Detection System
 ### Faculty Supervisor
 
 The faculty advisor for the project is Jesse Roberts.
