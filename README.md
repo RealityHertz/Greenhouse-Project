@@ -32,6 +32,8 @@ Team 2 is a 5 member Capstone Design Project Team at Tennessee Technological Uni
   - Hardware
   - Controls
   - Lighting Control System
+ 
+![Bryan Headshot](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Bryan_Rhoton_Headshot_resize.jpg)
 - **Bryan Rhoton**
   - Computer Engineering Major
   - Soil Detection System
