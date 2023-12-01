@@ -49,6 +49,8 @@ Team 2 is a 5 member Capstone Design Project Team at Tennessee Technological Uni
   - Computer Engineering Major
   - Programming
   - Communication and Display Subsystem
+
+![Grant Headshot](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Grant%20Hooper%20Headshot.jpg)
 - **Grant Hooper**
   - Electrical Engineer
   - Controls
