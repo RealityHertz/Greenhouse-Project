@@ -41,6 +41,10 @@ Team 2 is a 5 member Capstone Design Project Team at Tennessee Technological Uni
   - Computer Engineering Major
   - Programming
   - Communication and Display Subsystem
+- **Grant Hooper**
+  - Electrical Engineer
+  - Controls
+  - Water Level Monitoring System
 
 ### Faculty Supervisor
 
