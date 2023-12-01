@@ -37,6 +37,11 @@ Team 2 is a 5 member Capstone Design Project Team at Tennessee Technological Uni
   - Electrical Engineering Major
   - Controls
   - Temperature & Humidity Monitoring System
+- **Jaxson Billings**
+  - Computer Engineering Major
+  - Programming
+  - Communication and Display Subsystem
+
 ### Faculty Supervisor
 
 The faculty advisor for the project is Jesse Roberts.
