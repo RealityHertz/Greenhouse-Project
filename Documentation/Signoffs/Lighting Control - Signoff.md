@@ -3,12 +3,12 @@
 # *Detail Design: Lighting Control*
 ## **Team Members: Robert Jones**
 ## **Function of the Subsystem:**
-The function of this subsystem is to have grow lights shine on the plants to help them in their growing process. The subsystem will use a series of LEDs to do this. A photocell will be connected to the system to 
+The function of this subsystem is to have grow lights shine on the plants to help them in their growing process. The subsystem will use a series of LEDs to do this. A photocell will be connected to the system to turn the lights on at night and off during the day.
 ## **Constraints:**
 - Lighting Spectrum
 	Each type of plant grown in the greenhouse needs slightly different colors for optimal growth. Therefore, the light must be able to conform to all kinds of plants. Typically, this is 400-500nm for blue light and 600-700nm for red light.
 - Light Intensity
-	Most plants need between 200-400 µmol/m²/s of light intensity. To achieve this measure of success, the distance of the light from the plant will have to be adjusted. 
+	Most plants need between 200-400 µmol/m²/s of light intensity. These levels help to achieve optimal plant growth. To achieve this measure of success, the distance of the light from the plant will have to be adjusted based on their specific needs. 
 ## **Buildable Schematic:**
 ![Lighting Control Schematic](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADLightingSubsystem.jpg)
 ## **Analysis:**
