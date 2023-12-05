@@ -2,7 +2,7 @@
 
 ## **Function of the Subsystem:**
 
-<div style="margin-left: 20px">The Communcations Application Subsystem will be designed to collect, organize, and process data that is recieved by the PLC which includes nutrient levels, humidity, temperature, CO2, and NO2 levels from sensors. All of these sensors will send the data to Arduino Nano 33 BLE chips to the PLC using Bluetooth LowEnergy. The purpose of the Communications subsystem to the make sure it can take in the undisturbed sensor data and reorganize it into the way that will be easy for a user to read and understand. The subsystem acts as bridge between the raw data and the visualization interface. It will be used to see real-time data and allow for proper decision-making. Essentially the data from the PLC will be taken and put on the NHD-5.0-800480FT-CSXP-CTP screen and shown in readings and graphs to allow for the data to be easy to understand.
+<div style="margin-left: 20px">The Communcations Application Subsystem will be designed to collect, organize, and process data that is recieved by the PLC which includes nutrient levels, humidity, temperature, CO2, and NO2 levels from sensors. All of these sensors will send the data to Arduino Nano 33 IoT chips to the PLC using Bluetooth Low Energy. The purpose of the Communications subsystem to the make sure it can take in the sensor data and display in on a screen in the greenhouse . The subsystem acts as uses data and sends it to the visualization interface to be display for the greenhouse works to see the measurements of all the sensors. It will be used to see real-time data and allow for proper decision-making. Essentially the data from the PLC will be taken and put on the NHD-5.0-800480FT-CSXP-CTP screen and shown in readings to allow for the data to be easy to understand. It will also show the sensors that are alerting if the measurements are not within the proper range.
 
 ## **Constraints:**
 
@@ -39,11 +39,11 @@
 
   3. The ports being used in other subsystems consist of UART, SPI Data Out, and RS-485. In this case, RS-485 and UART will be recieved and grabbed the same way. The pseudocode below is a quick look at an example portion of code that can be used on the subsystem Arduinos to easily take the input from the specific sensors and turn that into a inetger that can be easily communicated to the PLC. The PLC can then send this integer through BLE to the communications subsystem Arduino.
 
-![UART Bits to Integer]()
+![UART Bits to Integer](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Tx%20to%20Int%20Code.png)
 
 We also have one sensor that communicates in 12-bit ADC so we can use a variation of this pseudocode to pull this 12-bit ADC and convert into an Integer that can be easily communicated to the PLC through BLE as well.
 
-![SPI Data Out Bits to Integer]()
+![SPI Data Out Bits to Integer](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/SPIDataOutToINT.png)
 
   - **Power Supply for Arduino Nano 33 IoT**
     - The power will be USB from 110 volt wall outlet and will to supply 5 volts to the Pin 15 on the Nano 33 IoT. The Pin 14 on the Nano 33 IoT will need to be connected to the ground from the USB ground wire.
