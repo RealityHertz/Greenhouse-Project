@@ -1,4 +1,4 @@
-# *Detail Design: Water and Nutrient Controller*
+# *Detail Design: Nutrient Controller*
 ## **Function of the Subsystem:**
 The function of this subsystem is to monitor the concentration of nutrients in the soil,
 the pH balance of the soil, the hydration level of the soil, the level of water in the water tanks,
@@ -30,7 +30,7 @@ timer to fill a local reserve tank and regulate the watering cycle of plants.
   2. The regulator shall be enabled at the start of the system in order to power the sensor.
 
 ## **Buildable Schematic:**
-![Nutrient Schematic](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Nutrient%20Schematic%20V3.png)
+![Nutrient Schematic](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Nutrient%20Schematic%20V4.png)
 
 *Figure 1. Buildable Schematic for Powering Arduino and Sensors*
 
@@ -51,7 +51,7 @@ timer to fill a local reserve tank and regulate the watering cycle of plants.
    7. The sensor measures pH within a range of 3-9pH with an accuracy of ±0.3pH and a resolution of 0.01pH.
  
 - **Voltage Regulator - Pololu U3V70F15**
-   1. The regulator takes an input voltage of range 2.9-15V with a maximum input current of 10mA and produces a constant 15VDC output.
+   1. The regulator takes an input voltage of range 2.9-15V with a maximum input current of 7A and produces a constant 15VDC ±4% output.
    2. The regulator is wired to be enabled by default as soon as it is powered.
   
 ## **Bill of Materials:**
