@@ -50,6 +50,11 @@ timer to fill a local reserve tank and regulate the watering cycle of plants.
    6. The sensor measures potassium levels within a range of 0-1999mg/kg with an accuracy of ±2% full scale and a resolution of 1mg/kg.
    7. The sensor measures pH within a range of 3-9pH with an accuracy of ±0.3pH and a resolution of 0.01pH.
  
+- **Power Supply for Anggrek RS485**
+    1. The sensor requires a 12-24VDC power supply to operate.
+    2. The Arduino will send a 5V signal through its 5V output pin to the Pololu U3V70F15 step-up voltage regulator to provide a constant 15VDC ±4% input for the sensor.
+    3. The power is routed through the Arduino so that the sensor may be cycled on and off as the Nano 33 IOT enters and exits sleep mode, this will allow the sensor conserve energy and not be ran comstantly.
+ 
 - **Voltage Regulator - Pololu U3V70F15**
    1. The regulator takes an input voltage of range 2.9-15V with a maximum input current of 7A and produces a constant 15VDC ±4% output.
    2. The regulator is wired to be enabled by default as soon as it is powered.
