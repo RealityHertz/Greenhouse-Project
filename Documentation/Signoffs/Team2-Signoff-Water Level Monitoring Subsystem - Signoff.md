@@ -15,6 +15,12 @@ The function of this subsystem is to relay the water levels to the Arduino via t
   - Service temperature range of -40-200℃
   - Resistivity of 3.5 x 10^13 Ω·cm
   - Drying time of 15 minutes for 2 coats
+- **Water Level Sensor**
+
+  - The transfer of data between the sensors and the Arduino must be nearly instantaneous for accurate and reliable monitoring of water level.
+  - Must be able to accurately sense when more water is needed to be added to the reservoir.
+  - Must be durable enough to continue function while in water for an indefinite amount of time.
+  - Must be cheap and easily replacable in the chance the user requires a new sensor.
 
 ## **Buildable Schematic:**
 
