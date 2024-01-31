@@ -20,7 +20,7 @@ Its primary function is to ensure the efficient handling of sensor data and pres
 
 ## **Buildable Schematic:**
 
-![Buildable Schematic Communication & Display](https://github.com/RealityHertz/Greenhouse-Project/blob/Team2-Signoff-Communication%26Display/Documentation/Images/CADCommunicationsSubsystem.jpg)
+![Buildable Schematic Communication & Display](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADCommunicationsSubsystem.jpeg)
 
 *Figure 1. Wiring Schematic for Communication and Display*
 
