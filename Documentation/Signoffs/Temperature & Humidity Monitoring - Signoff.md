@@ -44,7 +44,7 @@ The function of this subsystem is to measure the temperature and the humidity le
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
 |----|-----------|-----------|------------|--------|----------------|-----|
 |Songhe|Temperature and Humidity Sensor|Amazon|DHT11|5 (Pack)|$1.58|$7.88|
-|Arduino|Bluetooth Board|Arduino|Nano 33 BLE|1|$26.30|$26.30|
+|Arduino|Bluetooth Board|Arduino|Nano 33 IOT|1|$26.30|$26.30|
 |LAMPVPATH|4 AA Battery Holder|Amazon|B07L9M6VZK|1|$7.49|$7.49|
 |Duracell|AA Batteries|Amazon|DURMN1500B10Z|1|$8.79|$8.79|
 
