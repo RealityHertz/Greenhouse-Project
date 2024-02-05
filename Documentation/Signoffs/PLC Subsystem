@@ -7,8 +7,8 @@
 
 |Segment|Number|Contraint Description|
 |--------|-|-------------------------------------------------|
-||||
-||||
+|PLC|1|The PLC scan time needs to be able to scan fast enough to accommodate the desired sampling rate for all subsystem sensors. These sensors will be sending data every 5 minutes.|
+|PLC|2||
 ||||
 ||||
 ||||
@@ -30,7 +30,7 @@
 ## **Analysis:**
 
 **PLC**
-  1. 
+  1. The Automation Direct C2-03CPU has a scan time of < 1 ms and a contact execution of < 0.2 µs. This is more than sufficient to keep track of the sensor's data being sent every 5 minutes.
   2. 
   3. 
   - **Power Supply for PLC**
