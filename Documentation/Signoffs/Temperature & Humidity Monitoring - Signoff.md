@@ -31,11 +31,14 @@ The function of this subsystem is to measure the temperature and the humidity le
     1. The DHT11 temperature and humidity sensor is powered by the Arduino. An output voltage of 5 V is sent to the DHT11 via the Arduino.. The power consumed
     2. The DHT11 does not consume much power at all from the batteries. The amount of power from the DHT11 and Arduino are as follows:
        - AA batteries supply 1.5V and 3500mAh each. P = (1.5V*3500mAh) * 4 batteries = 21Wh
-       - Arduino uses 5V and 28mA while in the "on" mode. P = (5V * 28mA) * (10s/3600s) = .07778mWh.
-       - Sensor uses 0.3mA while on, and 60μA while off. P = (5V * 0.3mA) * (10s/3600s) + (5V * 60μA) * (300s/3600s) = 29.17μWh
-       - Total power consumed: P = 0.07778mWh + 29.17μWh = 0.81mWh. 21Wh/0.81mWh = 26,023 days.
+       - Arduino uses 5V and 28mA while in the "on" mode. P = (5V * 28mA) * (120s/3600s) = 4.67mWh.
+       - Sensor uses 0.3mA while on, and 150μA while off. P = (5V * 0.3mA) * (120s/3600s) + (5V * 150μA) * (3480s/3600s) = 0.775mWh
+       - Total power consumed: P = 4.67mWh + 0.775mWh = 5.445mWh. 21Wh/mWh = 3,857 hours or 5.4 months.
     3. The temperature and humidity ranges are ideal for greenhouses. When speaking to the greenhouse coordinator, the temperature ranges from 60-85°, and humidity ranges from 50-80% in this specific greenhouse. Anything greater than or less than these ranges shall send an alert to the communications app to notify the manager that something abnormal is occuring in the greenhouse. 
     4. The DHT11 must be on for at least 2 seconds in order to detect the temperature and humidity, as well as send the data to the Arduino. By leaving the Arduino on for 10 seconds, the sensor will have a sufficient amount of time to measure and transmit the data.
+
+ - **Communication for DHT11**
+     1. The DHT11's pin 3 will be used as the SPI Data Out which will then be connected to the Arduino via pin 26. Pin 26 is used as a Digital SPI MISO, which will allow for the Arduino to read in the data from the sensor.
     
 ## **Bill of Materials:**
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
