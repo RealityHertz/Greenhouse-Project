@@ -1,7 +1,7 @@
 # *Detail Design: PLC Subsystem*
 
 ## **Function of the Subsystem:**
-
+The function of this subsystem is to recieve data from the various sensors and relay that information to the hmi display. This system will also send commands to the various subsystems to change behaviors according to the plc code.
 <div style="margin-left: 20px">
 ## **Constraints:**
 
