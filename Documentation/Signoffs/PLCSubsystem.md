@@ -19,15 +19,15 @@ The function of this subsystem is to recieve data from the various sensors and r
 
 ![]()
 
-*Figure 1. *
+*Figure 1.*
 
 ![PLC Subsystem](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/PLC%202D%20Model.png)
 
-*Figure 2. *
+*Figure 2. PLC 2D Model*
 
 ![]()
 
-*Figure 3. *
+*Figure 3.*
 
 ## **Analysis:**
 
