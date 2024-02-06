@@ -5,7 +5,7 @@ The function of this subsystem is to receive data from the various sensors and r
 
 ## **Constraints:**
 
-|Segment|Number|Contraint Description|
+|Segment|Number|Constraint Description|
 |--------|-|-------------------------------------------------|
 |PLC|1|The PLC scan time shall be able to scan fast enough to accommodate the desired sampling rate for all subsystem sensors. These sensors will be sending data every 5 minutes.|
 |PLC|2|Communication Bandwidth shall be sufficient enough to handle all data from sensors simultaneously|
