@@ -2,7 +2,7 @@
 
 ## **Function of the Subsystem:**
 The function of this subsystem is to recieve data from the various sensors and relay that information to the hmi display. This system will also send commands to the various subsystems to change behaviors according to the plc code.
-<div style="margin-left: 20px">
+
 ## **Constraints:**
 
 |Segment|Number|Contraint Description|
@@ -38,7 +38,7 @@ The function of this subsystem is to recieve data from the various sensors and r
   4. 4
   5. 5
   6. 6
-  7. 
+  7. Through the CLICK CPU v3.0 Application and an additional RP-SMA antenna plug that directly connects to the PLC, we will be able to setup and see up to 8 additional BLE or IOT devices. This PLC comes standard allowing one HMI, but can be manipulated in the CLICK CPU to allow for more. Futhermore, devices can use microB-USB or RS-232 for a direct communication. Finally, this PLC allows for communication over WiFi or direct connect Ethernet (RJ45). All of these methods allow for us to communicate to the multiple Arduino Nano 33 IoT, but the priority is to use the BLE or IoT features for communication. [1]
   - **Power Supply for PLC**
     - 
 
@@ -58,6 +58,7 @@ The function of this subsystem is to recieve data from the various sensors and r
 ## **Bill of Materials**
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
 |----|-----------|-----------|------------|--------|----------------|-----|
+|CLICK PLUS|PLC|Automation Direct|C2-03CPU|1|$205.00|$205.00|
 
 
 
@@ -65,5 +66,4 @@ The function of this subsystem is to recieve data from the various sensors and r
 
 **References**
 
-[1] "Title of the PDF Document," Abbrev. Month, year. [Online]. Available: 
-<https://newhavendisplay.com/content/specs/NHD-5.0-800480FT-CSXP-CTP.pdf>
+[1] AutomationDirect, "Click PLCs - CLICK PLUS Features," AutomationDirect, https://www.automationdirect.com/clickplcs/clickplus/features.
