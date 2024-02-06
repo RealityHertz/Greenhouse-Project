@@ -10,7 +10,7 @@ The function of this subsystem is to recieve data from the various sensors and r
 |PLC|1|The PLC scan time shall be able to scan fast enough to accommodate the desired sampling rate for all subsystem sensors. These sensors will be sending data every 5 minutes.|
 |PLC|2|Communication Bandwidth shall sufficient enough to handle all data from sensors simultaneously|
 |PLC|3|Maximum Data Latency shall be low enough to allow for data to process on a 5 minute cycle|
-|PLC|4|Power|
+|PLC|4|The PLC shall be required to have an input voltage of 20.0 and 28.0 VDC and a current of at least 140mA|
 |PLC|5|PLC shall be able to operate in 30% to 95% relative non–condensing humidity|
 |PLC|6|PLC shall handle errors and alert when sensors are not in the correct set range|
 |PLC|7|PLC shall be able to input data from at least 4 Arduino Nano 33 IoT and 1 HMI|
@@ -35,7 +35,7 @@ The function of this subsystem is to recieve data from the various sensors and r
   1. The Automation Direct C2-03CPU has a scan time of < 1 ms and a contact execution of < 0.2 µs. This is more than sufficient to keep track of the sensor's data being sent every 5 minutes.
   2. 2
   3. 3
-  4. 4
+  4. The CLICK C0-01AC will supply the PLC with a constant output range of 23-35V with a 85-264 input voltage. It will also output a current of 1.3A with a over current protection system with automatic recovery at 1.6A. This power supply also has a over voltage protection system of 27.6V clamped by a zener diode. This power supply holds the same temperature and humidity requirements as the PLC as well. [4]
   5. The ambient humidity specifications in the PLC Datasheet show that when operating and non-condensing the relative humidity the PLC can handle is 30% to 95%. [2] This falls within our range for the greenhouse, with 80% being optimal for plant growth. [3] The PLC will also be able to monitor the humidity through communication with the Temperature/Humidity Subsystem's sensor to alert if the humidity is falling or rising to an unsafe range.
   6. 6
   7. Through the CLICK CPU v3.0 Application and an additional RP-SMA antenna plug that directly connects to the PLC, we will be able to setup and see up to 8 additional BLE or IOT devices. This PLC comes standard allowing one HMI, but can be manipulated in the CLICK CPU to allow for more. Futhermore, devices can use microB-USB or RS-232 for a direct communication. Finally, this PLC allows for communication over WiFi or direct connect Ethernet (RJ45). All of these methods allow for us to communicate to the multiple Arduino Nano 33 IoT, but the priority is to use the BLE or IoT features for communication. [1]
@@ -60,7 +60,7 @@ The function of this subsystem is to recieve data from the various sensors and r
 |----|-----------|-----------|------------|--------|----------------|-----|
 |CLICK PLUS|PLC|Automation Direct|C2-03CPU|1|$205.00|$205.00|
 |STRIDE|WiFi/Bluetooth Antenna|Automation Direct|SE-ANT250|1|$50.50|$50.50
-
+|CLICK|Power Supply|Automation Direct|C0-01AC|1|$63.00|$63.00|
 
 
 
@@ -71,3 +71,5 @@ The function of this subsystem is to recieve data from the various sensors and r
 [2] AutomationDirect, "C20xCPU - CPU Module for C2000 Series PLCs," AutomationDirect, https://cdn.automationdirect.com/static/specs/c20xcpu.pdf.
 
 [3] Atlas Scientific, "Ideal Greenhouse Temperature and Humidity," Atlas Scientific Blog, https://atlas-scientific.com/blog/ideal-greenhouse-temperature-and-humidity/#:~:text=Ideal%20Humidity%20For%20Greenhouses&text=The%20optimal%20relative%20humidity%20level,growth%20and%20lower%20quality%20yield.
+
+[4] AutomationDirect, "CLICK Series Power Supplies User Manual," AutomationDirect, https://cdn.automationdirect.com/static/specs/clickpower.pdf.
