@@ -48,6 +48,12 @@ The function of this subsystem is to recieve data from the various sensors and r
 
 ![HMI Design](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADHMISubsystemDrawing.jpg)
 
+![HMI 2D Model]()
+
+- We will use the PLC and code in "Ladder" to allow the ports to be read and sent to the HMI. The HMI then has the C-more Micro Programming Software that can be used to design and simulate the code to be used on the HMI to correctly display and customize the buttons. Here is the template to allow for the communication between PLC and HMI.
+
+![PLC Port Code](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/LadderLogicForPLC.PNG)
+
 ## **Bill of Materials**
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
 |----|-----------|-----------|------------|--------|----------------|-----|
