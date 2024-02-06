@@ -43,17 +43,8 @@ The function of this subsystem is to recieve data from the various sensors and r
     - 
 
     - 
-**HMI**
-
-  4. 
-  
-  5. 
-- **Communication for PLC and Ardiuno IOT's**
-
-  - 
-  - 
-  - 
-  - 
+**HMI to PLC**
+- To enable sensor data monitoring on the EA3-S3ML-RN, establish a connection between the EA3-S3ML-RN HMI and the C2-03CPU PLC. Physically connect the device to the PLC input modules via the Automation Direct PLC RJ12 port. Program the C2-03CPU to read sensor data, creating tags with appropriate data types, in our integers. Configure communication settings, ensuring matching IP addresses and protocols between the HMI and PLC. In the HMI project, import or manually configure tags corresponding to the PLC program, designing screens to display sensor data using graphical elements. Download the HMI project to the EA3-S3ML-RN, run the PLC program, and troubleshoot any communication errors. Document the configuration for future reference and conduct periodic maintenance checks. This process ensures efficient monitoring of sensor data through the HMI. The HMI has up to 99 different screens, with each screen being able to reconfigure the 5 push buttons to do different operations. We can use these screens and buttons to have navigation between the sensor data. Finally, we have a alert system and light for when certain thresholds are met and when manual labor is required in the greenhouse to fix potential problems.
 
 ## **Bill of Materials**
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
@@ -61,6 +52,8 @@ The function of this subsystem is to recieve data from the various sensors and r
 |CLICK PLUS|PLC|Automation Direct|C2-03CPU|1|$205.00|$205.00|
 |STRIDE|WiFi/Bluetooth Antenna|Automation Direct|SE-ANT250|1|$50.50|$50.50
 |CLICK|Power Supply|Automation Direct|C0-01AC|1|$63.00|$63.00|
+|C-more Micro|HMI|Automation Direct|EA3-S3ML-RN|1|$146.00|$146.00|
+|Automation Direct|RJ12 Cable|Automation Direct|DV-1000CBL|1|$23.00|$23.00|
 
 
 
