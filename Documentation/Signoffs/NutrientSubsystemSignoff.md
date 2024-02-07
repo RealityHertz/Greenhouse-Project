@@ -13,16 +13,17 @@ timer to fill a local reserve tank and regulate the watering cycle of plants.
   1. The communication between the sensors and PLC must be wireless. This will save time and money on wiring, while also allowing the system to be scalable, meaning if the greenhouse was to be expanded then this subsystem would be easily expanded to account for more plants.
   2. The transfer of data between the sensors and the Arduino must be below 3 seconds for accurate and reliable monitoring of the different nutrient levels in the soil as well as the soil hydration and pH balance, and to allow plenty of time for communication with the PLC while looping in and out of sleep mode.
   3. 	The system needs to be capable of wirelessly communicating the collected data back to the PLC in an inexpensive, yet reliable way.
+  4. 	The Arduino must support serial communication between itself and the rs485 translator.
 
 - **Soil NPK and Moisture Sensor - Anggrek RS485**
 
   1. The anggrek rs485 needs between 12-24V to operate effectively.
   2. The sensor must turn on every 5 minutes in order to measure NPK levels, soil moisture, and pH balance.
-  3. Must accurately measure soil moisture in a range of 0-100% to allow for optimum plant growth.
-  4. Must accurately measure nitrogen levels in the soil within a range of 50-300mg/kg to allow for optimum plant growth. [1]
-  5. Must accurately measure phosphorous levels in the soil within a range of 5-90mg/kg. [1]
-  6. Must accurately measure potassium levels in the soil within a range of 50-240mg/kg. [1]
-  7. Must accurately measure soil pH levels within a range of 5-8.5pH. [1]
+  3. Must accurately measure soil moisture in a range of 0-100% to allow for optimum plant growth with ±3% to ±5% accuracy.
+  4. Must accurately measure nitrogen levels in the soil within a range of 50-300mg/kg to allow for optimum plant growth with no more than ±10% accuracy. [1]
+  5. Must accurately measure phosphorous levels in the soil within a range of 5-90mg/kg with no more than ±10% accuracy. [1]
+  6. Must accurately measure potassium levels in the soil within a range of 50-240mg/kg with no more than ±10% accuracy. [1]
+  7. Must accurately measure soil pH levels within a range of 5-8.5pH with an accuracy of ±0.01 pH to ±0.5 pH. [1]
 
 - **Voltage Regulator - Pololu U3V70F15**
 
@@ -40,6 +41,7 @@ timer to fill a local reserve tank and regulate the watering cycle of plants.
    1. The Arduino's BLE capabilities could be broadened by using an array of bluetooth extenders if required for larger projects.
    2. The Ardiuno will need to be cycled in and out of sleep mode to conserve battery life. This will be done by using the Arduino-Libraries Github and use the provided files and functions in the ArduinoLowPower folder. For example, we can use the function LowPower.sleep() and input the amount of time we want it to sleep in ms. Implementing this in a loop will then allow the microcontroller to continuously fall asleep and wake up for the desired time. We have decided to do a system where the Ardiuno runs for 10 seconds for every 5 minutes. [2]
    3. BLE (Bluetooth Low Energy) is lower in cost than the classic Bluetooth as BLE is currently rising in use and has market competition. BLE decreases the distance a signal can be transmitted, but the signals transmitted through the greenhouse will not be far apart. The use of BLE allows for a cost-eﬃcient alternative compared to standard Bluetooth.
+   4. The Arduino Nano 33 IoT contains both USART Rx and Tx pins, connected as shown in the figure above, to support the serial connection to the rs485 translator.
  
 - **Soil NPK and Moisture Sensor - Anggrek RS485**
    1. The sensor will be supplied 15V from the Arduino pin 12 which provides a 5V output and will be passed through the pololu step-up regulator to produce the required 15V this will allow the sensor to be enabled and disabled as the Arduino cycles through sleep cycles.
@@ -53,7 +55,15 @@ timer to fill a local reserve tank and regulate the watering cycle of plants.
 - **Power Supply for Anggrek RS485**
     1. The sensor requires a 12-24VDC power supply to operate.
     2. The Arduino will send a 5V signal through its 5V output pin to the Pololu U3V70F15 step-up voltage regulator to provide a constant 15VDC ±4% input for the sensor.
-    3. The power is routed through the Arduino so that the sensor may be cycled on and off as the Nano 33 IOT enters and exits sleep mode, this will allow the sensor conserve energy and not be ran comstantly.
+    3. The power is routed through the Arduino so that the sensor may be cycled on and off as the Nano 33 IOT enters and exits sleep mode, this will allow the sensor conserve energy and not be ran constantly.
+    4. The pololu U3V70F15 has a current draw of around 1.5A with the input of 5V.
+    5. The pololu would use (1500mA x 5V) x (10s / 3600s) = 20.83mWh leading to an average power of 20.83mwh / (5min/60min) = 250mW.
+    6. The system is powered by 4 AA batteries each supplying 3500mAh and 1.5V.
+    7. This provides a total of (1.5Ax4)x3500mAh = 21,000mWh.
+    8. The Arduino would use (28mA x 5V) x (10s / 3600s) = 0.07778mWh leading to an average power of 0.07778mWh / (5min/60min) = 0.933mW.
+    9. The uxcell MAX485 has a current draw of <5ma at 5V.
+    10. The uxcell MAX485 would use (5ma x 5V) x (10s/3600s) = 0.0694mWh leading to an average power of 0.0694mWh / (5min/60min) = 0.833mW
+    11. The Anggrek RS485 has a current draw of 6mA at 5V.
  
 - **Voltage Regulator - Pololu U3V70F15**
    1. The regulator takes an input voltage of range 2.9-15V with a maximum input current of 7A and produces a constant 15VDC ±4% output.
