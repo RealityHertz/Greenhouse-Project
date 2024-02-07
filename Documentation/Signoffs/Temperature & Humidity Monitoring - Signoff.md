@@ -16,7 +16,7 @@ The function of this subsystem is to measure the temperature and the humidity le
   1. The sensor shall have 3.5-5.5 V to operate correctly.
   2. Sensor has 0.3 mA when on, and 60 μA when in sleep mode.
   3. Temperature range of 0-50°C (32-122°F) and humidity range of 20-90%.
-  4. Sampling period of greater than or equal to 2 seconds.
+  4. Sampling period of greater than or equal to 2 seconds, so it is set to be 10 seconds to allow for extra time.
   5. Sensor must alert the communications application when temperature is below 60°F and when the relative humdity is below 50%.
 
 ## **Buildable Schematic:**
@@ -38,7 +38,7 @@ The function of this subsystem is to measure the temperature and the humidity le
     4. The DHT11 must be on for at least 2 seconds in order to detect the temperature and humidity, as well as send the data to the Arduino. By leaving the Arduino on for 10 seconds, the sensor will have a sufficient amount of time to measure and transmit the data.
 
  - **Communication for DHT11**
-     1. The DHT11's pin 3 will be used as the SPI Data Out which will then be connected to the Arduino via pin 26. Pin 26 is used as a Digital SPI MISO, which will allow for the Arduino to read in the data from the sensor.
+     1. The DHT11's pin 2 will be used as the Single Bus Format Data Out which will then be connected to the Arduino via pin 26. Pin 26 is used as a Digital Input, which will allow for the Arduino to read in the data from the sensor. The data format will be 8bit integral RH data + 8bit decimal RH data + 8bit integral T data + 8bit decimal T data + 8bit check sum. If the data transmission is right, the check-sum should be the last 8bit of "8bit integral RH data + 8bit decimal RH data + 8bit integral T data + 8bit decimal T data. For a total of 40 bits transmitted.
     
 ## **Bill of Materials:**
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
