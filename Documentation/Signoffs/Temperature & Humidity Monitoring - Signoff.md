@@ -14,7 +14,7 @@ The function of this subsystem is to measure the temperature and the humidity le
 
 - **DHT11 Temperature & Humidity Sensor**
   1. The sensor shall have 3.5-5.5 V to operate correctly.
-  2. Sensor has 0.3 mA when on, and 60 μA when in sleep mode.
+  2. Sensor has 0.3 mA when on, and 150 μA when in sleep mode.
   3. Temperature range of 0-50°C (32-122°F) and humidity range of 20-90%.
   4. Sampling period of greater than or equal to 2 seconds, so it is set to be 10 seconds to allow for extra time.
   5. Sensor must alert the communications application when temperature is below 60°F and when the relative humdity is below 50%.
