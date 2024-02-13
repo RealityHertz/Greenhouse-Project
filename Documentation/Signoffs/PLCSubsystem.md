@@ -39,15 +39,9 @@ The function of this subsystem is to receive data from the various sensors and r
   6. We will utilize the Greenhouse Wifi along with Arduino onboard IoT (Internet of Things) technology and MQTT (Message Queuing Telemetry Transport) protocol to have communication between all Arduino devices and the PLC. Through the CLICK CPU v3.0 Application and an additional RP-SMA antenna plug directly connected to the PLC, we can establish connections with up to 8 additional IoT devices. The PLC, by default, supports one HMI (Human-Machine Interface), but it can be configured in the CLICK CPU to have more interfaces as needed. The primary focus will be on using IoT capabilities for communication with multiple Arduino Nano 33 IoT devices. This approach ensures reliable communication between the PLC and the Arduino devices within the greenhouse environment. [1]
      
 **Power Supply for PLC**
-  1. The CLICK C0-01 AC will be the source used to power the PLC system, which has the ability to supply between 100-240 VAC. This supply gives a 1.3A and 25V DC source which is more than capable of supporting the PLC even with all I/O ports being used. The maximum start-up time is 1000ms, which allows plenty of time for the PLC to receive and send data to and from the other sub-systems. The humidity range allows up to 95% humidity which is ideal for the supply being used inside of a greenhouse. 
+- The CLICK C0-01 AC will be the source used to power the PLC system, which has the ability to supply between 100-240 VAC. This supply gives a 1.3A and 25V DC source which is more than capable of supporting the PLC even with all I/O ports being used. The maximum start-up time is 1000ms, which allows plenty of time for the PLC to receive and send data to and from the other sub-systems. The humidity range allows up to 95% humidity which is ideal for the supply being used inside of a greenhouse. 
  
 **HMI to PLC**
-  1. To enable sensor data monitoring on the EA3-S3ML-RN, establish a connection between the EA3-S3ML-RN HMI and the C2-03CPU PLC. Physically connect the device to the PLC input modules via the Automation Direct PLC RJ12 port. Program the C2-03CPU to read sensor data, creating tags with appropriate data types, in our integers. Configure communication settings, ensuring matching IP addresses and protocols between the HMI and PLC. In the HMI project, import or manually configure tags corresponding to the PLC program, designing screens to display sensor data using graphical elements. Download the HMI project to the EA3-S3ML-RN, run the PLC program, and troubleshoot any communication errors. Document the configuration for future reference and conduct periodic maintenance checks. This process ensures efficient monitoring of sensor data through the HMI. The HMI has up to 99 different screens, with each screen being able to reconfigure the 5 push buttons to do different operations. We can use these screens and buttons to navigate between the sensor data. Finally, we have an alert system and light for when certain thresholds are met and when manual labor is required in the greenhouse to fix potential problems.
-
-![HMI Design](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADHMISubsystemDrawing.jpg)
-
-![HMI 2D Model](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/HMI2DModel.PNG)
-
 - We will use the PLC and code in "Ladder" to allow the ports to be read and sent to the HMI. The HMI then has the C-more Micro Programming Software that can be used to design and simulate the code to be used on the HMI to correctly display and customize the buttons. Here is the template to allow for communication between PLC and HMI.
 
 ![PLC Port Code](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/LadderLogicForPLC.PNG)
@@ -58,8 +52,6 @@ The function of this subsystem is to receive data from the various sensors and r
 |CLICK PLUS|PLC|Automation Direct|C2-03CPU|1|$205.00|$205.00|
 |STRIDE|WiFi/Bluetooth Antenna|Automation Direct|SE-ANT250|1|$50.50|$50.50
 |CLICK|Power Supply|Automation Direct|C0-01AC|1|$63.00|$63.00|
-|C-more Micro|HMI|Automation Direct|EA3-S3ML-RN|1|$146.00|$146.00|
-|Automation Direct|RJ12 Cable|Automation Direct|DV-1000CBL|1|$23.00|$23.00|
 
 
 
@@ -70,5 +62,3 @@ The function of this subsystem is to receive data from the various sensors and r
 [2] AutomationDirect, "C20xCPU - CPU Module for C2000 Series PLCs," AutomationDirect, https://cdn.automationdirect.com/static/specs/c20xcpu.pdf.
 
 [3] Atlas Scientific, "Ideal Greenhouse Temperature and Humidity," Atlas Scientific Blog, https://atlas-scientific.com/blog/ideal-greenhouse-temperature-and-humidity/#:~:text=Ideal%20Humidity%20For%20Greenhouses&text=The%20optimal%20relative%20humidity%20level,growth%20and%20lower%20quality%20yield.
-
-[4] AutomationDirect, "CLICK Series Power Supplies User Manual," AutomationDirect, https://cdn.automationdirect.com/static/specs/clickpower.pdf.
