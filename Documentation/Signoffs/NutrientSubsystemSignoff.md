@@ -56,17 +56,17 @@ timer to fill a local reserve tank and regulate the watering cycle of plants.
     1. The sensor requires a 12-24VDC power supply to operate.
     2. The Arduino will send a 5V signal through its 5V output pin to the Pololu U3V70F15 step-up voltage regulator to provide a constant 15VDC ±4% input for the sensor.
     3. The power is routed through the Arduino so that the sensor may be cycled on and off as the Nano 33 IOT enters and exits sleep mode, this will allow the sensor conserve energy and not be ran constantly.
-    4. The pololu U3V70F15 has a current draw of around 1.5A with the input of 5V.
-    5. The pololu would use (2mA x 5V) x (10s / 3600s) = 0.0278mWh leading to an average power of 0.0278wh / (5min/60min) = 0.333mW.
+    4. The pololu U3V70F15 has a current draw of around 6A with the input of 5V.
+    5. The pololu would use (6A x 5V) x (10s / 3600s) = 83.33mWh leading to an average power of 83.33mWh / (5min/60min) = 999.96mW.
     6. The system is powered by 4 AA batteries each supplying 3500mAh and 1.5V.
-    7. This provides a total of (1.5Ax4)x3500mAh = 21,000mWh.
+    7. This provides a total of (1.5Vx4)x3500mAh = 21,000mWh.
     8. The Arduino would use (28mA x 5V) x (10s / 3600s) = 0.07778mWh leading to an average power of 0.07778mWh / (5min/60min) = 0.933mW.
     9. The uxcell MAX485 has a current draw of <5ma at 5V.
     10. The uxcell MAX485 would use (5mA x 5V) x (10s/3600s) = 0.0694mWh leading to an average power of 0.0694mWh / (5min/60min) = 0.833mW
     11. The Anggrek RS485 has a current draw of 6mA at 5V.
     12. The Anggrek RS485 would use (6mA x 5V) x (10s/3600s) = 0.0833mWh leading to an averge power of 0.0833mWh / (5min/60min) = 1.000mW
-    13. This results in a total power usage of 0.333 + 0.933 + 0.833 + 1.000 = 3.099 mW.
-    14. This means the batteries will last (21,000mWh / 3.099 mw) = 6,779.38 hours or 9.41 months.
+    13. This results in a total power usage of 999.96 + 0.933 + 0.833 + 1.000 = 1002.73 mW.
+    14. This means the batteries will last (21,000mWh / 1002.73 mw) = 20.94 hours.
  
 - **Voltage Regulator - Pololu U3V70F15**
    1. The regulator takes an input voltage of range 2.9-15V with a maximum input current of 7A and produces a constant 15VDC ±4% output.
