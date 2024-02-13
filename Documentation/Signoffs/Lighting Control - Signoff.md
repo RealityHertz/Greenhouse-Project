@@ -4,17 +4,16 @@
 ## **Team Members: Robert Jones**
 ## **Function of the Subsystem:**
 The function of this subsystem is to have grow lights shine on the plants to help them in their growing process. The system will allow the full-spectrum light operating hours to be adjustable via the PLC and the programmable buttons on the HMI. The system will be controlled by an Arduino which is connected to the Programmable Logic Controller (PLC) subsystem to tell the lights when to turn on and off. 
-- **Lighting Spectrum**
+- **Lighting Timing**
 
-	During a plant's growing process, shining different colored lights can help speed up their different phases. Typically, the two colors for optimal growth are red and blue, which have a wavelength of 400-500nm for blue light and 600-700nm for red light. [1] Blue light is best for the seed and budding phase of a plant's life red light is most beneficial during the bloom phase.[2]
+	During a plant's photosynthesis process, they require between 12 and 16 hours a day of full spectrum light. On an average day, a plant inside of the greenhouse will only receive around 10 hours per day. [4] To combat this, the light must be able to shine for a minimum of 2 hours per day.
 - **Light Intensity**
 
-	Most plants need between 200-400 µmol/m²/s of light intensity. These levels help to achieve optimal plant growth. To achieve this measure of success, the distance of the light from the plant will have to be adjusted based on their specific needs. [1]
-- **Control**
-  
-	The lights must be able to be controlled by the PLC to change after a certain period of time. This time must be adjustable in the code based on the type of plants that are being grown in the house at the time. Typically, this greenhouse grows ferns which will need 2 months of blue light followed by the red light for the remaining photosynthesis process. [3] The plants will also need these lights for 12 hours a day when the UV rays are not as prevalent. [4] This will also need to be controlled by the PLC to ensure the measures of success.
+	Most plants need between 200-400 µmol/m²/s of light intensity to help to achieve optimal plant growth. [1] To achieve this measure of success, the distance of the light from the plant will have to be fully adjustable as the plant grows upward toward the light.
+- **Light Control**
 
-
+	To make the lights controllable for the user, the HMI must give the user the ability to adjust how long the light is on per day. This must be between 2 and 6 hours, based on the current weather conditions or any other factors that may reduce UV light on the plants.  
+	
 
 ## **Buildable Schematic:**
 ![Lighting Control Schematic](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADLightingGrowSubsystem.jpg)
@@ -26,16 +25,16 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 
 ## **Analysis:**
 - **Lighting Spectrum:**
-	The system has two sets of lights, the red light produces a wavelength of 660nm and the blue light produces a wavelength of 475nm. These are both well within the acceptable ranges needed for optimal growth.
+	The system uses a full-spectrum light bulb which mimics UV rays from the sun. This light will allow the plants to achieve optimal growth even when sunlight is not apparent.
 - **Power Supply for Arduino Nano 33 IoT:**
 	The power will be USB from a 110-volt wall outlet and will supply 5 volts to the Pin 15 on the Nano 33 IoT. The Pin 14 on the Nano 33 IoT will need to be connected to the ground from the USB ground wire.
 	The USB cable and plug used have a max current of 1 amp and 2 amp respectively. This will allow for a safe current supply to the board.
 - **Power Supply for Grow Bulbs:**
-	The Arduino 33 Iot has the ability to output 5V and maximum current of 1 A with the bulb needing 5W. A relay will be placed in the circuit as well to control the main voltage using the Nano IoT.[5]
+	The Arduino 33 Iot has the ability to output 5V and a maximum current of 1 A with the bulb needing 5W. A relay will be placed in the circuit as well to control the main voltage using the Nano IoT.[5]
 - **Light Intensity:**
-  	To ensure that the plants are achieving the most optimal benefits from the lights, the red light will be placed 2 feet away from the top of the plant and the blue light at 6 inches. [2]
+  	During the first 2 weeks of a plant's life, the light is most beneficial when it is around 6 inches away. After this period, the light needs to be 12 inches away. To achieve this, the light will be hung from a small chain and S-hook to be fully adjustable.
 - **Control:**
-	To control which lights are on, the PLC will be used to switch them back and forth. For the first two months of the plant's life, the blue light will be used while it is in the budding phase. After 2 months, the red light will turn on for the remainder of its life. [3] The lights will also be on for 12 hours and off for 12 hours to ensure optimal plant growth at night, which will be done using the PLC as well. [4]
+	
   
 ## **Bill of Materials**
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
