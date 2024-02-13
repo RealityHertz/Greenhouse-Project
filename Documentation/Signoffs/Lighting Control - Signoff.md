@@ -42,7 +42,7 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 |Geekstory|5V Relay Module|Amazon|SRD-05VDC-SL-C|1|$11.99|$11.99|
 |Yanmis|Full Spectrum Grow Light|Amazon|Grow Light|1|$10.00|$10.00|
 |Askcable|50ft AWG Cable|Amazon|Copper Wire|1|$17.99|$17.99|
-|Arduuino|Bluetooth Board|Amazon|Nano 33 IoT|1|$29.99|$29.99|
+|Arduino|Bluetooth Board|Amazon|Nano 33 IoT|1|$29.99|$29.99|
 |New orange heart|Waterproof Bulb Socket|Amazon|E26|1|$9.99|$9.99|
 
 ## **References:**
