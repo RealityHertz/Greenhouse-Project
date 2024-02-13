@@ -3,7 +3,7 @@
 # *Detail Design: Lighting Control*
 ## **Team Members: Robert Jones**
 ## **Function of the Subsystem:**
-The function of this subsystem is to have grow lights shine on the plants to help them in their growing process. There will be two sets of lights, one red and the other blue. The system will be controlled by an Arduino which is connected to the Programmable Logic Controller (PLC) subsystem to tell the lights when to turn on and off. 
+The function of this subsystem is to have grow lights shine on the plants to help them in their growing process. The system will allow the full-spectrum light operating hours to be adjustable via the PLC and the programmable buttons on the HMI. The system will be controlled by an Arduino which is connected to the Programmable Logic Controller (PLC) subsystem to tell the lights when to turn on and off. 
 - **Lighting Spectrum**
 
 	During a plant's growing process, shining different colored lights can help speed up their different phases. Typically, the two colors for optimal growth are red and blue, which have a wavelength of 400-500nm for blue light and 600-700nm for red light. [1] Blue light is best for the seed and budding phase of a plant's life red light is most beneficial during the bloom phase.[2]
@@ -25,7 +25,7 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 	The power will be USB from a 110-volt wall outlet and will supply 5 volts to the Pin 15 on the Nano 33 IoT. The Pin 14 on the Nano 33 IoT will need to be connected to the ground from the USB ground wire.
 	The USB cable and plug used have a max current of 1 amp and 2 amp respectively. This will allow for a safe current supply to the board.
 - **Power Supply for Grow Bulbs:**
-	The Arduino 33 Iot has the ability to output 5V with the bulb needing 9W. A relay will be placed in the circuit as well to control the main voltage using the Nano IoT.[5]
+	The Arduino 33 Iot has the ability to output 5V and maximum current of 1 A with the bulb needing 5W. A relay will be placed in the circuit as well to control the main voltage using the Nano IoT.[5]
 - **Light Intensity:**
   	To ensure that the plants are achieving the most optimal benefits from the lights, the red light will be placed 2 feet away from the top of the plant and the blue light at 6 inches. [2]
 - **Control:**
@@ -35,8 +35,7 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
 |----|-----------|-----------|------------|--------|----------------|-----|
 |Geekstory|5V Relay Module|Amazon|SRD-05VDC-SL-C|1|$11.99|$11.99|
-|Un-Edison|Blue Led Bulbs|Amazon|Seed Starting Bulb|2 pack|$20.54|$20.54|
-|Un-Edison|Red Led Bulbs|Amazon|Flowering Bulb|1|$13.00|$13.00|
+|Yanmis|Full Spectrum Grow Light|Amazon|Grow Light|1|$10.00|$10.00|
 |Askcable|50ft AWG Cable|Amazon|Copper Wire|1|$17.99|$17.99|
 |Arduuino|Bluetooth Board|Amazon|Nano 33 IoT|1|$29.99|$29.99|
 |New orange heart|Waterproof Bulb Socket|Amazon|E26|1|$9.99|$9.99|
