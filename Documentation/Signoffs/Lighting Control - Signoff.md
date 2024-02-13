@@ -34,7 +34,7 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 - **Light Intensity:**
   	During the first 2 weeks of a plant's life, the light is most beneficial when it is around 6 inches away. After this period, the light needs to be 12 inches away. To achieve this, the light will be hung from a small chain and S-hook to be fully adjustable. [4]
 - **Control:**
-	
+  	To regulate the timing of light activation and deactivation, the HMI subsystem will feature four programmable buttons. These buttons will enable users to adjust the duration for which the light remains on and off, allowing for hour-by-hour increments in both directions. For instance, if the preset timing is 2 hours for light activation and 8 hours for deactivation, the buttons will facilitate incremental adjustments, allowing users to increase or decrease each timing by one hour as needed.
   
 ## **Bill of Materials**
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
