@@ -17,7 +17,13 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 
 
 ## **Buildable Schematic:**
-![Lighting Control Schematic](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADLightingSubsystem.jpg)
+![Lighting Control Schematic](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADLightingGrowSubsystem.jpg)
+*Figure 1. Buildable Schematic*
+
+![Relay Diagram](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/RelayDiagram.png)
+
+*Figure 2. Relay Diagram*
+
 ## **Analysis:**
 - **Lighting Spectrum:**
 	The system has two sets of lights, the red light produces a wavelength of 660nm and the blue light produces a wavelength of 475nm. These are both well within the acceptable ranges needed for optimal growth.
