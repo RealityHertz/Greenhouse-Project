@@ -25,13 +25,13 @@ timer to fill a local reserve tank and regulate the watering cycle of plants.
   6. Must accurately measure potassium levels in the soil within a range of 50-240mg/kg with no more than ±10% accuracy. [1]
   7. Must accurately measure soil pH levels within a range of 5-8.5pH with an accuracy of ±0.01 pH to ±0.5 pH. [1]
 
-- **Voltage Regulator - Pololu U3V70F15**
+- **Voltage Regulator - Murata CMR0515S3C**
 
   1. The regulator shall be able to increase the voltage from the source of 5V to a voltage within the range of 12-24V to power the sensor.
   2. The regulator shall be enabled at the start of the system in order to power the sensor.
 
 ## **Buildable Schematic:**
-![Nutrient Schematic](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Nutrient%20Schematic%20V4.png)
+![Nutrient Schematic](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Nutrient_Schematic_V5.png)
 
 *Figure 1. Buildable Schematic for Powering Arduino and Sensors*
 
@@ -55,21 +55,21 @@ timer to fill a local reserve tank and regulate the watering cycle of plants.
 - **Power Supply for Anggrek RS485**
     1. The sensor requires a 12-24VDC power supply to operate.
     2. The Arduino will send a 5V signal through its 5V output pin to the Pololu U3V70F15 step-up voltage regulator to provide a constant 15VDC ±4% input for the sensor.
-    3. The power is routed through the Arduino so that the sensor may be cycled on and off as the Nano 33 IOT enters and exits sleep mode, this will allow the sensor conserve energy and not be ran constantly.
-    4. The pololu U3V70F15 has a current draw of around 6A with the input of 5V.
-    5. The pololu would use (6A x 5V) x (10s / 3600s) = 83.33mWh leading to an average power of 83.33mWh / (5min/60min) = 999.96mW.
+    3. The power is routed through the Arduino so that the sensor may be cycled on and off as the Nano 33 IOT enters and exits sleep mode, while the Arduino is in sleep mode it does not produce a high enough voltage for any of the systems components to function so they are all essentially turned off.[3]
+    4. The murata CMR0515S3C has a current draw of 188mA at 5V.
+    5. The murata would use (188mA x 5V) x (10s / 3600s) = 2.611mWh leading to an average power of 2.611mWh / (5min/60min) = 31.33mW.
     6. The system is powered by 4 AA batteries each supplying 3500mAh and 1.5V.
     7. This provides a total of (1.5Vx4)x3500mAh = 21,000mWh.
-    8. The Arduino would use (28mA x 5V) x (10s / 3600s) = 0.07778mWh leading to an average power of 0.07778mWh / (5min/60min) = 0.933mW.
+    8. The Arduino uses (28mA x 5V) x (10s/3600s) = 0.389mWh when active and (6mA x 5V) x (10s/3600s) = 0.0833mWh when in sleep mode, this leads to an average power consumption of (0.389mWh / (5min/60min)) + (0.0833mWh / (5min/60min)) = 5.33mW.
     9. The uxcell MAX485 has a current draw of <5ma at 5V.
     10. The uxcell MAX485 would use (5mA x 5V) x (10s/3600s) = 0.0694mWh leading to an average power of 0.0694mWh / (5min/60min) = 0.833mW
     11. The Anggrek RS485 has a current draw of 6mA at 5V.
     12. The Anggrek RS485 would use (6mA x 5V) x (10s/3600s) = 0.0833mWh leading to an averge power of 0.0833mWh / (5min/60min) = 1.000mW
-    13. This results in a total power usage of 999.96 + 0.933 + 0.833 + 1.000 = 1002.73 mW.
-    14. This means the batteries will last (21,000mWh / 1002.73 mw) = 20.94 hours.
+    13. This results in a total power usage of 31.33 + 5.33 + 0.833 + 1.00 = 38.493 mW.
+    14. This means the batteries will last (21,000mWh / 28.493 mw) = 545.55 hours or 22.73 days.
  
-- **Voltage Regulator - Pololu U3V70F15**
-   1. The regulator takes an input voltage of range 2.9-15V with a maximum input current of 7A and produces a constant 15VDC ±4% output.
+- **Voltage Regulator - Murata CMR0515S3C**
+   1. The regulator takes an input voltage of range 5V with an input current of 188mA and produces a constant 15VDC output with 79% effeciency.
    2. The regulator is wired to be enabled by default as soon as it is powered.
   
 ## **Bill of Materials:**
@@ -80,7 +80,7 @@ timer to fill a local reserve tank and regulate the watering cycle of plants.
 | Uxcell | RS495 Instrument Interface Module | Amazon | MAX485 TTL | 1 | 1 | $6.99 | $6.99 |
 | LAMPVPATH | 4 AA Battery Holder | Amazon | B07L9M6VZK | 1 | 2 | $7.49 | $7.49 |
 | Duracell | AA Batteries | Amazon | DURMN1500B10Z | 1 | 10 | $8.79 | $8.79 |
-| Pololu | Step-Up Voltage Regulator | Pololu | U3V70F15 | 1 | 1 | $17.95 | $17.95 |
+| Murata | Step-Up Voltage Regulator | Digikey | CMR0515S3C | 1 | 1 | $3.30 | $3.30 |
 
 ## **References:**
 
@@ -88,3 +88,5 @@ timer to fill a local reserve tank and regulate the watering cycle of plants.
 
 [2] “Arduino Low Power - Arduino Reference,” www.arduino.cc, Nov. 08, 2023).
 ‌<https://www.arduino.cc/reference/en/libraries/arduino-low-power/>
+
+[3] O. Staquet, "Arduino-Nano-33-IoT-Ultimate-Guide," github.com [Online]. Available: https://github.com/ostaquet/Arduino-Nano-33-IoT-Ultimate-Guide/blob/master/SavePowerSleeping.md. [Accessed Feb. 14, 2024].
