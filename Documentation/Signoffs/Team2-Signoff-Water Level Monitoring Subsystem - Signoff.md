@@ -40,8 +40,8 @@ _Figure 2. Arduino Nano 33 IoT Board Topology_
     - The total mWh supplied is equal to (1.5V x 4) x 3500 = 21,000mWh
     - Therefore, the energy used during the "while on" mode is (28mA x 5V) x (10s / 3600s) = .07778mWh
     - The average power is .07778 / (5min / 60min) = 0.933mW
-    - The total power used by both sensors and the Arduino is .933mW + .33mW + .0828mW = 1.346mW
-    - This means the batteries will last (21,000mWh / 1.346mW) = 15,601 hours or 21.7 months
+    - The total power used by everything is .933mW.
+    - This means the batteries will last (21,000mWh / 0.933mW) = 22,508 hours or almost 31 months.
 - **Power Supply for M8**
   - The M8 will connect to the Nano 33 IoT's Pin 20 supplying 5 volts to the sensor, and the Nano 33 IoT's pin 19 for ground to complete the circuit.
   - The working voltage will be 4.5 ~ 5.5 V DC
