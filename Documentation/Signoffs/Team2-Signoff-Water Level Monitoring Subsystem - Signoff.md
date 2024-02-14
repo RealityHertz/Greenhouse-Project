@@ -45,8 +45,7 @@ _Figure 2. Arduino Nano 33 IoT Board Topology_
 - **Power Supply for M8**
   - The M8 will connect to the Nano 33 IoT's Pin 20 supplying 5 volts to the sensor, and the Nano 33 IoT's pin 19 for ground to complete the circuit.
   - The working voltage will be 4.5 ~ 5.5 V DC
-  - Average Current \< 20 mA with a 5 V power supply
-  - Peak Current 150 mA with a 5 V power supply
+  - The M8 will complete the circuit to tell the arduino whether or not the water level has met 16.5 mm.
 - **Water Levels**
   - The float sensor will float on the water and send a signal to the Arduino 33 IoT saying whether the water level is below 16.5 mm or not.
 
