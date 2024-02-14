@@ -17,7 +17,6 @@ The function of this subsystem is to measure the temperature and the humidity le
   2. Sensor has 0.3 mA when on, and 150 μA when in sleep mode.
   3. Temperature range of 0-50°C (32-122°F) and humidity range of 20-90%.
   4. Sampling period of greater than or equal to 2 seconds, so it is set to be 10 seconds to allow for extra time.
-  5. Sensor must alert the communications application when temperature is below 60°F and when the relative humdity is below 50%.
 
 ## **Buildable Schematic:**
 ![Buildable Schematic Temperature & Humidity Monitoring](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADTemperatureHumiditySubsystem.jpg)
@@ -28,17 +27,19 @@ The function of this subsystem is to measure the temperature and the humidity le
   3. Using Bluetooth Low Energy (BLE) allows for a cost efficient manner to transmit data throughout the greenhouse. A disadvantage of BLE is the decreased distance that information can be transmitted. Most BLE devices can trasmit/recieve data at a max rate of 50 meters [2]. However, the distance between the Arduino and the PLC will only be 15 feet, or 4.57 meters.
  
 - **DHT11 Temperature & Humidity Sensor**
-    1. The DHT11 temperature and humidity sensor is powered by the Arduino. An output voltage of 5 V is sent to the DHT11 via the Arduino.. The power consumed
+    1. The DHT11 temperature and humidity sensor is powered by the Arduino. An output voltage of 5 V is sent to the DHT11 via the Arduino.
     2. The DHT11 does not consume much power at all from the batteries. The amount of power from the DHT11 and Arduino are as follows:
        - AA batteries supply 1.5V and 3500mAh each. P = (1.5V*3500mAh) * 4 batteries = 21Wh
        - Arduino uses 5V and 28mA while in the "on" mode. P = (5V * 28mA) * (120s/3600s) = 4.67mWh.
        - Sensor uses 0.3mA while on, and 150μA while off. P = (5V * 0.3mA) * (120s/3600s) + (5V * 150μA) * (3480s/3600s) = 0.775mWh
        - Total power consumed: P = 4.67mWh + 0.775mWh = 5.445mWh. 21Wh/mWh = 3,857 hours or 5.4 months.
-    3. The temperature and humidity ranges are ideal for greenhouses. When speaking to the greenhouse coordinator, the temperature ranges from 60-85°, and humidity ranges from 50-80% in this specific greenhouse. Anything greater than or less than these ranges shall send an alert to the communications app to notify the manager that something abnormal is occuring in the greenhouse. 
+    3. The temperature and humidity ranges are ideal for greenhouses. When speaking to the greenhouse coordinator, the temperature ranges from 60-85°, and humidity ranges from 50-80% in this specific greenhouse. The goal for this subsystem is to send an alert to the PLC to notify the manager when the temperature or humidity is out of these specific ranges. 
     4. The DHT11 must be on for at least 2 seconds in order to detect the temperature and humidity, as well as send the data to the Arduino. By leaving the Arduino on for 10 seconds, the sensor will have a sufficient amount of time to measure and transmit the data.
+    5. The operating voltage of the DHT11 is 3.5-5.5V. When the Arduino enters the sleep mode, the voltage drops below the minimum of 3.5V. The sensor will then be acting as if it is off since there will be not be enough voltage.
 
  - **Communication for DHT11**
      1. The DHT11's pin 2 will be used as the Single Bus Format Data Out which will then be connected to the Arduino via pin 26. Pin 26 is used as a Digital Input, which will allow for the Arduino to read in the data from the sensor. The data format will be 8bit integral RH data + 8bit decimal RH data + 8bit integral T data + 8bit decimal T data + 8bit check sum. If the data transmission is right, the check-sum should be the last 8bit of "8bit integral RH data + 8bit decimal RH data + 8bit integral T data + 8bit decimal T data. For a total of 40 bits transmitted.
+     2. Single Bus Data Format is compatible with the 33 Iot, as long as the data pin from the DHT11 sensor is connected to the digital analog pin 2 of the Arduino. [3]
     
 ## **Bill of Materials:**
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
@@ -53,4 +54,5 @@ The function of this subsystem is to measure the temperature and the humidity le
 [1]  “Arduino Low Power - Arduino Reference,” www.arduino.cc, Nov. 08, 2023). ‌https://www.arduino.cc/reference/en/libraries/arduino-low-power/
 
 [2] “Advantages of BLE (Bluetooth Low Energy) | disadvantages of BLE (Bluetooth Low Energy),” www.rfwireless-world.com. https://www.rfwireless-world.com/Terminology/Advantages-and-Disadvantages-of-BLE-Bluetooth-Low-Energy.html
-‌
+
+[3] BoianMVisuino, “Arduino Nano: Temperature and Humidity DHT11/DHT21/DHT22 Sensor Module With Visuino,” Instructables. https://www.instructables.com/Arduino-Nano-Temperature-and-Humidity-DHT11DHT21DH/ (accessed Feb. 12, 2024).
