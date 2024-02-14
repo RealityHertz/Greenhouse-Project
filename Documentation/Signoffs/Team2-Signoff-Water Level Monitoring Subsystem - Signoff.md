@@ -30,7 +30,7 @@ _Figure 2. Arduino Nano 33 IoT Board Topology_
 
 - **Arduino Nano 33 IoT**
   1. The Arduino's BLE capabilities could be broadened by using an array of bluetooth extenders if required for larger projects.
-  2. The Ardiuno will need to be cycled in and out of sleep mode to conserve battery life. This will be done by using the Arduino-Libraries Github and use the provided files and functions in the ArduinoLowPower folder. For example, we can use the function LowPower.sleep() and input the amount of time we want it to sleep in ms. Implementing this in a loop will then allow the microcontroller to continuously fall asleep and wake up for the desired time. We have decided to do a system where the Ardiuno runs for 10 seconds for every 5 minutes. [1]
+  2. The Ardiuno will need to be cycled in and out of sleep mode to conserve battery life. This will be done by using the Arduino-Libraries Github and use the provided files and functions in the ArduinoLowPower folder. For example, we can use the function LowPower.sleep() and input the amount of time we want it to sleep in ms. Implementing this in a loop will then allow the microcontroller to continuously fall asleep and wake up for the desired time. We have decided to do a system where the Ardiuno runs for 10 seconds for every 5 minutes. Sleep mode will lower current to virtually nothing. [1] [2]
   3. BLE (Bluetooth Low Energy) is lower in cost than the classic Bluetooth as BLE is currently rising in use and has market competition. BLE decreases the distance a signal can be transmitted, but the signals transmitted through the greenhouse will not be far apart. The use of BLE allows for a cost-eﬃcient alternative compared to standard Bluetooth.
 
   - **Power Supply for Arduino Nano 33 IoT**
@@ -64,3 +64,4 @@ _Figure 2. Arduino Nano 33 IoT Board Topology_
 
 [1] “Arduino Low Power - Arduino Reference,” www.arduino.cc, Nov. 08, 2023).
 ‌<https://www.arduino.cc/reference/en/libraries/arduino-low-power/>
+[2] O. Staquet, "Arduino-Nano-33-IoT-Ultimate-Guide," github.com [Online]. Available: https://github.com/ostaquet/Arduino-Nano-33-IoT-Ultimate-Guide/blob/master/SavePowerSleeping.md. [Accessed Feb. 14, 2024].
