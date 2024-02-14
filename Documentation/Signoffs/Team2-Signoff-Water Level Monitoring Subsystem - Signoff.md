@@ -64,4 +64,5 @@ _Figure 2. Arduino Nano 33 IoT Board Topology_
 
 [1] “Arduino Low Power - Arduino Reference,” www.arduino.cc, Nov. 08, 2023).
 ‌<https://www.arduino.cc/reference/en/libraries/arduino-low-power/>
+
 [2] O. Staquet, "Arduino-Nano-33-IoT-Ultimate-Guide," github.com [Online]. Available: https://github.com/ostaquet/Arduino-Nano-33-IoT-Ultimate-Guide/blob/master/SavePowerSleeping.md. [Accessed Feb. 14, 2024].
