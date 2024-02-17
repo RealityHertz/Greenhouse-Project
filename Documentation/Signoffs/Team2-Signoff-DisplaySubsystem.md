@@ -26,18 +26,18 @@ The Display Subsystem is responsible for receiving input data from various senso
 ## **Analysis:**
 
 **HMI**
-1. **Capability to Display Sensor Data**: The EA3-S3ML-RN HMI is specifically designed to receive and display sensor data from various sources within the greenhouse. With its customizable graphical interface and support for multiple data formats, including integers from the PLC, it ensures that all sensor readings are accurately presented to greenhouse workers in real-time. [1]
+1. **Capability to Display Sensor Data**: The EA3-S3ML HMI is specifically designed to receive and display sensor data from various sources from the C2-03CPU PLC. With its customizable graphical interface and support for multiple data formats, including integers from the PLC, it ensures that all sensor readings are accurately presented to greenhouse workers in real-time. [1]
 
-2. **Robust Communication with PLC**: The communication between the HMI and PLC will be established via RJ12 cable connections, ensuring a robust and reliable data link. By using dedicated RJ12 ports on both the HMI and PLC, we will see seamless communication, meeting the requirements for real-time monitoring of sensor data. [1]
+2. **Robust Communication with PLC**: The communication between the HMI and PLC will be established via ethernet cable connections, ensuring a robust and reliable data link. By using dedicated ethernet ports on both the HMI and PLC, we will see seamless communication, meeting the requirements for real-time monitoring of sensor data. [1]
 
 3. **Screen Resolution and Clarity**: The HMI boasts a display with 128 x 64 pixel resolution, allowing for the easy visualization of sensor readings, alerts, and notifications. Through the C-more Micro Programming Software, the graphical elements on the HMI can be customized to ensure that all information is presented in a clear and understandable format, meeting the demands for effective decision-making. This HMI is capable of allowing up to 999 screens each with different customization options for the buttons. It has 10 lines by 32 characters to be used to ensure clarity. [1]
 
-4. **Stable Power Supply**: To ensure uninterrupted operation, the HMI will be powered by a stable power supply at 1.05W provided by the RJ12 port on the PLC. [1]
+4. **Stable Power Supply**: To ensure uninterrupted operation, the HMI will be powered by a stable power supply at 1.05W provided by the ethernet port on the PLC. [1]
 
 ## **Bill of Materials**
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
 |----|-----------|-----------|------------|--------|----------------|-----|
-|C-more Micro|HMI|Automation Direct|EA3-S3ML-RN|1|$146.00|$146.00|
+|C-more Micro|HMI|Automation Direct|EA3-S3ML|1|$280.00|$280.00|
 |Automation Direct|RJ12 Cable|Automation Direct|DV-1000CBL|1|$23.00|$23.00|
 
 **References**
