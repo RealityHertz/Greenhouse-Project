@@ -24,8 +24,8 @@ PLC via WiFi connection.
 
 - **Voltage Converter - Murata CMR0515S3C**
 
-  1. The regulator shall be able to increase the voltage from the source of 5V to a voltage within the range of 12-24V to power the sensor.
-  2. The regulator shall be enabled at the start of the system in order to power the sensor.
+  1. The converter shall be able to increase the voltage from the source of 5V to a voltage within the range of 12-24V to power the sensor.
+  2. The converter shall be enabled at the start of the system in order to power the sensor.
 
 ## **Buildable Schematic:**
 ![Nutrient Schematic](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Nutrient_Schematic_V5.png)
@@ -66,8 +66,8 @@ PLC via WiFi connection.
     14. This means the batteries will last (21,000mWh / 38.493 mw) = 545.55 hours or 22.73 days.
  
 - **Voltage Converter - Murata CMR0515S3C**
-   1. The regulator takes an input voltage of range 5V with an input current of 188mA and produces a constant 15VDC output with 79% effeciency.
-   2. The regulator is wired to be enabled by default as soon as it is powered.
+   1. The converter takes an input voltage of 5V with an input current of 188mA and produces a constant 15VDC output with 79% effeciency.
+   2. The converter is wired to be enabled by default as soon as it is powered.
   
 ## **Bill of Materials:**
 | Brand/Manufacturer | Part Name | Supplier | Part/Model Number | Quantity | Units | Unit Cost | Cost |
