@@ -16,7 +16,7 @@ The function of this subsystem is to receive data from the various sensors and r
 
 ## **Buildable Schematic:**
 
-![PLC Design](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADPLCSubsystemDrawing.jpg)
+![PLC Design](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADPLCSubsystemSchematic.jpg)
 
 *Figure 1. PLC Subsystem Design*
 
