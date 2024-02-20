@@ -17,7 +17,7 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 	
 
 ## **Buildable Schematic:**
-![Lighting Control Schematic](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADLightingGrowSubsystem.jpg)
+![Lighting Control Schematic](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADLightingSubsystemSchematic.jpg)
 *Figure 1. Buildable Schematic*
 
 ![Relay Diagram](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/RelayDiagram.png)
