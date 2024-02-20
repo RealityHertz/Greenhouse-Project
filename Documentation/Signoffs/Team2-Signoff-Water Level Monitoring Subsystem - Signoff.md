@@ -13,7 +13,7 @@ The function of this subsystem is to relay the water levels to the Arduino via t
 
 - **Water Level Sensor**
   - The transfer of data between the sensors and the Arduino must be below 3 seconds for accurate and reliable monitoring of water level.
-  - Must be able to accurately sense when water level drops below 16.5 mm to signal more water is needed to be added to the reservoir.
+  - Must be able to accurately sense when water level drops below 1/3 of the max to signal more water is needed to be added to the reservoir.
   - Must be durable enough to continue function while in water for an indefinite amount of time.
   - Must be cheap and easily replacable in the chance the user requires a new sensor.
 
@@ -36,18 +36,19 @@ _Figure 2. Arduino Nano 33 IoT Board Topology_
   - **Power Supply for Arduino Nano 33 IoT**
     - The power used will need to supply 5 volts to the Pin 15 on the Nano 33 IoT.
     - The Pin 14 on the Nano 33 IoT will need to be connected to the ground from the power supply.
+    - The JSN-SR04T dras 5mA at 5V.
+    - The JSN-SR04T would use (30mA x 5V) x (10s / 3600s) = 0.4167mWh leading to an average power of 0.4167mWh / (5min/60min) = 5mW.
     - The Arduino will be powered by 4 AA batteries which supplies 3500mAh and 1.5V each
     - The total mWh supplied is equal to (1.5V x 4) x 3500 = 21,000mWh
     - Therefore, the energy used during the "while on" mode is (28mA x 5V) x (10s / 3600s) = .07778mWh
     - The average power is .07778 / (5min / 60min) = 0.933mW
-    - The total power used by everything is .933mW.
-    - This means the batteries will last (21,000mWh / 0.933mW) = 22,508 hours or almost 31 months.
-- **Power Supply for M8**
-  - The M8 will connect to the Nano 33 IoT's Pin 20 supplying 5 volts to the sensor, and the Nano 33 IoT's pin 19 for ground to complete the circuit.
-  - The working voltage will be 4.5 ~ 5.5 V DC
-  - The M8 will complete the circuit to tell the arduino whether or not the water level has met 16.5 mm.
+    - The total power used by everything is .933mW + 5mW = 5.933mW.
+    - This means the batteries will last (21,000mWh / 5.933mW) = 3540 hours or almost 5 months.
+- **Power Supply for JSN-SR04T**
+  - The JSN-SR04T will connect to the Nano 33 IoT's Pin 12 supplying 5 volts to the sensor, the Nano 33 IoT's pin 19 for ground, and the Nano 33 IoT's pins 25 and 26 for sending data. 
+  - The working voltage will be 5V
 - **Water Levels**
-  - The float sensor will float on the water and send a signal to the Arduino 33 IoT saying whether the water level is below 16.5 mm or not.
+  - The sensor will float on the water and send a signal to the Arduino 33 IoT saying whether the water level is below 1/3 of the max or not.
 
 ## **Bill of Materials:**
 
@@ -56,7 +57,7 @@ _Figure 2. Arduino Nano 33 IoT Board Topology_
 |Arduino|Bluetooth Board|Arduino|Nano 33 IoT|1|$25.50|$25.50|
 |LAMPVPATH|4 AA Battery Holder|Amazon|B07L9M6VZK|1|$7.49|$7.49|
 |Duracell|AA Batteries|Amazon|DURMN1500B10Z|1|$8.79|$8.79|
-|Gikfun|Water Level Sensor|Amazon|M8|1|$9.88|$9.88|
+|DIYmore|Water Level Sensor|DIYmore|JSN-SR04T|1|$12.99|$12.99|
 
 
 **References**
