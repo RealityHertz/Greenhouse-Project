@@ -15,7 +15,7 @@ The Display Subsystem is responsible for receiving input data from various senso
 
 ## **Buildable Schematic:**
 
-![HMI Design](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADHMISubsystemDrawing.jpg)
+![HMI Design](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADHMISubsystemSchematic.jpg)
 
 *Figure 1. HMI Subsystem Design*
 
