@@ -53,6 +53,7 @@ The function of this subsystem is to receive data from the various sensors and r
 |STRIDE|WiFi/Bluetooth Antenna|Automation Direct|SE-ANT250|1|$50.50|$50.50|
 |CLICK|Power Supply|Automation Direct|C0-01AC|1|$63.00|$63.00|
 |SanDisk|MicroSD|Amazon|SanDisk Ultra microSDHC 32GB|1|$7.65|$7.65|
+|BIGtec|Wifi Extender|Amazon|2024 Release WiFi Extender Signal Booster for Home|1|$24.99|$24.99|
 
 
 
