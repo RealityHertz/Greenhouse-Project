@@ -46,6 +46,9 @@ The function of this subsystem is to receive data from the various sensors and r
 
 ![PLC Port Code](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/LadderLogicForPLC.PNG)
 
+**Placement and Enclosure**
+- Placement of the enclosure will be in the south eastern part of the building next to the greenhouse entrance, WiFi box, and power outlet. The PLC will be enclosed in a 6.30 x 6.30 x 3.52 in weatherproof box and cable glands to allow for connection. The power supply will be enclosed in another 6.30 x 6.30 x 3.52 in enclosure with connections to the PLC and the power outlet. This placement allows for the EagleNet WiFi to reach the PLC and have enhanced strenght when connected to the WiFI extender. The cases will have 2 cable glands each to allow cables to input and output from each system.
+
 ## **Bill of Materials**
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
 |----|-----------|-----------|------------|--------|----------------|-----|
@@ -54,7 +57,9 @@ The function of this subsystem is to receive data from the various sensors and r
 |CLICK|Power Supply|Automation Direct|C0-01AC|1|$63.00|$63.00|
 |SanDisk|MicroSD|Amazon|SanDisk Ultra microSDHC 32GB|1|$7.65|$7.65|
 |BIGtec|Wifi Extender|Amazon|2024 Release WiFi Extender Signal Booster for Home|1|$24.99|$24.99|
-
+|Polycase|Outdoor Enclosure|Ploycase|SK-18 Enclosure with Knockouts 7.09 x 5.12 x 3.31 in|2|$41.17|$82.34|
+|Polycase|Cable Glands|Ploycase|CG3 Gray Cable Glands 1.53 x 1.19 x 1.19in|4|$2.86|$11.44|
+|Polycase|Mounting Kit|Ploycase|SK-99 Mounting Kit for SK Series Enclosures 0.91 x 0.59 x 0.86 in|2|$3.36|$6.72|
 
 
 **References**
