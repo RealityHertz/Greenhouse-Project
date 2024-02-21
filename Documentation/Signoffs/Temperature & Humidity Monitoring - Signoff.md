@@ -19,7 +19,7 @@ The function of this subsystem is to measure the temperature and the humidity le
   4. Sampling period of greater than or equal to 2 seconds, so it is set to be 10 seconds to allow for extra time.
 
 ## **Buildable Schematic:**
-![Buildable Schematic Temperature & Humidity Monitoring](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADTemperature%26HumiditySchematic.jpg)
+![Buildable Schematic Temperature & Humidity Monitoring](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADTemperature%26HumidityDrawing.jpg)
 ## **Analysis:**
 - **Arduino Nano 33 IoT**
   1. The power supply will be four AA batteries. Each battery contains 1.1-1.5 volts, which will give the Arduino the required 5 volts.
