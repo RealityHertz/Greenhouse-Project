@@ -44,11 +44,22 @@ _Figure 2. Arduino Nano 33 IoT Board Topology_
     - The average power is .07778 / (5min / 60min) = 0.933mW
     - The total power used by everything is .933mW + 5mW = 5.933mW.
     - This means the batteries will last (21,000mWh / 5.933mW) = 3540 hours or almost 5 months.
-- **Power Supply for JSN-SR04T**
-  - The JSN-SR04T will connect to the Nano 33 IoT's Pin 12 supplying 5 volts to the sensor, the Nano 33 IoT's pin 19 for ground, and the Nano 33 IoT's pins 25 and 26 for sending data. 
-  - The working voltage will be 5V
+- **JSN-SR04T**
+  1. In order for the sensor to work, the JSN-SR04T must be on for at least 10 ms, which is 1/100 of the time its planned to be briefly turn on.
+  2. The sensor will use ultra sonic waves to determine height from the bottom of the resevoir by reading how long it takes for an ultra sonic wave to return.
+    - distance = (high level time) x (speed of sound in medium) x 0.5.
+        -In this case the medium is water, making the speed of sound 1,481 m/s.
+        -Therefore, the distance calculated by code will end up being (the high level time) * 740.5 m/s, giving the result in meters. 
+        -This being said, the data will be read in under the 3 second prerequisite, due to the speed at which the echo will be recieved.
+        -The units of measurement mahy also be changed in code in order for an easier to read result such as cm or inches, given the unit for speed of sound in the medium is converted.
+  3. The sensor is only 12.99 and waterproof making it a good fit for a durable and cheap option in the case of wear and tear or mishaps.
+ 
+  - **Power Supply for JSN-SR04T**
+    - The JSN-SR04T will connect to the Nano 33 IoT's Pin 12 supplying 5 volts to the sensor, the Nano 33 IoT's pin 19 for ground, and the Nano 33 IoT's pins 25 and 26 for sending data. 
+    - The working voltage will be 5V
 - **Water Levels**
   - The sensor will float on the water and send a signal to the Arduino 33 IoT saying whether the water level is below 1/3 of the max or not.
+  - When the JSN-SR04T reads a distance that is equal to or less than the target height of 1/3 max, this will flag the PLC.
 
 ## **Bill of Materials:**
 
