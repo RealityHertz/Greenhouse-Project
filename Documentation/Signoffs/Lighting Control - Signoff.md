@@ -7,13 +7,13 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 ## **Constraints:**
 - **Lighting Timing**
 
-	During a plant's photosynthesis process, they require between 12 and 16 hours a day of full spectrum light. On an average day, a plant inside of the greenhouse will only receive around 10 hours per day. [1] To combat this, the light must be able to shine for a minimum of 2 hours per day.
+	During a plant's photosynthesis process, they require between 12 and 16 hours a day of full spectrum light. On an average day, a plant inside of the greenhouse will only receive around 10 hours per day. [1] To combat this, the lights must be able to shine for a minimum of 2 hours per day.
 - **Light Intensity**
 
-	Most plants need between 200-400 µmol/m²/s of light intensity to help to achieve optimal plant growth. [2] To achieve this measure of success, the distance of the light from the plant will have to be fully adjustable as the plant grows upward toward the light.
+	Most plants need between 200-400 µmol/m²/s of light intensity to help to achieve optimal plant growth. [2] To achieve this measure of success, the distance of the lights from the plants will have to be fully adjustable as the plants grow upward toward the lights.
 - **Light Control**
 
-	To make the lights controllable for the user, the HMI must give the user the ability to adjust how long the light is on per day. This must be between 2 and 6 hours, based on the current weather conditions or any other factors that may reduce UV light on the plants.  
+	To make the lights controllable for the user, the HMI must give the user the ability to adjust how long the lights are on per day. This must be between 2 and 6 hours, based on the current weather conditions or any other factors that may reduce UV light on the plants.  
 	
 
 ## **Buildable Schematic:**
@@ -26,16 +26,16 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 
 ## **Analysis:**
 - **Lighting Spectrum:**
-	The system uses a full-spectrum light bulb which mimics UV rays from the sun. This light will allow the plants to achieve optimal growth even when sunlight is not apparent.
+	The system uses four full-spectrum light bulbs which mimic UV rays from the sun. These lights will allow the plants to achieve optimal growth even when sunlight is not apparent.
 - **Power Supply for Arduino Nano 33 IoT:**
 	The power will be USB from a 110-volt wall outlet and will supply 5 volts to the Pin 15 on the Nano 33 IoT. The Pin 14 on the Nano 33 IoT will need to be connected to the ground from the USB ground wire.
 	The USB cable and plug used have a max current of 1 amp and 2 amp respectively. This will allow for a safe current supply to the board.
 - **Power Supply for Grow Bulbs:**
-	The Arduino 33 Iot has the ability to output 5V and a maximum current of 1 A with the bulb needing 5W. A relay will be placed in the circuit as well to control the main voltage using the Nano IoT.[3]
+	The Arduino 33 Iot has the ability to output 5V and a maximum current of 1 A with the bulbs needing 5W. A relay will be placed in the circuit as well to control the main voltage using the Nano IoT.[3] The bulbs will be connected together using 12 gauge wire that will allow all of the lights to be powered at the same time. 
 - **Light Intensity:**
-  	During the first 2 weeks of a plant's life, the light is most beneficial when it is around 6 inches away. After this period, the light needs to be 12 inches away. To achieve this, the light will be hung from a small chain and S-hook to be fully adjustable, which will be done manually. [4]
+  	The During the first 2 weeks of a plant's life, the full UV light is most beneficial when it is 6 inches away from the top of the plant. After this period, the light needs to be 12 inches away. To achieve this, the lights will be hung from a small chain and S-hook to be fully adjustable, which will be done manually. The chain has links that will be marked to show the user where to hang the light based on the plant's current height and age. [4]
 - **Control:**
-  	To regulate the timing of light activation and deactivation, the HMI subsystem will feature four programmable buttons. These buttons will enable users to adjust the duration for which the light remains on and off, allowing for hour-by-hour increments in both directions. For instance, if the preset timing is 2 hours for light activation and 8 hours for deactivation, the buttons will facilitate incremental adjustments, allowing users to increase or decrease each timing by one hour as needed. To add further capabilities, a photocell will be added to the PLC to tell the system if it is day or night. This will in turn allow the PLC to know when the light should start the cycle which has been set by the user.
+  	To regulate the timing of light activation and deactivation, the HMI subsystem will feature four programmable buttons. These buttons will enable users to adjust the duration for which the lights remains on and off, allowing for hour-by-hour increments in both directions. For instance, if the preset timing is 2 hours for light activation and 8 hours for deactivation, the buttons will facilitate incremental adjustments, allowing users to increase or decrease each timing by one hour as needed. To add further capabilities, a photocell will be added to the PLC to tell the system if it is day or night. This will in turn allow the PLC to know when the light should start the cycle which has been set by the user.
   
 ## **Bill of Materials:**
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
