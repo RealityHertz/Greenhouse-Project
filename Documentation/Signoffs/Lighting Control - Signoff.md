@@ -33,7 +33,7 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 - **Power Supply for Grow Bulbs:**
 	The Arduino 33 Iot has the ability to output 5V and a maximum current of 1 A with the bulbs needing 5W. A relay will be placed in the circuit as well to control the main voltage using the Nano IoT.[3] The bulbs will be connected together using 12 gauge wire that will allow all of the lights to be powered at the same time. 
 - **Light Intensity:**
-  	The During the first 2 weeks of a plant's life, the full UV light is most beneficial when it is 6 inches away from the top of the plant. After this period, the light needs to be 12 inches away. To achieve this, the lights will be hung from a small chain and S-hook to be fully adjustable, which will be done manually. The chain has links that will be marked to show the user where to hang the light based on the plant's current height and age. [4]
+  	To give the plants the needed light intensity of 200-400 µmol/m²/s the distance from the top of the plant to the light must be calculated. Using the formula, I1/I2=(d2/d1)^2 where d1 is the initial distance, d2 is the desired distance, I1 is the initial light intensity, and I2 is the desired light intensity. The chosen light gives off 450 lumens. Plugging this into the equation, I1 = 450 * .005 (which is the conversion factor from lumens to micromoles per second) = 2.07 and I2 = 200 µmol/m²/s. The square root of 2.07/200 = .102. Therefore, d2/d1 = .102 which equates to 10.2cm or 4 inches from the top of the plant to vary from 200-400 µmol/m²/s, the distance could vary +/- 2 inches and still give the needed light intensity. [4] To achieve this, the lights will be hung from a small chain and S-hook to be fully adjustable. Since cotton plants typically grow an inch per week, the light can be moved up 4 inches once a month which will be labeled on the chain for easy adjustment. [5]
 - **Control:**
   	To regulate the timing of light activation and deactivation, the HMI subsystem will feature four programmable buttons. These buttons will enable users to adjust the duration for which the lights remains on and off, allowing for hour-by-hour increments in both directions. For instance, if the preset timing is 2 hours for light activation and 8 hours for deactivation, the buttons will facilitate incremental adjustments, allowing users to increase or decrease each timing by one hour as needed. To add further capabilities, a photocell will be added to the PLC to tell the system if it is day or night. This will in turn allow the PLC to know when the light should start the cycle which has been set by the user.
   
@@ -62,4 +62,5 @@ Cruz, Terenz Jomar Dela. “How to Power Light Bulbs Using an Arduino with a Rel
 [4]
 How Close Should Grow Lights Be to Plants? 22 Apr. 2023, theindoornursery.com/blog/how-close-should-grow-lights-be-to-plants/#:~:text=In%20general%2C%20grow%20lights%20for%20mature%20plants%20should. Accessed 13 Feb. 2024.
 
-‌
+[5]
+Vanorio, Ame. “Growing Cotton: A Complete Guide on How to Plant, Grow, & Harvest Cotton.” MorningChores, 24 July 2019, morningchores.com/growing-cotton/.
