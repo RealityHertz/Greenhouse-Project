@@ -31,11 +31,11 @@ The function of this subsystem is to measure the temperature and the humidity le
     2. The DHT20 does not consume much power at all from the batteries. The amount of power from the DHT20 and Arduino are as follows:
        - AA batteries supply 1.5V and 3500mAh each. P = (1.5V*3500mAh) * 4 batteries = 21Wh
        - Arduino uses 5V and 28mA while in the "on" mode. P = (5V * 28mA) * (120s/3600s) = 4.67mWh.
-       - Sensor uses 3.2mW while on, and 0W while off. P = (3.2mW) * (120s/3600s) + (0) * (3480s/3600s) = 0.1mWh
-       - Total power consumed: P = 4.67mWh + 0.1mWh = 4.68mWh. 21Wh/4.68mWh = 4487.2 hours or 6.23 months.
+       - Sensor uses 3.2mW while on, and 0.8μW in the "dormant" state. P = (3.2mW) * (120s/3600s) + (0.8μW) * (3480s/3600s) = 0.107mWh
+       - Total power consumed: P = 4.67mWh + 0.107mWh = 4.777mWh. 21Wh/4.777mWh = 4,396.1 hours or 6.11 months.
     3. The temperature and humidity ranges are ideal for greenhouses. When speaking to the greenhouse coordinator, the temperature ranges from 60-85°, and humidity ranges from 50-80% in this specific greenhouse. The goal for this subsystem is to send an alert to the PLC to notify the manager when the temperature or humidity is out of these specific ranges. 
     4. The DHT20 must be on for at least 2 seconds in order to detect the temperature and humidity, as well as send the data to the Arduino. By leaving the Arduino on for 10 seconds, the sensor will have a sufficient amount of time to measure and transmit the data.
-    5. Once the readings are sent from the sensor to the Arduino, the temperature automatically goes back to its low power consumption mode, where 0 W are used.
+    5. The sensor begins to read in the data when SCL goes high, which then makes SDA go high. Once the data is read and sent to the MCU, SCL goes low, which makes SDA go low. SCL will not go high again until it recieves a signal from the MCU to begin reading the data again. Once the readings are sent from the sensor to the Arduino, the temperature automatically goes back to its low power consumption mode, where 0.8μW are used.
 
  - **Communication for DHT20**
      1. The DHT20 follows inter-integrated circuit (I2C) protocol to communicate with the Arduino 33 IoT. I2C is supported on all Arduino boards. [3]
