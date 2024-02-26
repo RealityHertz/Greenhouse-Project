@@ -10,13 +10,13 @@ The function of this subsystem is to receive data from the various sensors and r
 |PLC|1|The PLC scan time shall be able to scan fast enough to accommodate the desired sampling rate for all subsystem sensors. These sensors will be sending data every 5 minutes|
 |PLC|2|The PLC shall have a compatible communication ports to allow for avaliable programming|
 |PLC|3|The PLC shall be able to operate in 30% to 95% relative non–condensing humidity to ensure its suitability for deployment in greenhouse environmental conditions without risking damage due to moisture [2]|
-|PLC|4|The PLC shall be able to input data from at least 4 Arduino Nano 33 IoT and output to 1 HMI|
+|PLC|4|The PLC shall be able to input data from at least 3 Arduino Nano 33 IoT|
 |PLC|5|The PLC shall be able to log data every hour for at least 1 month|
 |Power Supply|6|The power supply  shall incorporate overcurrent protection and overvoltage protection to provide protection mechanisms for safeguarding connected equipment and ensuring the reliability of the power distribution system|
 
 ## **Buildable Schematic:**
 
-![PLC Design](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADPLCSubsystemSchematic.jpg)
+![PLC Design](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADPLCSubsystem.jpg)
 
 *Figure 1. PLC Subsystem Design*
 
@@ -34,7 +34,80 @@ The function of this subsystem is to receive data from the various sensors and r
   1. The Automation Direct C2-03CPU has a scan time of < 1 ms and a contact execution of < 0.2 µs. This is more than sufficient to keep track of the sensor's data being sent every 5 minutes.
   2. The Automation Direct C2-03CPU is able to communicate through USB to USB to allow for programs to be installed. [2]
   3. The ambient humidity specifications in the PLC Datasheet show that when operating and non-condensing the relative humidity the PLC can handle is 30% to 95%. [2] This falls within our range for the greenhouse, with 80% being optimal for plant growth. [3] The PLC will also be able to monitor the humidity through communication with the Temperature/Humidity Subsystem's sensor to alert if the humidity is falling or rising to an unsafe range.
-  4. We will utilize the Greenhouse Wifi (Tennessee Technological University EagleNet Wifi) along with Arduino onboard IoT (Internet of Things) protocol to have communication between all Arduino devices and the PLC. Through the CLICK CPU v3.0 Application and an additional RP-SMA antenna plug directly connected to the PLC, we can establish connections with up to 8 additional IoT devices. [1] The PLC, by default, supports one HMI (Human-Machine Interface), but it can be configured in the CLICK CPU to have more interfaces as needed. The primary focus will be on using IoT capabilities for communication with multiple Arduino Nano 33 IoT devices. This approach ensures reliable communication between the PLC and the Arduino devices within the greenhouse environment. [1]
+  4. In this communication setup, data collected by an Arduino Nano 33 IoT equipped with BLE capabilities is transmitted wirelessly to another Arduino Nano 33 IoT acting as a gateway device. The first Arduino gathers sensor data and communicates it to the gateway Arduino via Bluetooth Low Energy (BLE). When receiving the data, the gateway Arduino processes and formats it to suit Ethernet data requirements. Utilizing an Ethernet cable, the gateway Arduino establishes a wired connection to the Programmable Logic Controller (PLC). The formatted data is then relayed from the gateway Arduino to the PLC over the Ethernet cable. This seamless integration enables efficient and reliable data transfer from remote sensor nodes to the control system, making for real-time monitoring and control in the greenhouse. Here is example code of what it might look like to recieve/send data using this system.
+```
+#include <ArduinoBLE.h>
+#include <Ethernet.h>
+
+// Define Ethernet settings
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+IPAddress ip(192, 168, 1, 177); // IP address of your Arduino Nano 33 IoT
+EthernetServer server(80);
+
+BLEService dataService("12345678-1234-5678-1234-56789abcdef0");
+BLECharacteristic dataCharacteristic("0000abcd-0000-1000-8000-00805f9b34fb", BLERead | BLENotify, 20);
+
+void setup() {
+  Serial.begin(9600);
+  while (!Serial);
+
+  // Initialize Ethernet
+  Ethernet.begin(mac, ip);
+
+  // Start server
+  server.begin();
+
+  // Start BLE
+  if (!BLE.begin()) {
+    Serial.println("Starting BLE failed!");
+    while (1);
+  }
+
+  // Set up BLE service and characteristic
+  BLE.setLocalName("Nano33IoT");
+  BLE.setAdvertisedService(dataService);
+  dataService.addCharacteristic(dataCharacteristic);
+  BLE.addService(dataService);
+
+  // Start advertising
+  BLE.advertise();
+}
+
+void loop() {
+  // Wait for a BLE central to connect
+  BLEDevice central = BLE.central();
+  if (central) {
+    Serial.print("Connected to central: ");
+    Serial.println(central.address());
+  }
+
+  // Read data from BLE characteristic
+  String sensorData = readSensorDataFromBLE();
+
+  // Format data for Ethernet
+  String formattedData = formatDataForEthernet(sensorData);
+
+  // Send data over Ethernet
+  EthernetClient client = server.available();
+  if (client) {
+    client.print(formattedData);
+    client.stop();
+  }
+}
+
+String readSensorDataFromBLE() {
+  String data = "";
+  if (dataCharacteristic.valueUpdated()) {
+    data = dataCharacteristic.value();
+  }
+  return data;
+}
+
+String formatDataForEthernet(String data) {
+  // Format data as needed
+  return "{\"sensor_data\":\"" + data + "\"}";
+}
+```
   5. The utilization of CLICK programming features with the PLC offers a solution for data logging requirements. By leveraging trigger bits in the ladder logic, CSV files containing data can be systematically generated and stored onto a micro SD card connected to the PLC. With a maximum file limit of 999 files and a data save interval set at every hour, calculations reveal that this setup enables the logging of data for an approximate duration of 41.625 days before reaching file capacity. This approach underscores the efficiency and reliability of the PLC subsystem, ensuring seamless data acquisition and storage over extended periods exceeding our 1 month minimum timeline. [4]
   6. In the system design the C0-01AC model power supply integrates essential protection features to ensure the safety of connected equipment. The power supply includes overcurrent protection with automatic recovery, activated at a threshold of 0.65 A, safeguarding against excessive current draw. Additionally, the system has overvoltage protection, by a Zener diode, which clamps voltage spikes at 27.6 V. These protective measures are fundamental in decreasing risks from electrical faults and keeping an uninterrupted operation from the power distribution system.
      
@@ -49,14 +122,14 @@ The function of this subsystem is to receive data from the various sensors and r
 **Placement and Enclosure**
 - Placement of the enclosure will be in the south eastern part of the building next to the greenhouse entrance, WiFi box, and power outlet. The PLC will be enclosed in a 6.30 x 6.30 x 3.52 in weatherproof box and cable glands to allow for connection. The power supply will be enclosed in another 6.30 x 6.30 x 3.52 in enclosure with connections to the PLC and the power outlet. This placement allows for the EagleNet WiFi to reach the PLC and have enhanced strenght when connected to the WiFI extender. The cases will have 2 cable glands each to allow cables to input and output from each system.
 
+
+
 ## **Bill of Materials**
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
 |----|-----------|-----------|------------|--------|----------------|-----|
 |CLICK PLUS|PLC|Automation Direct|C2-03CPU|1|$205.00|$205.00|
-|STRIDE|WiFi/Bluetooth Antenna|Automation Direct|SE-ANT250|1|$50.50|$50.50|
 |CLICK|Power Supply|Automation Direct|C0-01AC|1|$63.00|$63.00|
 |SanDisk|MicroSD|Amazon|SanDisk Ultra microSDHC 32GB|1|$7.65|$7.65|
-|BIGtec|Wifi Extender|Amazon|2024 Release WiFi Extender Signal Booster for Home|1|$24.99|$24.99|
 |Polycase|Outdoor Enclosure|Ploycase|SK-18 Enclosure with Knockouts 7.09 x 5.12 x 3.31 in|2|$41.17|$82.34|
 |Polycase|Cable Glands|Ploycase|CG3 Gray Cable Glands 1.53 x 1.19 x 1.19in|4|$2.86|$11.44|
 |Polycase|Mounting Kit|Ploycase|SK-99 Mounting Kit for SK Series Enclosures 0.91 x 0.59 x 0.86 in|2|$3.36|$6.72|
