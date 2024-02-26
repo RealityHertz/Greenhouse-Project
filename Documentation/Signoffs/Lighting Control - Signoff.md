@@ -31,7 +31,7 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 	The power will be USB from a 110-volt wall outlet and will supply 5 volts to the Pin 15 on the Nano 33 IoT. The Pin 14 on the Nano 33 IoT will need to be connected to the ground from the USB ground wire.
 	The USB cable and plug used have a max current of 1 amp and 2 amp respectively. This will allow for a safe current supply to the board.
 - **Power Supply for Grow Bulbs:**
-	The Arduino 33 Iot has the ability to output 5V and a maximum current of 1 A with the bulbs needing 5W. A relay will be placed in the circuit as well to control the main voltage using the Nano IoT.[3] The bulbs will be connected together using 12 gauge wire that will allow all of the lights to be powered at the same time. 
+	The Arduino 33 Iot has the ability to output 5V and a maximum current of 1 A with the bulbs needing 5W. A relay will be placed in the circuit to control the main power, which is a 20-watt source while still allowing the Nano IoT to control the lights.[3] The 20 watt source will be powered from a 110-volt wall outlet and will allow safe transfer of power to the lights using a USB-c cable. The bulbs will be connected using 12 gauge wire that will allow all of the lights to be powered at the same time. 
 - **Light Intensity:**
   	To give the plants the needed light intensity of 200-400 µmol/m²/s the distance from the top of the plant to the light must be calculated. Using the formula, I1/I2=(d2/d1)^2 where d1 is the initial distance, d2 is the desired distance, I1 is the initial light intensity, and I2 is the desired light intensity. The chosen light gives off 450 lumens. Plugging this into the equation, I1 = 450 * .005 (which is the conversion factor from lumens to micromoles per second) = 2.07 and I2 = 200 µmol/m²/s. The square root of 2.07/200 = .102. Therefore, d2/d1 = .102 which equates to 10.2cm or 4 inches from the top of the plant to vary from 200-400 µmol/m²/s, the distance could vary +/- 2 inches and still give the needed light intensity. [4] To achieve this, the lights will be hung from a small chain and S-hook to be fully adjustable. Since cotton plants typically grow an inch per week, the light can be moved up 4 inches once a month which will be labeled on the chain for easy adjustment. [5]
 - **Control:**
@@ -40,11 +40,11 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 ## **Bill of Materials:**
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
 |----|-----------|-----------|------------|--------|----------------|-----|
-|Geekstory|5V Relay Module|Amazon|SRD-05VDC-SL-C|1|$11.99|$11.99|
-|Yanmis|Full Spectrum Grow Light|Amazon|Grow Light|1|$10.00|$10.00|
+|Geekstory|5V Relay Module|Amazon|SRD-05VDC-SL-C|4|$11.99|$47.96|
+|Yanmis|Full Spectrum Grow Light|Amazon|Grow Light|4|$10.00|$40.00|
 |Askcable|50ft AWG Cable|Amazon|Copper Wire|1|$17.99|$17.99|
-|Arduino|Bluetooth Board|Amazon|Nano 33 IoT|1|$29.99|$29.99|
-|New orange heart|Waterproof Bulb Socket|Amazon|E26|1|$9.99|$9.99|
+|Arduino|Bluetooth Board|Amazon|Nano 33 IoT|4|$29.99|$119.96|
+|New orange heart|Waterproof Bulb Socket|Amazon|E26|4|$9.99|$39.96|
 
 ## **References:**
 
