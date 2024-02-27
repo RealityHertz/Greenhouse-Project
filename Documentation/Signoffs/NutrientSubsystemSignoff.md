@@ -58,7 +58,7 @@ PLC's Nano 33 IoT via BLE connection and then to the PLC itself via an ethernet 
     6. This provides a total of (1.5Vx4)x3500mAh = 21,000mWh.
     7. The murata CMR0515S3C has a current draw of 188mA at 5V.
     8. The murata would use (188mA x 5V) x (10s / 3600s) = 2.611mWh leading to an average power of 2.611mWh / (5min/60min) = 31.33mW.
-    9. The Arduino uses (28mA x 5V) x (10s/3600s) = 0.389mWh this leads to an average power consumption of (0.389mWh / (5min/60min)) = 4.67
+    9. The Arduino uses (28mA x 5V) x (10s/3600s) = 0.389mWh this leads to an average power consumption of (0.389mWh / (5min/60min)) = 4.67mW.
     11. The uxcell MAX485 has a current draw of <5ma at 5V.
     12. The uxcell MAX485 would use (5mA x 5V) x (10s/3600s) = 0.0694mWh leading to an average power of 0.0694mWh / (5min/60min) = 0.833mW
     13. The Anggrek RS485 has a current draw of 6mA at 5V.
