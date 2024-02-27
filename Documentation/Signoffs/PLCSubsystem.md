@@ -34,78 +34,86 @@ The function of this subsystem is to receive data from the various sensors and r
   1. The Automation Direct C2-03CPU has a scan time of < 1 ms and a contact execution of < 0.2 µs. This is more than sufficient to keep track of the sensor's data being sent every 5 minutes.
   2. The Automation Direct C2-03CPU is able to communicate through USB to USB to allow for programs to be installed. [2]
   3. The ambient humidity specifications in the PLC Datasheet show that when operating and non-condensing the relative humidity the PLC can handle is 30% to 95%. [2] This falls within our range for the greenhouse, with 80% being optimal for plant growth. [3] The PLC will also be able to monitor the humidity through communication with the Temperature/Humidity Subsystem's sensor to alert if the humidity is falling or rising to an unsafe range.
-  4. In this communication setup, data collected by an Arduino Nano 33 IoT equipped with BLE capabilities is transmitted wirelessly to another Arduino Nano 33 IoT acting as a gateway device. The first Arduino gathers sensor data and communicates it to the gateway Arduino via Bluetooth Low Energy (BLE). When receiving the data, the gateway Arduino processes and formats it to suit Ethernet data requirements. Utilizing an Ethernet cable, the gateway Arduino establishes a wired connection to the Programmable Logic Controller (PLC). The formatted data is then relayed from the gateway Arduino to the PLC over the Ethernet cable. This seamless integration enables efficient and reliable data transfer from remote sensor nodes to the control system, making for real-time monitoring and control in the greenhouse. Here is example code of what it might look like to recieve/send data using this system.
+  4. In this communication setup, data collected by multiple Arduino Nano 33 IoT equipped with BLE capabilities is wirelessly transmitted to another Arduino Nano 33 IoT functioning as a gateway device. The sensor Arduinos gather data and transmit it to the gateway Arduino via Bluetooth Low Energy (BLE). Upon receiving the data, the gateway Arduino processes and formats it to align with the requirements for RS232 communication. Through a wired connection established by an RS232 cable, the gateway Arduino interfaces with the Programmable Logic Controller (PLC). It then relays the formatted data from the sensor Arduinos to the PLC via RS232, facilitating data transfer for real-time monitoring and control in the greenhouse environment. Here is example code of what it might look like to recieve/send data using this system.
 ```
+#include <SoftwareSerial.h>
 #include <ArduinoBLE.h>
 #include <Ethernet.h>
 
-// Define Ethernet settings
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-IPAddress ip(192, 168, 1, 177); // IP address of your Arduino Nano 33 IoT
-EthernetServer server(80);
+#define RX_PIN 17 // RX pin of Arduino Nano 33 IoT
+#define TX_PIN 16 // TX pin of Arduino Nano 33 IoT
+
+SoftwareSerial RS232(RX_PIN, TX_PIN);
 
 BLEService dataService("12345678-1234-5678-1234-56789abcdef0");
 BLECharacteristic dataCharacteristic("0000abcd-0000-1000-8000-00805f9b34fb", BLERead | BLENotify, 20);
 
 void setup() {
   Serial.begin(9600);
+  RS232.begin(9600);
   while (!Serial);
-
-  // Initialize Ethernet
-  Ethernet.begin(mac, ip);
-
-  // Start server
-  server.begin();
-
-  // Start BLE
   if (!BLE.begin()) {
-    Serial.println("Starting BLE failed!");
+    Serial.println("starting BLE failed!");
     while (1);
   }
-
-  // Set up BLE service and characteristic
   BLE.setLocalName("Nano33IoT");
   BLE.setAdvertisedService(dataService);
   dataService.addCharacteristic(dataCharacteristic);
   BLE.addService(dataService);
-
-  // Start advertising
+  dataCharacteristic.writeValue(0);
   BLE.advertise();
+  Serial.println("BLE server is now running, waiting for connections...");
+}
+
+float parseData(String data) {
+  int commaIndex = data.indexOf(',');
+  if (commaIndex == -1) {
+    return 0.0;
+  }
+  // Get the first part of the split
+  String floatValue = data.substring(0, commaIndex); 
+  // Convert the float value to a float and return it
+  return floatValue.toFloat();
+}
+
+void sendDataToPLC(float data1, float data2, float data3, float data4) {
+  String dataToSend = String(data1) + "," + String(data2) + "," + String(data3) + "," + String(data4);
+  RS232.println(dataToSend);
+}
+
+float getDataFromArduino1() {
+  String data = readSensorDataFromBLE();
+  // Parse the data and return the value
+  return parseData(data);
+}
+
+float getDataFromArduino2() {
+  String data = readSensorDataFromBLE();
+  // Parse the data and return the value
+  return parseData(data);
+}
+
+float getDataFromArduino3() {
+  String data = readSensorDataFromBLE();
+  // Parse the data and return the value
+  return parseData(data);
+}
+
+float getDataFromArduino4() {
+  String data = readSensorDataFromBLE();
+  // Parse the data and return the value
+  return parseData(data);
 }
 
 void loop() {
-  // Wait for a BLE central to connect
-  BLEDevice central = BLE.central();
-  if (central) {
-    Serial.print("Connected to central: ");
-    Serial.println(central.address());
-  }
+  float data1 = getDataFromArduino1();
+  float data2 = getDataFromArduino2();
+  float data3 = getDataFromArduino3();
+  float data4 = getDataFromArduino4();
 
-  // Read data from BLE characteristic
-  String sensorData = readSensorDataFromBLE();
-
-  // Format data for Ethernet
-  String formattedData = formatDataForEthernet(sensorData);
-
-  // Send data over Ethernet
-  EthernetClient client = server.available();
-  if (client) {
-    client.print(formattedData);
-    client.stop();
-  }
-}
-
-String readSensorDataFromBLE() {
-  String data = "";
-  if (dataCharacteristic.valueUpdated()) {
-    data = dataCharacteristic.value();
-  }
-  return data;
-}
-
-String formatDataForEthernet(String data) {
-  // Format data as needed
-  return "{\"sensor_data\":\"" + data + "\"}";
+  sendDataToPLC(data1, data2, data3, data4);
+  
+  delay(1000);
 }
 ```
   5. The utilization of CLICK programming features with the PLC offers a solution for data logging requirements. By leveraging trigger bits in the ladder logic, CSV files containing data can be systematically generated and stored onto a micro SD card connected to the PLC. With a maximum file limit of 999 files and a data save interval set at every hour, calculations reveal that this setup enables the logging of data for an approximate duration of 41.625 days before reaching file capacity. This approach underscores the efficiency and reliability of the PLC subsystem, ensuring seamless data acquisition and storage over extended periods exceeding our 1 month minimum timeline. [4]
@@ -120,7 +128,7 @@ String formatDataForEthernet(String data) {
 ![PLC Port Code](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/LadderLogicForPLC.PNG)
 
 **Placement and Enclosure**
-- Placement of the enclosure will be in the south eastern part of the building next to the greenhouse entrance, WiFi box, and power outlet. The PLC will be enclosed in a 6.30 x 6.30 x 3.52 in weatherproof box and cable glands to allow for connection. The power supply will be enclosed in another 6.30 x 6.30 x 3.52 in enclosure with connections to the PLC and the power outlet. This placement allows for the EagleNet WiFi to reach the PLC and have enhanced strenght when connected to the WiFI extender. The cases will have 2 cable glands each to allow cables to input and output from each system.
+- Placement of the enclosure will be in the south eastern part of the building next to the greenhouse entrance and power outlet. The PLC will be enclosed in a 6.30 x 6.30 x 3.52 in weatherproof box and cable glands to allow for connection. The power supply will be enclosed in another 6.30 x 6.30 x 3.52 in enclosure with connections to the PLC and the power outlet.The cases will have 2 cable glands each to allow cables to input and output from each system.
 
 
 
@@ -133,7 +141,8 @@ String formatDataForEthernet(String data) {
 |Polycase|Outdoor Enclosure|Ploycase|SK-18 Enclosure with Knockouts 7.09 x 5.12 x 3.31 in|2|$41.17|$82.34|
 |Polycase|Cable Glands|Ploycase|CG3 Gray Cable Glands 1.53 x 1.19 x 1.19in|4|$2.86|$11.44|
 |Polycase|Mounting Kit|Ploycase|SK-99 Mounting Kit for SK Series Enclosures 0.91 x 0.59 x 0.86 in|2|$3.36|$6.72|
-
+|MAX3232|TTL to RS232 Module|Amazon|B07PFB4MHR|1|$15.99|$15.99|
+|DTech|RS232 Cable|Amazon|DT-9006C 2M|1|$10.96|$10.96|
 
 **References**
 
