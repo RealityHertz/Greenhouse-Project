@@ -7,7 +7,7 @@ The function of this subsystem is to relay the water levels to the Arduino via t
 ## **Constraints:**
 
 - **Arduino Nano 33 IoT**
-  - The communication between the sensors and PLC must be wireless. This will save time and money on wiring, while also allowing the system to be scalable.
+  - The communication between the sensors and PLC system must be wireless. This will save time and money on wiring, while also allowing the system to be scalable.
   - The transfer of data between the sensors and the Arduino must be below 3 seconds for accurate and reliable monitoring of water level.
   - BLE (Bluetooth Low Energy) is lower in cost than the classic Bluetooth as BLE is currently rising in use and has market competition. BLE decreases the distance a signal can be transmitted, but the signals transmitted through the greenhouse will not be far. The use of BLE allows for a cost-efficient alternative compared to classic Bluetooth.
 
@@ -63,7 +63,7 @@ _Figure 3. Set up for Subsystem_
     - The working voltage will be 5V
 - **Water Levels**
   - The sensor will float on the water and send a signal to the Arduino 33 IoT saying whether the water level is below 1/3 of the max or not.
-  - When the JSN-SR04T reads a distance that is equal to or less than the target height of 1/3 max, this will flag the PLC.
+  - When the JSN-SR04T reads a distance that is equal to or less than the target height of 1/3 max, this will flag the PLC system.
 
 ## **Bill of Materials:**
 
