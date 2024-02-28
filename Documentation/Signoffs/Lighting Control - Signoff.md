@@ -31,7 +31,7 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 	The power will be USB from a 110-volt wall outlet and will supply 5 volts to the Pin 15 on the Nano 33 IoT. The Pin 14 on the Nano 33 IoT will need to be connected to the ground from the USB ground wire.
 	The USB cable and plug used have a max current of 1 amp and 2 amp respectively. This will allow for a safe current supply to the board.
 - **Power Supply for Grow Bulbs:**
-	The Arduino 33 Iot has the ability to output 5V and a maximum current of 1 A with the bulbs needing 100W. A relay will be placed in the circuit to control the main power while still allowing the Nano IoT to control the lights.[3] From the panel inside the greenhouse, the power cables will be run to a NEMA 4x enclosure which will house a 10A circuit breaker and the relay. NEMA 4x was chosen due to its ability to keep out dust and direct sprays from water. A 10 amp breaker will meet the needs of the circuit to protect the components based on: P=IV = 400W=I*120, therefore, the current is 3.33 amps which is below the 10 amp breaker. The wire to be used to connect all of the components is 14-2 romex. This will allow for safe power transfer due to the maximum amperage rating on the wire being 15 amps. From the relay, the cable will be run to the waterproof bulb sockets, which are rated for up to 250V or 660W, which the lights will screw into.
+	The Arduino 33 Iot has the ability to output 5V and a maximum current of 1 A with the bulbs needing 100W. A relay will be placed in the circuit to control the main power while still allowing the Nano IoT to control the lights.[3] From the outlet, the power will be run through an extension cord to a NEMA 4x enclosure which will house a 15A circuit breaker and the relay. NEMA 4x was chosen due to its ability to keep out dust and direct sprays from water. A 15 amp breaker will meet the needs of the circuit to protect the components based on: P=IV = 400W=I*120, therefore, the current is 3.33 amps which is below the 15 amp breaker. The wire to be used to connect all of the components is 14-3 romex. This will allow for safe power transfer due to the maximum amperage rating on the wire being 15 amps. From the relay, the cable will be run to the waterproof bulb sockets, which are rated for up to 250V or 660W, which the lights will screw into.[6]
 - **Light Intensity:**
   	To give the plants the needed light intensity of 200-400 µmol/m²/s the distance from the top of the plant to the light must be calculated. Using the formula, Irradiance = Power/4π(r)^2, where P is equal to 100 watts for the bulb and r is equal to the distance of 5.5 feet from the top of the plant, the irradiance is equal to 318 µmol/m²/s. This is well within the range needed for cotton plants. [4] To achieve this, the lights will be hung from a small chain and S-hook to be fully adjustable.
 - **Control:**
@@ -42,12 +42,13 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 |----|-----------|-----------|------------|--------|----------------|-----|
 |Geekstory|5V Relay Module|Amazon|SRD-05VDC-SL-C|2|$11.99|$23.98|
 |Highydro|Full Spectrum Grow Light|Amazon|Grow Light|4|$20.99|$83.96|
-|Southwire|14-2 Wire|Amazon|Solid Copper Wire|1|$59.70|$59.70|
+|Southwire|14-3 Wire|Amazon|Solid Copper Wire|1|$80.91|$80.91|
 |Arduino|Bluetooth Board|Amazon|Nano 33 IoT|2|$29.99|$59.98|
 |New orange heart|Waterproof Bulb Socket|Amazon|E26|4|$9.99|$39.96|
-|Chtaixi|10 Amp Circuit Breaker|Amazon|B09TVSCC2N|2|$12.78|$25.56|
-|AIRIC|Cable Glands|Amazon|NPT 1/4" 20 Pieces|2|$11.99|$23.98|
+|DIHOOL|2 15 Amp Circuit Breaker|Amazon|B0BFF6CX2X|1|$12.78|$25.56|
+|AIRIC|Cable Glands|Amazon|NPT 1/4" 20 Pieces|2|$13.99|$27.98|
 |TOCRETOARE|NEMA 4x Enclosure|Amazon|12x10x6" Box|1|$49.99|$49.99|
+|HONDERSON|10ft 14-3 Extension Cord|Amazon|3 Prong SJTW Heavy Duty Extension Cable|1|$12.19|$12.99|
 
 ## **References:**
 
@@ -67,3 +68,6 @@ How Close Should Grow Lights Be to Plants? 22 Apr. 2023, theindoornursery.com/bl
 
 [5]
 Vanorio, Ame. “Growing Cotton: A Complete Guide on How to Plant, Grow, & Harvest Cotton.” MorningChores, 24 July 2019, morningchores.com/growing-cotton/.
+
+[6]
+National Electrical Code Basics: Sizing and protecting branch-circuit conductors - technical articles. EEPower. (n.d.). https://eepower.com/technical-articles/national-electrical-code-basics-sizing-and-protecting-branch-circuit-conductors 
