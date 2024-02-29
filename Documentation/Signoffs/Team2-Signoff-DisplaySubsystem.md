@@ -34,6 +34,9 @@ The Display Subsystem is responsible for receiving input data from various senso
 
 4. **Stable Power Supply**: To ensure uninterrupted operation, the HMI will be powered by a stable power supply at 1.05W provided by the ethernet port on the PLC. [1]
 
+**HMI Mounting**
+![HMI Mounting](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/HMIMounting.jpg)
+
 ## **Bill of Materials**
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
 |----|-----------|-----------|------------|--------|----------------|-----|
