@@ -45,19 +45,23 @@ PLC's Nano 33 IoT via BLE connection and then to the PLC itself via an ethernet 
    8. The sensor measures pH within a range of 3-9pH with an accuracy of ±0.3pH and a resolution of 0.01pH.
  
 - **Power Analysis**
-    1. The sensor requires a 4.5-30VDC power supply to operate.
-    2. The Arduino will send the sensor a 5V signal through its 5V output pin.
-    3. The power is routed through the Arduino so that the sensor may be cycled on and off as the Nano 33 IOT enters and exits sleep mode, while the Arduino is in sleep mode it does not produce a high enough voltage for any of the systems components to function so they are all essentially powered off.[4]
-    4. The Arduino will be cycled out of sleep mode for 10 seconds every 5 minutes leading to the sensors using (10s/3600s) for the milliwatt hour calculations, or 10 seconds per hour, and (5min/60min) for the average power consumption calculations from the 5 minute cycle.
-    5. The system is powered by 4 AA batteries each supplying 3500mAh and 1.5V.
-    6. This provides a total of (1.5Vx4)x3500mAh = 21,000mWh.
-    9. The Arduino uses (28mA x 5V) x (10s/3600s) = 0.389mWh this leads to an average power consumption of (0.389mWh / (5min/60min)) = 4.67mW.
-    11. The uxcell MAX485 has a current draw of <5ma at 5V.
-    12. The uxcell MAX485 would use (5mA x 5V) x (10s/3600s) = 0.0694mWh leading to an average power of 0.0694mWh / (5min/60min) = 0.833mW
-    13. The CWT-SOIL-NPKPHCTH-S has a max power usage of 500mW at 24V giving us (500mw/24V) = 20.83mA usage which in turn would give us a maximum power usage of (20.83mA x 5V) = 104.17mW at 5V.
-    14. The CWT-SOIL-NPKPHCTH-S will use 104.17 x (10s/3600s) = 0.289mWh leading to an averge power of 0.0289mWh / (5min/60min) = 3.47mW
-    15. This results in a total power usage of 4.67 + 0.833 + 3.47 = 8.975 mW.
-    16. This means the batteries will last (21,000mWh / 8.975 mw) = 2,339.77 hours or 3.250 months.
+  
+    1. The power is routed through the Arduino so that the sensor may be cycled on and off as the Nano 33 IOT enters and exits sleep mode, while the Arduino is in sleep mode it does not produce a high enough voltage for any of the systems components to function so they are all essentially powered off.[4]
+    2. The Arduino will be cycled out of sleep mode for 10 seconds every 5 minutes leading to the sensors using (10s/3600s) for the milliwatt hour calculations, or 10 seconds per hour, and (5min/60min) for the average power consumption calculations from the 5 minute cycle.
+    3. The system is powered by 4 AA batteries each supplying 3500mAh and 1.5V.
+    4. The uxcell MAX485 has a current draw of <5ma at 5V.
+    5. The CWT-SOIL-NPKPHCTH-S has a max power usage of 500mW at 24V giving us (500mw/24V) = 20.83mA usage which in turn would give us a maximum power usage of (20.83mA x 5V) = 104.17mW at 5V when used continuously [5].
+    
+| Component | Current Draw @ 5V | MilliWatt Hours (10 seconds on) | Average Power Consumption (5 minute cycle) |
+| :--- | :--- | :--- | :--- |
+| Arduino Nano 33 IoT | 28mA | (28mA * 5V) * (10s/3600s) = 0.389mWh | (0.389mWh) / (5min/60min) = 4.67mW |
+| Uxcell MAX485 | 5mA | (5mA * 5V) * (10s/3600s) = 0.0694mWh | (0.0694mWh) / (5min/60min) = 0.833mW |
+| CWT-SOIL-NPKPHCTH-S | 20.83mA | (28.83mA * 5V) * (10s/3600s) = 0.289mWh | (0.389mWh) / (5min/60min) = 3.47mW | 
+
+| Battery MilliWatt Hours | Total Average Power Consumption | Time Until Battery Change |
+| :--- | :--- | :---|
+| (1.5V * 4 Batteries) * 3500mAh = 21,000mWh | 4.67mW + 0.833mW + 3.47mW = 8.975mW | 21,000mWh / 8.975mW = 2,339.77 houts or 3.250 months|
+
  
 ## **Bill of Materials:**
 | Brand/Manufacturer | Part Name | Supplier | Part/Model Number | Quantity | Units | Unit Cost | Cost |
@@ -78,3 +82,4 @@ PLC's Nano 33 IoT via BLE connection and then to the PLC itself via an ethernet 
 [3] “Advantages of BLE (Bluetooth Low Energy) | disadvantages of BLE (Bluetooth Low Energy),” www.rfwireless-world.com. https://www.rfwireless-world.com/Terminology/Advantages-and-Disadvantages-of-BLE-Bluetooth-Low-Energy.html
 
 [4] O. Staquet, "Arduino-Nano-33-IoT-Ultimate-Guide," github.com [Online]. Available: https://github.com/ostaquet/Arduino-Nano-33-IoT-Ultimate-Guide/blob/master/SavePowerSleeping.md. [Accessed Feb. 14, 2024].
+[5] ComWinTop, "RS485 4-20mA Soil Temperature Humidity Moisture Conductivity EC PH Sensor", ComWinTop, https://store.comwintop.com/products/rs485-4-20ma-soil-temperature-humidity-moisture-conductivity-ec-ph-sensor?variant=43435240358115
