@@ -35,13 +35,26 @@ The Display Subsystem is responsible for receiving input data from various senso
 4. **Stable Power Supply**: To ensure uninterrupted operation, the HMI will be powered by a stable power supply at 1.05W provided by the ethernet port on the PLC. [1]
 
 **HMI Mounting**
-![HMI Mounting](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/HMIMounting.jpg)
+
+![HMI Mounting Rear](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/HMIMountingRearView.png)
+
+*Figure 3. HMI Mounting Rear View*
+
+![HMI Mounting Side](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/HMIMountingSideView.png)
+
+*Figure 4. HMI Mounting Side View*
+
+![3D HMI with Bracket](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/HMIScrewPlacement.png)
+
+*Figure 5. HMI 3D Schematic with Bracket*
+
+The PLC will sit in a 16 x 11 x 5.5 inch enclosure. This is more than enough for the HMI as it needs 4.5 inches for the width plus an additional 1.2 inch on each side. [1] Thus, the 11 inch enclosure will allow us to make a 3.26 x 4.5 inch cutout in the 16 x 11 inch enclosure face and meet the requirements of having at least a 6.9 inch width enclosure. We will then use the mounting bracket and tighten the screws the the enclosure from the inside. You can see on the 3D schematic above, the screws will be tightened from the inside of the case and make contact to secure the HMI in the cutout. 
 
 ## **Bill of Materials**
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
 |----|-----------|-----------|------------|--------|----------------|-----|
 |C-more Micro|HMI|Automation Direct|EA3-S3ML|1|$280.00|$280.00|
-|Automation Direct|RJ12 Cable|Automation Direct|DV-1000CBL|1|$23.00|$23.00|
+|Automation Direct|Ethernet Cable|Automation Direct|C5E-STPBL-S3|1|$6.75|$6.75|
 
 **References**
 
