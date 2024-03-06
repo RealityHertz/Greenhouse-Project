@@ -138,11 +138,12 @@ void loop() {
 |CLICK PLUS|PLC|Automation Direct|C2-03CPU|1|$205.00|$205.00|
 |CLICK|Power Supply|Automation Direct|C0-01AC|1|$63.00|$63.00|
 |SanDisk|MicroSD|Amazon|SanDisk Ultra microSDHC 32GB|1|$7.65|$7.65|
-|Polycase|Outdoor Enclosure|Ploycase|SK-18 Enclosure with Knockouts 7.09 x 5.12 x 3.31 in|2|$41.17|$82.34|
-|Polycase|Cable Glands|Ploycase|CG3 Gray Cable Glands 1.53 x 1.19 x 1.19in|4|$2.86|$11.44|
+|Polycase|Outdoor Enclosure|Ploycase|SK-18 Enclosure with Knockouts 7.09 x 5.12 x 3.31 in|1|$41.17|$41.17|
+|Polycase|Cable Glands|Ploycase|CG3 Gray Cable Glands 1.53 x 1.19 x 1.19in|2|$2.86|$5.72|
 |Polycase|Mounting Kit|Ploycase|SK-99 Mounting Kit for SK Series Enclosures 0.91 x 0.59 x 0.86 in|2|$3.36|$6.72|
 |MAX3232|TTL to RS232 Module|Amazon|B07PFB4MHR|1|$15.99|$15.99|
 |DTech|RS232 Cable|Amazon|DT-9006C 2M|1|$10.96|$10.96|
+|JoinFWorld|Outdoor Enclosure|Amazon|Outdoor Electrical Box Waterproof Nema Enclosure 16x11x6 Plastic WiFi Box|1|$49.99|$49.99|
 
 **References**
 
