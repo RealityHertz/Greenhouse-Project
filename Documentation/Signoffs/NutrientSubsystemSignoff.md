@@ -56,7 +56,7 @@ PLC's Nano 33 IoT via BLE connection and then to the PLC itself via an ethernet 
 | :--- | :--- | :--- | :--- |
 | Arduino Nano 33 IoT | 28mA | (28mA * 5V) * (10s/3600s) = 0.389mWh | (0.389mWh) / (5min/60min) = 4.67mW |
 | Uxcell MAX485 | 5mA | (5mA * 5V) * (10s/3600s) = 0.0694mWh | (0.0694mWh) / (5min/60min) = 0.833mW |
-| CWT-SOIL-NPKPHCTH-S | 20.83mA | (28.83mA * 5V) * (10s/3600s) = 0.289mWh | (0.389mWh) / (5min/60min) = 3.47mW | 
+| CWT-SOIL-NPKPHCTH-S | 20.83mA | (20.83mA * 5V) * (10s/3600s) = 0.289mWh | (0.389mWh) / (5min/60min) = 3.47mW | 
 
 | Battery MilliWatt Hours | Total Average Power Consumption | Time Until Battery Change |
 | :--- | :--- | :---|
