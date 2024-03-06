@@ -38,7 +38,7 @@ PLC's Nano 33 IoT via BLE connection and then to the PLC itself via an ethernet 
 - **Soil NPK and Moisture Sensor - CWT-SOIL-NPKPHCTH-S**
    1. The sensor will be supplied 5V from the Arduino pin 12, which provides a 5V output, this will allow the sensor to be enabled and disabled as the Arduino cycles through sleep cycles.
    2. The sensor has a response time of less than 1 second and it will be enabled for 10 seconds every 5 minutes to allow the system time to commumicate with the PLC.
-   4. The sensor measures soil moisture with a range of 0-100% with an accuracy of ±% within the 0-50% moisture range and ±3% within the 50-100% range and a resolution of 0.10%.
+   4. The sensor measures soil moisture with a range of 0-100% with an accuracy of ±2% within the 0-50% moisture range and ±3% within the 50-100% range and a resolution of 0.10%.
    5. The sensor measures nitrogen levels within a range of 1-1999mg/kg with an accuracy of ±2% full scale and a resolution of 1mg/kg.
    6. The sensor measures phosphorus levels within a range of 1-1999mg/kg with an accuracy of ±2% full scale and a resolution of 1mg/kg.
    7. The sensor measures potassium levels within a range of 1-1999mg/kg with an accuracy of ±2% full scale and a resolution of 1mg/kg.
