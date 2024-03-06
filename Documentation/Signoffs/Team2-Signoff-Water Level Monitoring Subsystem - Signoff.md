@@ -46,7 +46,7 @@ _Figure 2. Arduino Nano 33 IoT Board Topology_
     - This means the batteries will last (21,000mWh / 5.933mW) = 3540 hours or almost 5 months.
 - **JSN-SR04T**
   1. In order for the sensor to work, the JSN-SR04T must be on for at least 10 ms, which is 1/100 of the time its planned to be briefly turn on.
-  2. The sesnor has a range of 20cm - 4m
+  2. The sensor has a range of 20cm - 4m
   3. The sensor will use ultra sonic waves to determine height from the top of the resevoir by reading how long it takes for an ultra sonic wave to return. (The height of the resevoir) - (measured distance) = water level.
     - distance = (high level time) x (speed of sound in medium) x 0.5.
         - The speed of sound 340 m/s.
