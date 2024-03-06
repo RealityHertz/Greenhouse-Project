@@ -60,7 +60,7 @@ PLC's Nano 33 IoT via BLE connection and then to the PLC itself via an ethernet 
 
 | Battery MilliWatt Hours | Total Average Power Consumption | Time Until Battery Change |
 | :--- | :--- | :---|
-| (1.5V * 4 Batteries) * 3500mAh = 21,000mWh | 4.67mW + 0.833mW + 3.47mW = 8.975mW | 21,000mWh / 8.975mW = 2,339.77 houts or 3.250 months|
+| (1.5V * 4 Batteries) * 3500mAh = 21,000mWh | 4.67mW + 0.833mW + 3.47mW = 8.975mW | 21,000mWh / 8.975mW = 2,339.77 hours or 3.250 months|
 
  
 ## **Bill of Materials:**
