@@ -46,16 +46,17 @@ _Figure 2. Arduino Nano 33 IoT Board Topology_
     - This means the batteries will last (21,000mWh / 5.933mW) = 3540 hours or almost 5 months.
 - **JSN-SR04T**
   1. In order for the sensor to work, the JSN-SR04T must be on for at least 10 ms, which is 1/100 of the time its planned to be briefly turn on.
-  2. The sensor will use ultra sonic waves to determine height from the top of the resevoir by reading how long it takes for an ultra sonic wave to return. (The height of the resevoir) - (measured distance) = water level.
+  2. The sesnor has a range of 20cm - 4m
+  3. The sensor will use ultra sonic waves to determine height from the top of the resevoir by reading how long it takes for an ultra sonic wave to return. (The height of the resevoir) - (measured distance) = water level.
     - distance = (high level time) x (speed of sound in medium) x 0.5.
         - The speed of sound 340 m/s.
         - Therefore, the distance calculated by code will end up being (the high level time) * 170 m/s, giving the result in meters. 
         - This being said, the data will be read in under the 3 second prerequisite, due to the speed at which the echo will be recieved.
         - The units of measurement may also be changed in code in order for an easier to read result such as cm or inches, given the unit for speed of sound in the medium is converted.
-  3. The sensor is only 12.99 and waterproof making it a good fit for a durable and cheap option in the case of wear and tear or mishaps.
+  4. The sensor is only 12.99 and waterproof making it a good fit for a durable and cheap option in the case of wear and tear or mishaps.
  
   - **Power Supply for JSN-SR04T**
-    - The JSN-SR04T will connect to the Nano 33 IoT's Pin 12 supplying 5 volts to the sensor, the Nano 33 IoT's pin 19 for ground, and the Nano 33 IoT's pins 25 and 26 for sending data. 
+    - The JSN-SR04T will connect to the Nano 33 IoT's Pin 12 supplying 5 volts to the sensor, the Nano 33 IoT's pin 19 for ground, and the Nano 33 IoT's pins 23 and 24 for sending data via pulse width modulation (PWM).
     - The working voltage will be 5V
 - **Water Levels**
   - The sensor will float on the water and send a signal to the Arduino 33 IoT saying whether the water level is below 1/3 of the max or not.
