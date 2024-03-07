@@ -47,11 +47,13 @@ _Figure 2. Arduino Nano 33 IoT Board Topology_
 - **JSN-SR04T**
   1. In order for the sensor to work, the JSN-SR04T must be on for at least 10 ms, which is 1/100 of the time its planned to be briefly turn on.
   2. The sensor has a range of 25cm - 4m.
-  3. The sensor will use ultra sonic waves to determine height from the top of the resevoir by reading how long it takes for an ultra sonic wave to return. (The height of the resevoir) - (measured distance) = water level.
+  3. The sensor will use a 40kHz ultra sonic waves to determine height from the top of the resevoir by reading how long it takes for an ultra sonic wave to return. (The height of the resevoir) - (measured distance) = water level.
+    - When the wave is returned, a pulse will be sent to the arduino whos length is proportional to the distance. The pulseIn function from the ardunio library will read this pulse and do the distace caluclations.
+        - The pulsein function looks like so: pulseIn(X, Y) where X is the observed variable and Y is either HIGH or LOW. When the function is called it looks at variable X and waits for it to toggle to Y (in this case, we will use HIGH so it will look for a toggle from LOW to HIGH). When this happens, a timer is started in milliseconds. The timer stops when the variable is toggled again. The function then outputs the time in milliseconds the variable was toggled for. 
     - distance = (high level time) x (speed of sound in medium) x 0.5.
         - The speed of sound 340 m/s.
         - Therefore, the distance calculated by code will end up being (the high level time) * 170 m/s, giving the result in meters.
-        - The pulse in function used to read the duration of the sound wave requires the pulse to be 10 microseconds - 3 minutes. It takes sound well over 10 microseconds to travel 25 cm and its fast enough to return 4 m in under 3 minutes.
+        - The pulseIn function used to read the duration of the sound wave requires the pulse to be 10 microseconds - 3 minutes. It takes sound well over 10 microseconds to travel 25 cm and its fast enough to travel and return 4 m in under 3 minutes.
         - This being said, the data will be read in under the 3 second prerequisite, due to the speed at which the echo will be recieved.
         - The units of measurement may also be changed in code in order for an easier to read result such as cm or inches, given the unit for speed of sound in the medium is converted.
   4. The sensor is only 12.99 and waterproof making it a good fit for a durable and cheap option in the case of wear and tear or mishaps.
