@@ -23,7 +23,7 @@ PLC's Nano 33 IoT via BLE connection and then to the PLC itself via an ethernet 
   7. Must accurately measure soil pH levels within a range of 5-8.5pH with an accuracy of ±0.01 pH to ±0.5 pH. [1]
 
 ## **Buildable Schematic:**
-![Nutrient Schematic](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Nutrient_Schematic_V6.png)
+![Nutrient Schematic](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Nutrient_Schematic_V7.png)
 
 *Figure 1. Buildable Schematic for Powering Arduino and Sensors*
 
