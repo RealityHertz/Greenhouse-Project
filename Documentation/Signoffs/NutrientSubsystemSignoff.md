@@ -57,16 +57,24 @@ PLC's Nano 33 IoT via BLE connection and then to the PLC itself via an ethernet 
     3. The system is powered by 4 AA batteries each supplying 3500mAh and 1.5V.
     4. The uxcell MAX485 has a current draw of <5ma at 5V.
     5. The CWT-SOIL-NPKPHCTH-S has a max power usage of 500mW at 24V giving us (500mw/24V) = 20.83mA usage which in turn would give us a maximum power usage of (20.83mA x 5V) = 104.17mW at 5V when used continuously [5].
+    6. The Nisshinbo R1210N601D-TR-FE uses 0.09mA at 6V.
+    7. The R1210N601D-TR-FE would use (6V * 0.09mA) = 0.54mW.
+    8. As shown in the figure below, since the system only uses a total of 28mA + 5mA + 20.83mA + 0.09mA = 53.92mA the batteries should last significantly longer than the shown dropoff of 2.2Ah.
+  ![Battery Dropoff](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/AA-100mA.png)
+
+*Figure 2. Duracell(DC) vs. Radio Shack(RS) AA battery voltage dropoff at 100mA current draw*
+
+*Source: Adapted from [6]*
     
 | Component | Current Draw @ 5V | MilliWatt Hours (10 seconds on) | Average Power Consumption (5 minute cycle) |
 | :--- | :--- | :--- | :--- |
 | Arduino Nano 33 IoT | 28mA | (28mA * 5V) * (10s/3600s) = 0.389mWh | (0.389mWh) / (5min/60min) = 4.67mW |
 | Uxcell MAX485 | 5mA | (5mA * 5V) * (10s/3600s) = 0.0694mWh | (0.0694mWh) / (5min/60min) = 0.833mW |
-| CWT-SOIL-NPKPHCTH-S | 20.83mA | (20.83mA * 5V) * (10s/3600s) = 0.289mWh | (0.389mWh) / (5min/60min) = 3.47mW | 
+| CWT-SOIL-NPKPHCTH-S | 20.83mA | (20.83mA * 5V) * (10s/3600s) = 0.289mWh | (0.389mWh) / (5min/60min) = 3.47mW |
 
 | Battery MilliWatt Hours | Total Average Power Consumption | Time Until Battery Change |
 | :--- | :--- | :---|
-| (1.5V * 4 Batteries) * 3500mAh = 21,000mWh | 4.67mW + 0.833mW + 3.47mW = 8.975mW | 21,000mWh / 8.975mW = 2,339.77 hours or 3.250 months|
+| (1.5V * 4 Batteries) * 3500mAh = 21,000mWh | 4.67mW + 0.833mW + 3.47mW + 0.54mW = 9.515mW | 21,000mWh / 9.515mW = 2,207.04 hours or 3.07 months|
 
  
 ## **Bill of Materials:**
@@ -89,4 +97,7 @@ PLC's Nano 33 IoT via BLE connection and then to the PLC itself via an ethernet 
 [3] “Advantages of BLE (Bluetooth Low Energy) | disadvantages of BLE (Bluetooth Low Energy),” www.rfwireless-world.com. https://www.rfwireless-world.com/Terminology/Advantages-and-Disadvantages-of-BLE-Bluetooth-Low-Energy.html
 
 [4] O. Staquet, "Arduino-Nano-33-IoT-Ultimate-Guide," github.com [Online]. Available: https://github.com/ostaquet/Arduino-Nano-33-IoT-Ultimate-Guide/blob/master/SavePowerSleeping.md. [Accessed Feb. 14, 2024].
+
 [5] ComWinTop, "RS485 4-20mA Soil Temperature Humidity Moisture Conductivity EC PH Sensor", ComWinTop, https://store.comwintop.com/products/rs485-4-20ma-soil-temperature-humidity-moisture-conductivity-ec-ph-sensor?variant=43435240358115
+
+[6] PowerStream. "Discharge tests of AA Batteries, Alkaline and NiMH". (Feb. 7, 2023). Accessed: Mar. 7, 2024. [online]. Available: https://www.powerstream.com/AA-tests.htm
