@@ -43,6 +43,12 @@ PLC's Nano 33 IoT via BLE connection and then to the PLC itself via an ethernet 
    6. The sensor measures phosphorus levels within a range of 1-1999mg/kg with an accuracy of ±2% full scale and a resolution of 1mg/kg.
    7. The sensor measures potassium levels within a range of 1-1999mg/kg with an accuracy of ±2% full scale and a resolution of 1mg/kg.
    8. The sensor measures pH within a range of 3-9pH with an accuracy of ±0.3pH and a resolution of 0.01pH.
+
+- **DC to DC Converter - Nisshinbo R1210N601D-TR-FE**
+  
+   1. The converter takes an input voltage range of 0.8-8V and produces a constant output of 6V ±0.15V.
+   2. This is within the range of input voltage for the Arduino Nano 33 IoT and reduces the risk of having too little voltage for the Arduino as the battery charges dissipate.
+   3. Since the minimum input voltage of the converter is 0.8V this means that the system will be able to operate until the power supply voltage drops below 0.2V per battery which means that roughly ((1.5V-0.2V)/1.5V) = 0.867 or 86.7% of the individual battery's supply is used before needing to be replaced.
  
 - **Power Analysis**
   
@@ -71,6 +77,7 @@ PLC's Nano 33 IoT via BLE connection and then to the PLC itself via an ethernet 
 | Uxcell | RS485 Instrument Interface Module | Amazon | MAX485 TTL | 1 | 1 | $6.99 | $6.99 |
 | LAMPVPATH | 4 AA Battery Holder | Amazon | B07L9M6VZK | 1 | 2 | $7.49 | $7.49 |
 | Duracell | AA Batteries | Amazon | DURMN1500B10Z | 1 | 10 | $8.79 | $8.79 |
+| Nisshinbo | 6V dc to dc converter | Arrow.com | R1210N601D-TR-FE | 5 | 5 | $0.48 | $2.39 |
 
 ## **References:**
 
