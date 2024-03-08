@@ -59,23 +59,18 @@ PLC's Nano 33 IoT via BLE connection and then to the PLC itself via an ethernet 
     5. The CWT-SOIL-NPKPHCTH-S has a max power usage of 500mW at 24V giving us (500mw/24V) = 20.83mA usage which in turn would give us a maximum power usage of (20.83mA x 5V) = 104.17mW at 5V when used continuously [5].
     6. The Nisshinbo R1210N601D-TR-FE uses 0.09mA at 6V.
     7. The R1210N601D-TR-FE would use (6V * 0.09mA) = 0.54mW.
-    8. As shown in the figure below, since the system only uses a total of 28mA + 5mA + 20.83mA + 0.09mA = 53.92mA the batteries should last significantly longer than the shown dropoff of 2.2Ah.
+    8. The duty cycle of the components would be (10s / (5min * 60s)) = 0.0333 because the system is only turned on for 10 seconds every 5 minutes.
+    9. Therefore the Ardunio has an average current draw of (28mA * 0.0333) = 0.933mA.
+    10. The sensor has an average current draw of (20.83mA * 0.0333) = 0.694mA.
+    11. The Max485 translator has an average current draw of (5mA * 0.0333) = 0.167mA.
+    12. This all leads to an average current draw of 0.933mA + 0.694mA + 0.167mA + 0.09mA = 1.884mA
+    13. The total ampere-hours for the batteries in the worst case is (2200mAh * 4 batteries) = 8800mAh and in the best case: (3500mAh * 4 batteries) = 14000mAh.
+    14. This means that the batteries would last between (8800mAh / 1.884mA) = 4670.91 hours or 6.487 months at the worst case and (14000mAh / 1.884mA) = 7430.998 hours or 10.321 months in the best case in accordance with the graph below and the expected ampere-hour output of 3500mAh.
   ![Battery Dropoff](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/AA-100mA.png)
 
 *Figure 2. Duracell(DC) vs. Radio Shack(RS) AA battery voltage dropoff at 100mA current draw*
 
 *Source: Adapted from [6]*
-    
-| Component | Current Draw @ 5V | MilliWatt Hours (10 seconds on) | Average Power Consumption (5 minute cycle) |
-| :--- | :--- | :--- | :--- |
-| Arduino Nano 33 IoT | 28mA | (28mA * 5V) * (10s/3600s) = 0.389mWh | (0.389mWh) / (5min/60min) = 4.67mW |
-| Uxcell MAX485 | 5mA | (5mA * 5V) * (10s/3600s) = 0.0694mWh | (0.0694mWh) / (5min/60min) = 0.833mW |
-| CWT-SOIL-NPKPHCTH-S | 20.83mA | (20.83mA * 5V) * (10s/3600s) = 0.289mWh | (0.389mWh) / (5min/60min) = 3.47mW |
-
-| Battery MilliWatt Hours | Total Average Power Consumption | Time Until Battery Change |
-| :--- | :--- | :---|
-| (1.5V * 4 Batteries) * 3500mAh = 21,000mWh | 4.67mW + 0.833mW + 3.47mW + 0.54mW = 9.515mW | 21,000mWh / 9.515mW = 2,207.04 hours or 3.07 months|
-
  
 ## **Bill of Materials:**
 | Brand/Manufacturer | Part Name | Supplier | Part/Model Number | Quantity | Units | Unit Cost | Cost |
