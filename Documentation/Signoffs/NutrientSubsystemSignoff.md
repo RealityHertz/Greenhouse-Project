@@ -56,9 +56,8 @@ PLC's Nano 33 IoT via BLE connection and then to the PLC itself via an ethernet 
     2. The Arduino will be cycled out of sleep mode for 10 seconds every 5 minutes leading to the sensors using (10s/3600s) for the milliwatt hour calculations, or 10 seconds per hour, and (5min/60min) for the average power consumption calculations from the 5 minute cycle.
     3. The system is powered by 4 AA batteries each supplying 3500mAh and 1.5V.
     4. The uxcell MAX485 has a current draw of <5ma at 5V.
-    5. The CWT-SOIL-NPKPHCTH-S has a max power usage of 500mW at 24V giving us (500mw/24V) = 20.83mA usage which in turn would give us a maximum power usage of (20.83mA x 5V) = 104.17mW at 5V when used continuously [5].
+    5. The CWT-SOIL-NPKPHCTH-S has a max power usage of 500mW at 24V giving us (500mw/24V) = 20.83mA current draw [5].
     6. The Nisshinbo R1210N601D-TR-FE uses 0.09mA at 6V.
-    7. The R1210N601D-TR-FE would use (6V * 0.09mA) = 0.54mW.
     8. The duty cycle of the components would be (10s / (5min * 60s)) = 0.0333 because the system is only turned on for 10 seconds every 5 minutes.
     9. Therefore the Ardunio has an average current draw of (28mA * 0.0333) = 0.933mA.
     10. The sensor has an average current draw of (20.83mA * 0.0333) = 0.694mA.
