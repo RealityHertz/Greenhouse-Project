@@ -30,7 +30,7 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 
 ![NEMA 4X Enclosure Fit](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Screenshot%202024-03-08%20123324.jpg)
 
-*Figure 4. Enclosure Schematic
+*Figure 4. Enclosure Schematic. The figure on the right is the front view, with the left being the side view*
 ## **Analysis:**
 - **Lighting Spectrum:**
 	The system uses four full-spectrum light bulbs which mimic UV rays from the sun. These lights will allow the plants to achieve optimal growth even when sunlight is not apparent.
