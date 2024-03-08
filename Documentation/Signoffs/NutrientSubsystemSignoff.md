@@ -65,6 +65,7 @@ PLC's Nano 33 IoT via BLE connection and then to the PLC itself via an ethernet 
     12. This all leads to an average current draw of 0.933mA + 0.694mA + 0.167mA + 0.09mA = 1.884mA
     13. The total ampere-hours for the batteries in the worst case is (2200mAh * 4 batteries) = 8800mAh and in the best case: (3500mAh * 4 batteries) = 14000mAh.
     14. This means that the batteries would last between (8800mAh / 1.884mA) = 4670.91 hours or 6.487 months at the worst case and (14000mAh / 1.884mA) = 7430.998 hours or 10.321 months in the best case in accordance with the graph below and the expected ampere-hour output of 3500mAh.
+  
   ![Battery Dropoff](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/AA-100mA.png)
 
 *Figure 2. Duracell(DC) vs. Radio Shack(RS) AA battery voltage dropoff at 100mA current draw*
