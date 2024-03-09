@@ -30,9 +30,17 @@ _Figure 2. Arduino Nano 33 IoT Board Topology_
 
 _Figure 3. Set up for Subsystem_
 
+![Zipties](https://github.com/RealityHertz/Greenhouse-Project/blob/e3781d01eeff20c61832d13c1b5c98d5b7397d66/Documentation/Images/pgk5garl.png).
+
+_Figure 4. Direction for zipties for mounting_
+
 ![3D Artifact Top Down](https://github.com/RealityHertz/Greenhouse-Project/blob/7a92c124f4ef290e4a266dcd4652c733d0d4fb6e/Documentation/Images/3D-artifact-topdown-CAPSTONE.png).
 
-_Figure 4. Top down view of subsystem set up_
+_Figure 5. Top down view of subsystem set up_
+
+![Holding Sensor](https://github.com/RealityHertz/Greenhouse-Project/blob/515b6fbf5c76c52fc5e037464497fa9066775a7c/Documentation/Images/3D-artifact-sensor-CAPSTONE.png).
+
+_Figure 6. Side view of the two dowels ziptied together holding up the sensor_
 
 ## **Analysis:**
 
