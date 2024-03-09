@@ -55,22 +55,28 @@ PLC's Nano 33 IoT via BLE connection and then to the PLC itself via an ethernet 
     1. The power is routed through the Arduino so that the sensor may be cycled on and off as the Nano 33 IOT enters and exits sleep mode, while the Arduino is in sleep mode it does not produce a high enough voltage for any of the systems components to function so they are all essentially powered off.[4]
     2. The Arduino will be cycled out of sleep mode for 10 seconds every 5 minutes leading to the sensors using (10s/3600s) for the milliwatt hour calculations, or 10 seconds per hour, and (5min/60min) for the average power consumption calculations from the 5 minute cycle.
     3. The system is powered by 4 AA batteries each supplying 3500mAh and 1.5V.
-    4. The uxcell MAX485 has a current draw of <5ma at 5V.
-    5. The CWT-SOIL-NPKPHCTH-S has a max power usage of 500mW at 24V giving us (500mw/24V) = 20.83mA current draw [5].
+    4. The uxcell MAX485 has a current draw of <5ma in on mode and 0.3mA in sleep mode.
+    5. The CWT-SOIL-NPKPHCTH-S has a max power usage of 500mW at 24V giving us (500mw/24V) = 20.83mA current draw and has a current draw of 4mA in sleep mode [5].
     6. The Nisshinbo R1210N601D-TR-FE uses 0.09mA at 6V.
     8. The duty cycle of the components would be (10s / (5min * 60s)) = 0.0333 because the system is only turned on for 10 seconds every 5 minutes.
-    9. Therefore the Ardunio has an average current draw of (28mA * 0.0333) = 0.933mA.
-    10. The sensor has an average current draw of (20.83mA * 0.0333) = 0.694mA.
-    11. The Max485 translator has an average current draw of (5mA * 0.0333) = 0.167mA.
-    12. This all leads to an average current draw of 0.933mA + 0.694mA + 0.167mA + 0.09mA = 1.884mA
-    13. The total ampere-hours for the batteries in the worst case is (2200mAh * 4 batteries) = 8800mAh and in the best case: (3500mAh * 4 batteries) = 14000mAh.
-    14. This means that the batteries would last between (8800mAh / 1.884mA) = 4670.91 hours or 6.487 months at the worst case and (14000mAh / 1.884mA) = 7430.998 hours or 10.321 months in the best case in accordance with the graph below and the expected ampere-hour output of 3500mAh.
+    9. Therefore the Ardunio has an current draw of 28mA in on mode and 6mA in sleep mode.
+    12. According to the simulations below the system has a current draw of 53.92mA in on mode and 10.39mA in off mode.
+    13. When applying the duty cycle this gives us an average current consumption of (53.92mA * 0.0333) + (10.39mA * 0.0333) = 2.143mA.
+    15. This means that the batteries would last for 2200mAh / 2.143mA = 1026.598 hours and with an expected battery usage of 86.7% we will realistically see a battery life of (1026.598 * 0.867) = 890.06 hours or 1.24 months.
+
+  ![Nutrient On Sim](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Nutrient_On_Sim.png)
+
+  *Figure 2. LTSpice Simulation for nutrient system in on mode using current load components (all current measurements in amperes)*
+
+  ![Nutrient Off Sim](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Nutrient_Off_Sim.png)
+
+  *Figure 3. LTSpice Simulation for nutrient system in sleep mode using current load components (all current measurements in amperes)*
   
   ![Battery Dropoff](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/AA-100mA.png)
 
-*Figure 2. Duracell(DC) vs. Radio Shack(RS) AA battery voltage dropoff at 100mA current draw*
+  *Figure 4. Duracell(DC) vs. Radio Shack(RS) AA battery voltage dropoff at 100mA current draw*
 
-*Source: Adapted from [6]*
+  *Source: Adapted from [6]*
  
 ## **Bill of Materials:**
 | Brand/Manufacturer | Part Name | Supplier | Part/Model Number | Quantity | Units | Unit Cost | Cost |
