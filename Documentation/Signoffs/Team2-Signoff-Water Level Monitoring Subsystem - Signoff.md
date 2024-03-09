@@ -30,6 +30,10 @@ _Figure 2. Arduino Nano 33 IoT Board Topology_
 
 _Figure 3. Set up for Subsystem_
 
+![3D Artifact Top Down](https://github.com/RealityHertz/Greenhouse-Project/blob/7a92c124f4ef290e4a266dcd4652c733d0d4fb6e/Documentation/Images/3D-artifact-topdown-CAPSTONE.png).
+
+_Figure 4. Top down view of subsystem set up_
+
 ## **Analysis:**
 
 - **Arduino Nano 33 IoT**
