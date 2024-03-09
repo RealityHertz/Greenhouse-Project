@@ -70,7 +70,7 @@ _Figure 3. Set up for Subsystem_
   - When the JSN-SR04T reads a distance that is equal to or less than the target height of 1/3 max, this will flag the PLC system.
 
 - **Placement and Enclosure**
-  - The enclosure will be set up next to the resevoir using a cable gland to transport the wire out. Inside the enclosure will be the battery pack and the breadbaord. The wire for the sensor will then run out and over the reservoir. Two wooden dowels will be ziptied toegther with the sensor in between to hold the sensor over the center of the reservoir. 
+  - The enclosure will be set up using zipties linked together no the side of the resevoir using a cable gland to transport the wire out. Inside the enclosure will be the battery pack and the breadbaord. The wire for the sensor will then run out and over the reservoir. Two wooden dowels will be ziptied toegther with the sensor in between to hold the sensor over the center of the reservoir. 
 
 
 
