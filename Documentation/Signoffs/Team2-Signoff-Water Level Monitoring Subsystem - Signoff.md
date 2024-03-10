@@ -30,9 +30,11 @@ _Figure 2. Arduino Nano 33 IoT Board Topology_
 
 _Figure 3. Set up for Subsystem_
 
-![Zipties](https://github.com/RealityHertz/Greenhouse-Project/blob/a60f073921a4aab1bd0b0f29eba7014c3f44a608/Documentation/Images/pgk5garl.jpg).
+![Mounting Model](https://github.com/RealityHertz/Greenhouse-Project/blob/6118d1c71d864b9eebc8de3b106a7ff571bb5395/Documentation/Images/Mounting-Model.png)
 
-_Figure 4. Direction for zipties for mounting_
+_Figure 4. 3D model  of desinged mount._
+
+_For the model:  https://www.tinkercad.com/things/jwpPelM5zqh/edit?sharecode=Q2aPLBubOT7n5q68HoEgVgSHFNOAS2fjU0qmp6W8gsg_
 
 ![3D Artifact Top Down](https://github.com/RealityHertz/Greenhouse-Project/blob/7a92c124f4ef290e4a266dcd4652c733d0d4fb6e/Documentation/Images/3D-artifact-topdown-CAPSTONE.png).
 
@@ -82,7 +84,7 @@ _Figure 6. Side view of the two dowels ziptied together holding up the sensor_
   - When the JSN-SR04T reads a distance that is equal to or less than the target height of 1/3 max, this will flag the PLC system.
 
 - **Placement and Enclosure**
-  - The enclosure will be set up using zipties linked together no the side of the resevoir using a cable gland to transport the wire out. Inside the enclosure will be the battery pack and the breadbaord. The wire for the sensor will then run out and over the reservoir. Two wooden dowels will be ziptied toegther with the sensor in between to hold the sensor over the center of the reservoir. 
+  - The enclosure will be set up using a desgined mount on the side of the resevoir using a cable gland to transport the wire out. Inside the enclosure will be the battery pack and the breadbaord. The wire for the sensor will then run out and over the reservoir. Two wooden dowels will be ziptied toegther with the sensor in between to hold the sensor over the center of the reservoir. 
 
 
 
@@ -96,7 +98,6 @@ _Figure 6. Side view of the two dowels ziptied together holding up the sensor_
 |DIYmore|Water Level Sensor|DIYmore|JSN-SR04T|1|$12.99|$12.99|
 |Polycase|Enclosure|Polycase|SK-18 Enclosure with Knockouts 5.12 x 3.70 x 2.24 in|1|$20.92|$20.92|
 |Polycase|Cable Gland|Ploycase|CG3 Gray Cable Glands 1.53 x 1.19 x 1.19in|1|$2.86|$2.86|
-|Polycase|Mounting Kit|Ploycase|SK-99 Mounting Kit for SK Series Enclosures 0.91 x 0.59 x 0.86 in|1|$3.36|$3.36|
 |Qunqi|Breadboard|Amazon|Qunqi 400 tie Point Experiment Mini Breadboard 5.5×8.2×0.85cm|1|$5.99|$5.99|
 |Madison Mill|Dowel|Lowes|Madison Mill 0.75-in dia x 36-in L Square Poplar Dowel|2|$3.98|$7.96|
 |Tin-N-Lock|Ziptiews|Amazon|Tie-N-Lock 8" Heavy Duty Nylon Cable Ties, 50 lb Test, 100 PC, Black|1|$1.21|$1.21|
