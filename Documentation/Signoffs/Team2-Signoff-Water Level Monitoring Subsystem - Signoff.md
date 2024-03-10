@@ -30,7 +30,7 @@ _Figure 2. Arduino Nano 33 IoT Board Topology_
 
 _Figure 3. Set up for Subsystem_
 
-![Zipties](https://github.com/RealityHertz/Greenhouse-Project/blob/e3781d01eeff20c61832d13c1b5c98d5b7397d66/Documentation/Images/pgk5garl.png).
+![Zipties](https://github.com/RealityHertz/Greenhouse-Project/blob/a60f073921a4aab1bd0b0f29eba7014c3f44a608/Documentation/Images/pgk5garl.jpg).
 
 _Figure 4. Direction for zipties for mounting_
 
