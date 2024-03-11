@@ -58,17 +58,20 @@ PLC's Nano 33 IoT via BLE connection and then to the PLC itself via an ethernet 
     4. The uxcell MAX485 has a current draw of <5ma in on mode and 0.3mA in sleep mode.
     5. The CWT-SOIL-NPKPHCTH-S has a max power usage of 500mW at 24V giving us (500mw/24V) = 20.83mA current draw and has a current draw of 4mA in sleep mode [5].
     6. The Nisshinbo R1210N601D-TR-FE uses 0.09mA at 6V.
-    8. The duty cycle of the components would be (10s / (5min * 60s)) = 0.0333 because the system is only turned on for 10 seconds every 5 minutes.
-    9. Therefore the Ardunio has an current draw of 28mA in on mode and 6mA in sleep mode.
-    12. According to the simulations below the system has a current draw of 53.92mA in on mode and 10.39mA in off mode.
-    13. When applying the duty cycle this gives us an average current consumption of (53.92mA * 0.0333) + (10.39mA * 0.0333) = 2.143mA.
-    15. This means that the batteries would last for 2200mAh / 2.143mA = 1026.598 hours and with an expected battery usage of 86.7% we will realistically see a battery life of (1026.598 * 0.867) = 890.06 hours or 1.24 months.
+    7. In the simulations below the battery and converter are shown as sinusoidal voltage sources to simulate the decay of the battery and the effeciency of the converter respectively.
+    8. The Arduino is modeled as a 5V voltage source to simulate the Arduino's 5V output pin.
+    9. The duty cycle of the components would be (10s / (5min * 60s)) = 0.0333 because the system is only turned on for 10 seconds every 5 minutes.
+    10. Therefore the Ardunio has an current draw of 28mA in on mode and 6mA in sleep mode.
+    12. According to the simulations below the system has a current draw of 25.83mA in on mode with additional loads from the Arduino and the converter giving a total current draw of 25.83mA + 28mA + 0.09mA = 53.92mA in on mode.
+    13. According to the simulations below the system has a current draw of 25.83mA in on mode with additional loads from the Arduino and the converter giving a total current draw of 4.3mA + 6mA + 0.09mA = 10.39mA in off mode.
+    14. When applying the duty cycle this gives us an average current consumption of (53.92mA * 0.0333) + (10.39mA * 0.9666) = 11.841mA.
+    15. This means that the batteries would last for 2200mAh / 11.841mA = 185.795 hours and with an expected battery usage of 86.7% we will realistically see a battery life of (185.765 * 0.867) = 161.08 hours or 6.71 days.
 
-  ![Nutrient On Sim](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Nutrient_On_Sim.png)
+  ![Nutrient On Sim](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Nutrient_On_Sim2.png)
 
   *Figure 2. LTSpice Simulation for nutrient system in on mode using current load components (all current measurements in amperes)*
 
-  ![Nutrient Off Sim](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Nutrient_Off_Sim.png)
+  ![Nutrient Off Sim](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Nutrient_Off_Sim2.png)
 
   *Figure 3. LTSpice Simulation for nutrient system in sleep mode using current load components (all current measurements in amperes)*
   
