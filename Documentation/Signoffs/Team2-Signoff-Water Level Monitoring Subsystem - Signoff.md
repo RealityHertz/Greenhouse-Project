@@ -26,7 +26,7 @@ _Figure 1. Wiring Schematic for Power to Sensor_
 
 _Figure 2. Arduino Nano 33 IoT Board Topology_
 
-![3D Artifact](https://github.com/RealityHertz/Greenhouse-Project/blob/6050fa68b3df3f069c6c240e58d2556a632e1d1b/Documentation/Images/3D-artifact-CAPSTONE.png).
+![3D Artifact](https://github.com/RealityHertz/Greenhouse-Project/blob/6118d1c71d864b9eebc8de3b106a7ff571bb5395/Documentation/Images/3D-artifact-CAPSTONE.png).
 
 _Figure 3. Set up for Subsystem_
 
@@ -36,7 +36,7 @@ _Figure 4. 3D model  of desinged mount._
 
 _For the model:  https://www.tinkercad.com/things/jwpPelM5zqh/edit?sharecode=Q2aPLBubOT7n5q68HoEgVgSHFNOAS2fjU0qmp6W8gsg_
 
-![3D Artifact Top Down](https://github.com/RealityHertz/Greenhouse-Project/blob/7a92c124f4ef290e4a266dcd4652c733d0d4fb6e/Documentation/Images/3D-artifact-topdown-CAPSTONE.png).
+![3D Artifact Top Down](https://github.com/RealityHertz/Greenhouse-Project/blob/6118d1c71d864b9eebc8de3b106a7ff571bb5395/Documentation/Images/3D-artifact-topdown-CAPSTONE.png).
 
 _Figure 5. Top down view of subsystem set up_
 
