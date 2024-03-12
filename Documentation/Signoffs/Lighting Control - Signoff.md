@@ -43,7 +43,7 @@ The function of this subsystem is to have grow lights shine on the plants to hel
  1. The Arduino 33 Iot only has the ability to output 5V and a maximum current of 1 A, which will not satisfy the lights that need 100W.
  2.  A 15A breaker will be placed in the circuit to protect the wiring of the system. This breaker will meet the needs of the circuit based on: P=IV = 400W=I*120, therefore, the current is 3.33 amps which is below the rating of the 15A breaker.
 
-[Breaker Datasheet](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Breaker%20Datasheet.png)
+![Breaker Datasheet](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Breaker%20Datasheet.png)
 
  3. A relay will be placed in the circuit to control the main power while still allowing the Nano IoT to control the lights.[3] The relay has a maximum current rating of 10A and a maximum voltage rating of 250VAC. The system will be running on 120 VAC and 3.33A, therefore this relay meets the requirements. From the outlet, the power will be run through an extension cord to a NEMA 4x enclosure which will house the 15A circuit breaker and the relay. NEMA 4x was chosen due to its ability to keep out dust and direct sprays from water.
 Here is an  excerpt from the Datasheet provinng these requirements will be fulfilled:
