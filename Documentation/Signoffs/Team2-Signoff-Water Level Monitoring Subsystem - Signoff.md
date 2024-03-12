@@ -54,14 +54,14 @@ _Figure 6. Side view of the two dowels ziptied together holding up the sensor_
   - **Power Supply for Arduino Nano 33 IoT**
     - The power used will need to supply 5 volts to the Pin 15 on the Nano 33 IoT.
     - The Pin 14 on the Nano 33 IoT will need to be connected to the ground from the power supply.
-    - The JSN-SR04T draws 5mA at 5V.
-    - The JSN-SR04T would use (30mA x 5V) x (10s / 3600s) = 0.4167mWh leading to an average power of 0.4167mWh / (5min/60min) = 5mW.
+    - The JSN-SR04T draws 30mA at 5V while on and 5 mA in a dormancy state.
+    - The JSN-SR04T would use (30mA x 5V) x (10s / 3600s) = 0.4167mWh and (5mA x 5V) x (290s / 3600s) = 2.013mWh leading to an average power of 0.4167mWh + 2.013mWh = 2.431mWh, (2.431mWh) / (5min/60min) = 29.167mW.
     - The Arduino will be powered by 4 AA batteries which supplies 3500mAh and 1.5V each
     - The total mWh supplied is equal to (1.5V x 4) x 3500 = 21,000mWh
     - Therefore, the energy used during the "while on" mode is (28mA x 5V) x (10s / 3600s) = .07778mWh
     - The average power is .07778 / (5min / 60min) = 0.933mW
-    - The total power used by everything is .933mW + 5mW = 5.933mW.
-    - This means the batteries will last (21,000mWh / 5.933mW) = 3540 hours or almost 5 months.
+    - The total power used by everything is .933mW + 29.167mW = 30.1mW.
+    - This means the batteries will last (21,000mWh / 30.1mW) = 698 hours or almost 1 month.
 - **JSN-SR04T**
   1. In order for the sensor to work, the JSN-SR04T must be on for at least 10 ms, which is 1/100 of the time its planned to be briefly turn on.
   2. The sensor has a range of 25cm - 4m.
