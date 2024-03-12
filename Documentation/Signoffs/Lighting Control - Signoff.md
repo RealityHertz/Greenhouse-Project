@@ -42,7 +42,17 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 - **Power Supply for Grow Bulbs:**
  1. The Arduino 33 Iot only has the ability to output 5V and a maximum current of 1 A, which will not satisfy the lights that need 100W.
  2.  A 15A breaker will be placed in the circuit to protect the wiring of the system. This breaker will meet the needs of the circuit based on: P=IV = 400W=I*120, therefore, the current is 3.33 amps which is below the rating of the 15A breaker.
+
+[Breaker Datasheet](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Breaker%20Datasheet.png)
+
  3. A relay will be placed in the circuit to control the main power while still allowing the Nano IoT to control the lights.[3] The relay has a maximum current rating of 10A and a maximum voltage rating of 250VAC. The system will be running on 120 VAC and 3.33A, therefore this relay meets the requirements. From the outlet, the power will be run through an extension cord to a NEMA 4x enclosure which will house the 15A circuit breaker and the relay. NEMA 4x was chosen due to its ability to keep out dust and direct sprays from water.
+Here is an  excerpt from the Datasheet provinng these requirements will be fulfilled:
+
+"Current Rating: 10 Amps
+Coil Voltage: 5 Volts
+Contact Current Rating:	10 Amps
+Maximum Switching Current: 10 Amps"
+
  4. Next, 14 gauge extension cords will be run from the relay to the lights. This will allow for safe power transfer due to the maximum amperage rating on the wire being 15 amps.[6]
  5. The positive wire of the extension cord, which is from the 120V wall outlet, will go into the breaker which will then come out of the other side of the breaker and into the common pin of the relay. The neutral wire will go straight to the extension cord which is connected to the lights, which allows for the unused power from the lights to return to the power supply. The ground wire will be grounded inside the box and also go to the lights, this is to ensure that the circuit will be shorted if there were to be a loose neutral or hot wire in the box.
  6.  The bulbs will screw into an aluminum reflector lamp which will plug into the extension cord.
