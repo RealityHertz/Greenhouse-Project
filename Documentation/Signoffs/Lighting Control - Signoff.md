@@ -46,7 +46,7 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 ![Breaker Datasheet](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Breaker%20Datasheet.png)
 
  3. A relay will be placed in the circuit to control the main power while still allowing the Nano IoT to control the lights.[3] The relay has a maximum current rating of 10A and a maximum voltage rating of 250VAC. The system will be running on 120 VAC and 3.33A, therefore this relay meets the requirements. From the outlet, the power will be run through an extension cord to a NEMA 4x enclosure which will house the 15A circuit breaker and the relay. NEMA 4x was chosen due to its ability to keep out dust and direct sprays from water.
-Here is an  excerpt from the Datasheet provinng these requirements will be fulfilled:
+Here is an  excerpt from the Datasheet providing these requirements will be fulfilled:
 
 "Current Rating: 10 Amps
 Coil Voltage: 5 Volts
@@ -57,8 +57,8 @@ Maximum Switching Current: 10 Amps"
  5. The positive wire of the extension cord, which is from the 120V wall outlet, will go into the breaker which will then come out of the other side of the breaker and into the common pin of the relay. The neutral wire will go straight to the extension cord which is connected to the lights, which allows for the unused power from the lights to return to the power supply. The ground wire will be grounded inside the box and also go to the lights, this is to ensure that the circuit will be shorted if there were to be a loose neutral or hot wire in the box.
  6.  The bulbs will screw into an aluminum reflector lamp which will plug into the extension cord.
 
-- **Enclosure Sizing:**
-1. The NEMA 4X enclosure is a 12x10x6 box which will house the circuit breaker and relay. The circuit breaker is 0.71x3.15x2.95 and the relay is 1.58x1.18x1.07. Therefore, these items will have a perfect fit inside of the enclosure and allow for plenty of space for the user to maneuver and to be able to run wires to each.
+- **Enclosure Sizing and Mounting:**
+1. The NEMA 4X enclosure is a 12x10x6 box which will house the circuit breaker and relay. The circuit breaker is 0.71x3.15x2.95 and the relay is 1.58x1.18x1.07. Therefore, these items will have a perfect fit inside of the enclosure and allow for plenty of space for the user to maneuver and to be able to run wires to each. Each component inside of the enclosure will mount using DIN Mounting rails which are provided with the enclosure and both the relay and breaker can connect to.
 
 - **Light Intensity:**
 1. To give the plants the needed light intensity of 200-400 µmol/m²/s, the distance from the top of the plant to the light must be calculated. Using the formula, Irradiance = Power/4π(r)^2, where P is equal to 100 watts for the bulb and r is equal to the distance of 5.5 feet from the top of the plant, the irradiance is equal to 318 µmol/m²/s, which is well within the range needed for cotton plants. [4]
