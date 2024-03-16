@@ -45,10 +45,10 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 
 ![Breaker Datasheet](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Breaker%20Datasheet.png)
 
- 3. A relay will be placed in the circuit to control the main power while still allowing the Nano IoT to control the lights.[3] The relay has a maximum current rating of 10A and a maximum voltage rating of 250VAC. The system will be running on 120 VAC and 3.33A, therefore this relay meets the requirements. From the outlet, the power will be run through an extension cord to a NEMA 4x enclosure which will house the 15A circuit breaker and the relay. NEMA 4x was chosen due to its ability to keep out dust and direct sprays from water.
+ 3. A relay will be placed in the circuit to control the main power while still allowing the Nano IoT to control the lights.[3] The relay has a maximum current rating of 16A and a maximum voltage rating of 250VAC. The system will be running on 120 VAC and 3.33A, therefore this relay meets the requirements. From the outlet, the power will be run through an extension cord to a NEMA 4x enclosure which will house the 15A circuit breaker and the relay. NEMA 4x was chosen due to its ability to keep out dust and direct sprays from water.
 Here is an  excerpt from the Datasheet providing these requirements will be fulfilled:
 
-"Current Rating: 10 Amps
+"Current Rating: 16 Amps
 Coil Voltage: 5 Volts
 Contact Current Rating:	10 Amps
 Maximum Switching Current: 10 Amps"
