@@ -19,7 +19,7 @@ The function of this subsystem is to relay the water levels to the Arduino via t
 
 ## **Buildable Schematic:**
 
-![Buildable Schematic Water Level](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/WaterLevelSchem.png)
+![Buildable Schematic Water Level](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Water_Level_Schematic.png)
 
 _Figure 1. Wiring Schematic for Power to Sensor_ 
 ![Arduino Nano 33](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/ArduinoNano33.png)
@@ -54,14 +54,22 @@ _Figure 6. Side view of the two dowels ziptied together holding up the sensor_
   - **Power Supply for Arduino Nano 33 IoT**
     - The power used will need to supply 5 volts to the Pin 15 on the Nano 33 IoT.
     - The Pin 14 on the Nano 33 IoT will need to be connected to the ground from the power supply.
+    - The Arduino uses 28mA in on mode and 6mA in sleep mode.
     - The JSN-SR04T draws 30mA at 5V while on and 5 mA in a dormancy state.
-    - The JSN-SR04T would use (30mA x 5V) x (10s / 3600s) = 0.4167mWh and (5mA x 5V) x (290s / 3600s) = 2.013mWh leading to an average power of 0.4167mWh + 2.013mWh = 2.431mWh, (2.431mWh) / (5min/60min) = 29.167mW.
-    - The Arduino will be powered by 4 AA batteries which supplies 3500mAh and 1.5V each
-    - The total mWh supplied is equal to (1.5V x 4) x 3500 = 21,000mWh
-    - Therefore, the energy used during the "while on" mode is (28mA x 5V) x (10s / 3600s) = .07778mWh
-    - The average power is .07778 / (5min / 60min) = 0.933mW
-    - The total power used by everything is .933mW + 29.167mW = 30.1mW.
-    - This means the batteries will last (21,000mWh / 30.1mW) = 698 hours or almost 1 month.
+    - The converter has a current draw of 0.09mA.
+    - The batteries would have a realistic voltage drop off point of 2200mAh according to the graph below.
+    - The system is on for 10 seconds every 5 minutes leading to a duty cycle of (10s / (5min * 60s)) = 0.0333
+    - In "on" mode the system uses a total of 28mA + 30mA + 0.09mA = 58.09mA when the duty cycle is applied this leads to an average current draw of 58.09mA * 0.0333 = 1.936mA.
+    - In "sleep" mode the system uses a total of 6mA + 5mA + 0.09mA = 11.09mA when the duty cycle is applied this leads to an average current draw of 11.09 * 0.9667 = 10.72mA.
+    - There would be a total average current draw of 10.72mA + 1.936mA = 12.657mA leading to a battery life of 2200mAh / 12.657mA = 173.821 hours.
+    - Since we have an expected battery usage of 86.7% we will realistically see a battery life of (173.821 * 0.867) = 150.65 hours or 6.28 days.
+   
+- **DC to DC Converter - Nisshinbo R1210N601D-TR-FE**
+  
+   1. The converter takes an input voltage range of 0.8-8V and produces a constant output of 6V ±0.15V.
+   2. This is within the range of input voltage for the Arduino Nano 33 IoT and reduces the risk of having too little voltage for the Arduino as the battery charges dissipate.
+   3. Since the minimum input voltage of the converter is 0.8V this means that the system will be able to operate until the power supply voltage drops below 0.2V per battery which means that roughly ((1.5V-0.2V)/1.5V) = 0.867 or 86.7% of the individual battery's supply is used before needing to be replaced.
+
 - **JSN-SR04T**
   1. In order for the sensor to work, the JSN-SR04T must be on for at least 10 ms, which is 1/100 of the time its planned to be briefly turn on.
   2. The sensor has a range of 25cm - 4m.
@@ -86,7 +94,10 @@ _Figure 6. Side view of the two dowels ziptied together holding up the sensor_
 - **Placement and Enclosure**
   - The enclosure will be set up using a desgined mount on the side of the resevoir using a cable gland to transport the wire out. Inside the enclosure will be the battery pack and the breadbaord. The wire for the sensor will then run out and over the reservoir. Two wooden dowels will be ziptied toegther with the sensor in between to hold the sensor over the center of the reservoir. 
 
+![Battery Dropoff](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/AA-100mA.png)
 
+_Figure 7. Duracell(DC) vs. Radio Shack(RS) AA battery voltage dropoff at 100mA current draw_
+_Source: Adapted from [3]_
 
 ## **Bill of Materials:**
 
@@ -101,6 +112,7 @@ _Figure 6. Side view of the two dowels ziptied together holding up the sensor_
 |Qunqi|Breadboard|Amazon|Qunqi 400 tie Point Experiment Mini Breadboard 5.5×8.2×0.85cm|1|$5.99|$5.99|
 |Madison Mill|Dowel|Lowes|Madison Mill 0.75-in dia x 36-in L Square Poplar Dowel|2|$3.98|$7.96|
 |Tin-N-Lock|Ziptiews|Amazon|Tie-N-Lock 8" Heavy Duty Nylon Cable Ties, 50 lb Test, 100 PC, Black|1|$1.21|$1.21|
+| Nisshinbo | 6V dc to dc converter | Arrow.com | R1210N601D-TR-FE | 5 | $0.48 | $2.39 |
 
 **References**
 
@@ -108,3 +120,5 @@ _Figure 6. Side view of the two dowels ziptied together holding up the sensor_
 ‌<https://www.arduino.cc/reference/en/libraries/arduino-low-power/>
 
 [2] O. Staquet, "Arduino-Nano-33-IoT-Ultimate-Guide," github.com [Online]. Available: https://github.com/ostaquet/Arduino-Nano-33-IoT-Ultimate-Guide/blob/master/SavePowerSleeping.md. [Accessed Feb. 14, 2024].
+
+[3] PowerStream. "Discharge tests of AA Batteries, Alkaline and NiMH". (Feb. 7, 2023). Accessed: Mar. 7, 2024. [online]. Available: https://www.powerstream.com/AA-tests.htm
