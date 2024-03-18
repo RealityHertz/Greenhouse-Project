@@ -93,13 +93,13 @@ Here is an  excerpt from the Datasheet providing these requirements will be fulf
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
 |----|-----------|-----------|------------|--------|----------------|-----|
 |LCLCTC|Relay Module|Amazon|B0BQ2RFW6G|1|$18.90|$18.90|
-|Highydro|Full Spectrum Grow Light|Amazon|Grow Light|4|$20.99|$83.96|
-|Arduino|Bluetooth Board|Amazon|Nano 33 IoT|2|$29.99|$59.98|
-|VIVOSUN|4 Pack Lamp Aluminum Reflector E26|Amazon|B07H8G6PKX|1|$29.69|$29.69|
-|DIHOOL|15 Amp Circuit Breaker|Amazon|B0BFF6CX2X|1|$12.78|$12.78|
-|AIRIC|Cable Glands|Amazon|NPT 1/4" 20 Pieces|2|$13.99|$27.98|
+|Highydro|Full Spectrum Grow Light|Amazon|Grow Light|4|$21.99|$87.96|
+|Arduino|Bluetooth Board|Amazon|Nano 33 IoT|1|$25.90|$25.90|
+|VIVOSUN|4 Pack Lamp Aluminum Reflector E26|Amazon|B07H8G6PKX|1|$22.99|$22.99|
+|DIHOOL|15 Amp Circuit Breaker|Amazon|B0BFF6CX2X|1|$13.99|$13.99|
+|AIRIC|Cable Glands|Amazon|NPT 1/4" 20 Pieces|1|$11.99|$11.99|
 |TOCRETOARE|NEMA 4x Enclosure|Amazon|12x10x6" Box|1|$49.99|$49.99|
-|HONDERSON|10ft 14-3 Extension Cord|Amazon|3 Prong SJTW Heavy Duty Extension Cable|1|$12.19|$12.19|
+|HONDERSON|10ft 14-3 Extension Cord|Amazon|3 Prong SJTW Heavy Duty Extension Cable|1|$12.99|$12.99|
 |Maximm|30ft 14 Gauge Extension Cord with Multiple Outlets|Amazon|B0BT56KZCR|1|$32.99|$32.99|
 |Leviton|Straight Blade Rubber Plug|Amazon|000-515PR-000|1|$7.25|$7.25|
 
