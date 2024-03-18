@@ -1,18 +1,18 @@
-# What to put in this folder
+# Reports Folder
 
-In this folder the final verion of each of the following should be found:
+This folder contains a collection of reports used in the Autonomous Greenhouse project.
 
-1. [The project proposal](https://github.com/TnTech-ECE/StarterRepo/blob/364141e6634a5ea8218900e1664af58cee2d57e7/Reports/ProjectProposal.md)
-2. [Conceptual Design and Planning](https://github.com/TnTech-ECE/StarterRepo/blob/8979e1445f6a24c35b43196b08c25d6c5497d1a5/Reports/DesignPhase1.md)
-3. [Final Report](https://github.com/TnTech-ECE/StarterRepo/blob/2ec7fa8f6471a12fe058d78877ed54082690cfc5/Reports/FinalReport.md)
-4. [Lessons Learned](https://github.com/TnTech-ECE/CapstoneStarterRepo/blob/main/Reports/Lessons%20Learned.md)
+## Contents
 
-Each of the above are clickable and link to the expectations and requirements for each of the documents.
+- Conceptual Design Final Draft
+- Conceptual Design
+- Project Proposal Revision
+- Project Proposal
 
-## Examples
+## Usage
 
-Isaac Newton is quoted as having said that if he "saw further than others", it was because "he stood on the backs of giants" which came before him. Likewise, current teams benefit from the experience of those teams which came before. 
+To hold and keep track of reports that document usages, completion, costs, etc.
 
-Each of the capstone team projects in [this](https://github.com/TnTech-ECE) directory have successfully completed capstone. Peruse them to find examples of how they met these expectations. 
+## File Formats
 
-Any past projects that provide significant help or inspiration must be cited as a source.
+The reports are commonly provided in `.pdf`

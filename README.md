@@ -1,60 +1,83 @@
-# {Name of the Project} - Your project should have a catchy and functional name
-
-The descriptions and information in all readme files in the starter repo (including this one) must be edited. All section descriptions must be deleted. Any failure to remove the description information (like the statement that you are currently reading) will be heavily penalized!
+# Autonomous Greenhouse Project
 
 ## Executive Summary
 
-Give the elevator pitch and abstract for the project. It should allow interested visitors to broadly understand the motivation for the project and what the project has accomplished.
+With this project Team 2 proposes to create a greenhouse that can wirelessly and autonomously detect soil moisture, pH level, and nutrient level as well as carbon dioxide and nitrogen monoxide in the greenhouse's atmosphere along with the greenhouse's temperature and humidity. The greenhouse will also be able to autonomously detect the water level of an exterior water source and fill said reservoir when the level is too low as well as running a timed watering cycle for the plants. 
 
 
 ## Capabilities
 
-Here explain in more detail (though not as much as will be given in the datasheet) what the version of this project in this repo is capable of doing.
+This version of the project will be able to accurately measure the levels of nitrogen, phosphorus, and potassium in the greenhouse soil as well as the temperature, humidity, carbon dioxide, and nitrogen monoxide levels in the atmosphere. The project will also be able to detect the water level of an external reservoir that will alert when low and be able to refill when the alert is sent.
 
 
 ## Salient Outcomes
 
-Projects often have some outcomes that are more interesting than others. Here, highlight those things that you found interesting!
-
+Currently, there are no outcomes for the Autonomous Greenhouse project.
 
 ## Project Demonstration & Images
 
-Give a link to a video of the project being demonstrated. The video should be hosted on the capstone youtube.
-
-Below the video link show some well-taken, appropriately sized images of the project.
+There are no demonstrations currently available.
 
 
 ## About Us
 
 ### Team
 
-Give a brief bio for each team member and their broad contribution to the project (no need to be terribly specifc).
+
+Team 2 is a 5 member Capstone Design Project Team at Tennessee Technological University who began Version 1 of the Greenhouse Automation Project in the Fall semester of 2023. The group members are Robert Jones, Jared Hooker, Jaxson Billings, Bryan Rhoton, and Grant Hooper. All members contributed to the C02 and N02 Monitoring System.
+
+![Noah Headshot](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Noah%20Jones%20Headshot.jpg)
+- **Robert Jones**
+  - Electrical Engineering Major
+  - Hardware
+  - Controls
+  - Lighting Control System
+ 
+![Bryan Headshot](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Bryan_Rhoton_Headshot_resize.jpg)
+- **Bryan Rhoton**
+  - Computer Engineering Major
+  - Soil Detection System
+
+![Jared Headshot](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Jared%20Hooker%20Headshot.jpg)
+- **Jared Hooker**
+  - Electrical Engineering Major
+  - Controls
+  - Temperature & Humidity Monitoring System
+
+![Jaxson Headshot](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Jaxson%20Billings%20Headshot.jpg)
+- **Jaxson Billings**
+  - Computer Engineering Major
+  - Programming
+  - Communication and Display Subsystem
+
+![Grant Headshot](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Grant%20Hooper%20Headshot.jpg)
+- **Grant Hooper**
+  - Electrical Engineer
+  - Controls
+  - Water Level Monitoring System
 
 ### Faculty Supervisor
 
-Tell who the faculty supervisor was for the project
+The faculty advisor for the project is Jesse Roberts.
 
 ### Stakeholders
 
-Tell a bit about the customer for the project. Also discuss any other groups (specific or general) that are expected to be impacted by the project.
+The customer for this project is the Agricultural Department at Tennessee Technological University. A scalable version of this design would be useful for agricultural researchers, farmers, and/or urban growers.
 
 ### Recognitions
 
-Use this space to recognize anyone that you feel has had an impact on the project. Be sure to recognize the work of previous teams if you referenced it for style or content. 
+Team 2 would like to recognize the sponsor for this project, EOSYS. They have worked closely with the group to help provide feedback, troubleshoot, and brainstorm ideas for the project. 
 
 ## Repo Organization
 
-Give the layout of the repo and what can be found where. Make it easy on those who are interested by making the headings of the various things in this section clickable links to the relevant folder or file in the repo.
+### [Reports](https://github.com/RealityHertz/Greenhouse-Project/tree/main/Reports)
 
+Finalized reports can be found by going to the Reports folder or by clicking the link above.
 
-### Reports
+### [Documentation](https://github.com/RealityHertz/Greenhouse-Project/tree/main/Documentation)
 
-In the reports section of this repository information about the individual expectations for the reports and how they should be housed is provided.
+Group documentation can be found by going to the Documentation folder or by clicking the link above.
 
-### Documentation
+### [Software](https://github.com/RealityHertz/Greenhouse-Project/tree/main/Software)
 
-In the documentaion section information regarding the documentation that is required and how it should be organized is given.
-
-### Software
-
-In the software directory of the repo information regarding how each team is expected to document software can be found.
+Software can be found by going to the Software folder or by clicking the link above.
