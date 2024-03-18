@@ -17,10 +17,10 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 	
 
 ## **Buildable Schematic:**
-![Lighting Control Schematic](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADLightingSubsystem3-16.jpg)
+![Lighting Control Schematic](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Final%20Drawing%20Line.png)
 *Figure 1. Buildable Schematic*
 
-![Relay Diagram](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/RelayPic.png)
+![Relay Diagram](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Final%20Relay%20Pic.png)
 
 *Figure 2. Relay Diagram*
 
@@ -28,7 +28,7 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 
 *Figure 3. Connections*
 
-![NEMA 4X Enclosure Fit](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CADUPDATED.png)
+![NEMA 4X Enclosure Fit](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Cad%20Final%20Update.png)
 
 *Figure 4. Enclosure Schematic. The figure on the right is the front view, with the left being the top view*
 ## **Analysis:**
@@ -56,7 +56,7 @@ The function of this subsystem is to have grow lights shine on the plants to hel
  6. NEMA 4x was chosen due to its ability to keep out dust and direct sprays from water.
 Here is an  excerpt from the Datasheet providing these requirements will be fulfilled:
 
-![Relay Data Sheet](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Relay%20Datasheet.png)
+![Relay Data Sheet](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Final%20Relay%20Data.png)
 
 *Figure 6. Relay Datasheet*
 
@@ -96,12 +96,12 @@ Here is an  excerpt from the Datasheet providing these requirements will be fulf
 |Highydro|Full Spectrum Grow Light|Amazon|Grow Light|4|$20.99|$83.96|
 |Arduino|Bluetooth Board|Amazon|Nano 33 IoT|2|$29.99|$59.98|
 |VIVOSUN|4 Pack Lamp Aluminum Reflector E26|Amazon|B07H8G6PKX|1|$29.69|$29.69|
-|DIHOOL|15 Amp Circuit Breaker|Amazon|B0BFF6CX2X|1|$12.78|$25.56|
+|DIHOOL|15 Amp Circuit Breaker|Amazon|B0BFF6CX2X|1|$12.78|$12.78|
 |AIRIC|Cable Glands|Amazon|NPT 1/4" 20 Pieces|2|$13.99|$27.98|
 |TOCRETOARE|NEMA 4x Enclosure|Amazon|12x10x6" Box|1|$49.99|$49.99|
-|HONDERSON|10ft 14-3 Extension Cord|Amazon|3 Prong SJTW Heavy Duty Extension Cable|1|$12.19|$12.99|
+|HONDERSON|10ft 14-3 Extension Cord|Amazon|3 Prong SJTW Heavy Duty Extension Cable|1|$12.19|$12.19|
 |Maximm|30ft 14 Gauge Extension Cord with Multiple Outlets|Amazon|B0BT56KZCR|1|$32.99|$32.99|
-|Leviton|Straight Blade Rubber Plug|Amazon|000-515PR-000|2|$7.25|$14.50|
+|Leviton|Straight Blade Rubber Plug|Amazon|000-515PR-000|1|$7.25|$7.25|
 
 
 ## **References:**
