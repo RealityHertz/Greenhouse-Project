@@ -51,7 +51,7 @@ The function of this subsystem is to have grow lights shine on the plants to hel
 
 
  3. A relay will be placed in the circuit to control the main power while still allowing the Nano IoT to control the lights.[3]
- 4. The relay has a maximum current rating of 20 A and a maximum voltage rating of 240 V. The system will be running on 120 V and 3.33A, therefore this relay meets the requirements.
+ 4. The relay has a maximum current rating of 40 A and a maximum voltage rating of 480 VAC. The system will be running on 120 VAC and 3.33A, therefore this relay meets the requirements.
  5. From the outlet, the power will be run through an extension cord to a NEMA 4x enclosure which will house the 15A circuit breaker and the relay.
  6. NEMA 4x was chosen due to its ability to keep out dust and direct sprays from water.
 Here is an  excerpt from the Datasheet providing these requirements will be fulfilled:
@@ -70,7 +70,7 @@ Here is an  excerpt from the Datasheet providing these requirements will be fulf
 
 - **Enclosure Sizing and Mounting:**
 1. The NEMA 4X enclosure is a 12x10x6 box which will house the circuit breaker and relay.
-2. The circuit breaker is 0.71x3.15x2.95 and the relay is .71x4.33x4.05.
+2. The circuit breaker is 0.71x3.15x2.95 and the relay is 0.96x3.25x3.01.
 3. Therefore, these items will have a perfect fit inside of the enclosure and allow for plenty of space for the user to maneuver and to be able to run wires to each.
 4. Each component inside of the enclosure will mount using DIN Mounting rails which are provided with the enclosure and both the relay and breaker can connect to.
 
@@ -92,7 +92,7 @@ Here is an  excerpt from the Datasheet providing these requirements will be fulf
 ## **Bill of Materials:**
 |Brand/Manufacturer|Part Name|Supplier|Part/Model Number|Quantity|Individual Price|Total|
 |----|-----------|-----------|------------|--------|----------------|-----|
-|Carlo Gavazzi Inc.|Relay Module|DigiKey|RGC1A23D15KGU|1|$62.00|$62.00|
+|LCLCTC|Relay Module|Amazon|B0BQ2RFW6G|1|$18.90|$18.90|
 |Highydro|Full Spectrum Grow Light|Amazon|Grow Light|4|$20.99|$83.96|
 |Arduino|Bluetooth Board|Amazon|Nano 33 IoT|2|$29.99|$59.98|
 |VIVOSUN|4 Pack Lamp Aluminum Reflector E26|Amazon|B07H8G6PKX|1|$29.69|$29.69|
