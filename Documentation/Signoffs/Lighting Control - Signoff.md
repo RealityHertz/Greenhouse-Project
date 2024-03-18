@@ -100,7 +100,7 @@ Here is an  excerpt from the Datasheet providing these requirements will be fulf
 |AIRIC|Cable Glands|Amazon|NPT 1/4" 20 Pieces|2|$13.99|$27.98|
 |TOCRETOARE|NEMA 4x Enclosure|Amazon|12x10x6" Box|1|$49.99|$49.99|
 |HONDERSON|10ft 14-3 Extension Cord|Amazon|3 Prong SJTW Heavy Duty Extension Cable|1|$12.19|$12.99|
-|Maximm|30ft 14 Gauge Extension Cord with Multiple Outlets|Amazon|B0BT56KZCR|2|$32.99|$65.98|
+|Maximm|30ft 14 Gauge Extension Cord with Multiple Outlets|Amazon|B0BT56KZCR|1|$32.99|$32.99|
 |Leviton|Straight Blade Rubber Plug|Amazon|000-515PR-000|2|$7.25|$14.50|
 
 
