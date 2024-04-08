@@ -8,7 +8,7 @@ Brown 320
 
 **Date:**
 
-Wednesday, March 27th
+Wednesday, April 3rd
 
 **Time:**
 
@@ -32,7 +32,11 @@ Bryan Rhoton
 
 **Action Items**
 
-1\.
+1\. Use Serial and Manual for PLC
+
+2\. Communication for PLC
+
+3\. How the PLC communicate from the bus to the Ladder Logic is completely dependent.
 
 **Individual Items**
 
