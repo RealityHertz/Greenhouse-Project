@@ -47,11 +47,14 @@
         - Sensor is $12.99, while maintaining a high quality and accuracy in a cost effective price range.
 
 5. NPK Subsystem
-   - Constraint 1:
-   - Constraint 2:
-   - Constraint 3:
-   - Constraint 4:
-   - Constraint 5:
+   - Constraint 1: Must have an operational voltage between 4.5V and 30V.
+        -Sensor and translator operate with a voltage of 6V supplied from the battery pack which is well within the range of required voltages.
+   - Constraint 2: Sensor must turn on every 5 minutes to provide soil NPK, pH and moisture information.
+   - Constraint 3: Must accurately measure soil moisture in a range of 0-100% to allow for optimum plant growth with ±3% to ±5% accuracy.
+   - Constraint 4: Must accurately measure nitrogen levels in the soil within a range of 50-300mg/kg to allow for optimum plant growth with no more than ±10% accuracy.
+   - Constraint 5: Must accurately measure phosphorous levels in the soil within a range of 5-90mg/kg with no more than ±10% accuracy.
+   - Constraint 6: Must accurately measure potassium levels in the soil within a range of 50-240mg/kg with no more than ±10% accuracy.
+   - Constraint 7: Must accurately measure soil pH levels within a range of 5-8.5pH with an accuracy of ±0.01 pH to ±0.5 pH.
 
 6. HMI Subsystem
    - Constraint 1:
