@@ -17,11 +17,19 @@
    - Constraint 5:
 
 3. Temperature and Humidity Subsystem
-   - Constraint 1:
-   - Constraint 2:
-   - Constraint 3:
-   - Constraint 4:
-   - Constraint 5:
+   - Constraint 1: The sensor shall have 2.5-5.5 V to operate correctly. The sensor is given the constant voltage of 3.3V from Pin 2 on the Arduino Nano 33 IoT
+   - Constraint 2: Sensor uses 3.2mW when on, and 0 W when in sleep mode. We tested the voltage multiple times and received a voltage range of 3.2-3.4 volts every time. We also tested for current and received measurements between 1.0-1.1 mA. If we calculate power by multipling voltage by current, we see that we have a range of 3.2-3.74 mW. When it sleep mode the power uses 0 watts.
+   - Constraint 3: Temperature range of 0-50°C (32-122°F) and humidity range of 20-90%. While testing in room temperature environment, we see a range of +- 2 degrees Celsius maximum and a range of +- 1%rH. For our testing, we were in a room that was 20 degrees Celsius and a humidity of 41 %rH. Here is the data set we got for 18 trials. 
+
+       - Temperature values: 19.40, 19.26, 19.56, 19.55, 20.49, 19.44, 19.80, 20.79, 21.01, 20.27, 19.11, 19.99, 19.45, 20.89, 19.75, 19.12, 19.11, 19.05
+
+         We find that the sum over the count is 356.04/18 which equals 19.78. Next, we will show the data gathered by the humidity sensor.
+
+        - Humidity values: 40.59, 41.58, 40.84, 41.56, 40.05, 41.94, 40.30, 40.83, 40.47, 40.47, 40.49, 41.88, 41.33, 40.42, 41.67, 41.06, 40.00, 41.18
+       
+          We find that the sum over the count is 736.66/18 which equals roughly 40.93.
+     
+   - Constraint 4: Sampling period of greater than or equal to 2 seconds, so it is set to be 10 seconds to allow for extra time. We added the Arduino libraries "delay()" function, which allows for input of an integer which is understood to be in milliseconds,  with a value of 10000 to allow for 10 extra seconds to achieve this.
 
 4. Water Level Subsystem
    - Constraint 1:  The transfer of data between the sensors and the Arduino must be below 3 seconds for accurate and reliable monitoring of water level. After Testing we got the following data:
