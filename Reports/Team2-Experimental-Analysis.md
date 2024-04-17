@@ -54,15 +54,17 @@
    - Constraint 4: Must be cheap and easily replacable in the chance the user requires a new sensor.
         - Sensor is $12.99, while maintaining a high quality and accuracy in a cost effective price range.
 
-5. NPK Subsystem
+5. Nutrient Subsystem
    - Constraint 1: Must have an operational voltage between 4.5V and 30V.
-        -Sensor and translator operate with a voltage of 6V supplied from the battery pack which is well within the range of required voltages.
+        - Sensor and translator operate with a voltage of 6V supplied from the battery pack which is well within the range of required voltages.
    - Constraint 2: Sensor must turn on every 5 minutes to provide soil NPK, pH and moisture information.
+        - Sensor code contains the WatchDog.sleep sleep mode function from the Adafruit SleepyDog library to cycle the system into sleep mode, reducing the operating current from 18mA to 6mA, every 5 minutes.
    - Constraint 3: Must accurately measure soil moisture in a range of 0-100% to allow for optimum plant growth with ±3% to ±5% accuracy.
    - Constraint 4: Must accurately measure nitrogen levels in the soil within a range of 50-300mg/kg to allow for optimum plant growth with no more than ±10% accuracy.
    - Constraint 5: Must accurately measure phosphorous levels in the soil within a range of 5-90mg/kg with no more than ±10% accuracy.
    - Constraint 6: Must accurately measure potassium levels in the soil within a range of 50-240mg/kg with no more than ±10% accuracy.
    - Constraint 7: Must accurately measure soil pH levels within a range of 5-8.5pH with an accuracy of ±0.01 pH to ±0.5 pH.
+        - For constraints 3 through 7, there was no datasheet and very little documentation on the sensor itself so the register addresses for the sensor values were not able to be found. Despite this limitation we used the register values of a similar sensor and were still unable to get the sensor to communicate with the arduino. The sensor will however send a constant value of 255 for all measures.
 
 6. HMI Subsystem
    - Constraint 1:
