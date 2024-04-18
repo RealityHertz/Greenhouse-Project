@@ -18,6 +18,10 @@
    - CO2 Constraint 3: Must alert the communications applications when above or below 400-2000 ppm to ensure proper plant growth.
       - The sensor correctly reads in the sensor data, but on a slightly higher level. For example, 400 ppm is represented as 40000 with the library we are using. That data is then checked to be above or below 40000 to 200000. If it is not within this range, a boolean true is sent over BLE. If it is within this range then the boolean remains false.
       - An experiment was ran with 20 iterations. The experiment was ran inside of a household room at normal temperature. The expected CO2 ppm is between 300-400ppm in a household. The table below shows the data gathered.
+    
+![C02 Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CO2graph.png)
+
+*Figure 1. Carbon Dioxide Levels for the MH-Z19B Sensor*
 
 | Iterations | Carbon Dioxide (ppm) |
 |------------|----------------------|
@@ -270,11 +274,15 @@ We find that the sum over the count is 356.04/18 which equals 19.78. Next, we wi
 *Figure 5. Sleep Mode Function Code for NPK Sensor*
 
    - Constraint 3: Must accurately measure soil moisture in a range of 0-100% to allow for optimum plant growth with ±3% to ±5% accuracy.
+      -  The data below shows that the sensor will send moisture data for for the first few iterations and then will cease communication with the arduino.
    - Constraint 4: Must accurately measure nitrogen levels in the soil within a range of 50-300 mg/kg to allow for optimum plant growth with no more than ±10% accuracy.
+      - The data below shows that the sensor communicates the levels of nitrogen in the soil with the arduino with a small degree of accuracy with only a few readings being outside the normal range of 10-50 mg/kg 
    - Constraint 5: Must accurately measure phosphorus levels in the soil within a range of 5-90 mg/kg with no more than ±10% accuracy.
+      - The data below shows that the sensor sends phosphorus data to the arduino but there is very little accuracy in the readings with most readings being outside the normal range of 200-1500 mg/kg. 
    - Constraint 6: Must accurately measure potassium levels in the soil within a range of 50-240 mg/kg with no more than ±10% accuracy.
+      - The data below shows that sensor sends data for potassium readings but is not accurate since almost no readings are within the normal range, additionally the sensor stopped communicating data for potassium at iteration 14 indicated by the sudden jump to 255 mg/kg which was most likely caused by the sensor being subjected to direct sunlight.
    - Constraint 7: Must accurately measure soil pH levels within a range of 5-8.5pH with an accuracy of ±0.01 pH to ±0.5 pH.
-        - For constraints 3 through 7, there was no datasheet and very little documentation on the sensor itself so the register addresses for the sensor values were not able to be found. Despite this limitation we used the register values of a similar sensor and were still unable to get the sensor to communicate with the arduino. The sensor will however send a constant value of 255 for all measures.
+      - The data below shows that the sensor will not communicate pH data with the arduino which is caused by the lack of documentation on the sensor's register addressing for the values of the readings.
 
 ![Moisture Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/MoistureGraph.png)
 
