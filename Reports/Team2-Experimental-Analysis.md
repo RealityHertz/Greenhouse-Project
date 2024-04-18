@@ -135,14 +135,22 @@
 
 6. HMI Subsystem
    - Constraint 1: The HMI shall be capable of receiving and displaying sensor data from various sources within the greenhouse, including nutrient levels, humidity, temperature, CO2, and NO2 levels.
+        - HMI is able to connect to the PLC and display any value in the PLC with the associated address.
    - Constraint 2: Communication between the HMI and PLC must be robust and reliable to ensure real-time monitoring of sensor data.
+        - HMI is able to display the one second timer in the PLC toggling on and off while running.
    - Constraint 3: The HMI shall have sufficient screen resolution and clarity to display sensor readings in an easily understandable format, including any alerts or notifications.
+        - HMI has characters large enough to be able to be read clearly
    - Constraint 4: Power supply for the HMI shall provide stable wattage at 1.05W to ensure uninterrupted operation of the display system.
+        - The HMI is safely provided power via the C0-01AC power supply.
 
 7. PLC Subsystem
    - Constraint 1: The PLC scan time shall be able to scan fast enough to accommodate the desired sampling rate for all subsystem sensors. These sensors will be sending data every 5 minutes.
+        -The PLC is able to scan fast enough to recieve data every 5 minutes
    - Constraint 2: The PLC shall have compatible communication ports to allow for available programming.
+        - The PLC has multiple ports including the Ethernet and micro USB ports for programming. 
    - Constraint 3: The PLC shall be able to operate in 30% to 95% relative non–condensing humidity to ensure its suitability for deployment in greenhouse environmental conditions without risking damage due to moisture.
    - Constraint 4: The PLC shall be able to input data from at least 3 Arduino Nano 33 IoT.
    - Constraint 5: The PLC shall be able to log data every hour for at least 1 month.
+        - THe PLC has a data logging option allowing for data to be logging into a CSV file.
    - Constraint 6: The power supply shall incorporate overcurrent protection and overvoltage protection to provide protection mechanisms for safeguarding connected equipment and ensuring the reliability of the power distribution system.
+        - The C0-01AC power suuply provides the required protections for overcurrent and overvoltage.
