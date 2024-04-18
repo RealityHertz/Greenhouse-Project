@@ -4,7 +4,7 @@
 
 1. Lighting Subsystem
    - Constraint 1: The lights must be able to shine for a minimum of 2 hours per day. The lights are set to be on for a minimum of 2 hours per day.
-   - Constraint 2: The distance of the lights from the plants will have to be fully adjustable as the plants grow upward toward the lights. The lights are powerful enough to keep from having to move them as the plants grow, but they are connected to a 10-foot cord that can move up and down.. 
+   - Constraint 2: The distance of the lights from the plants will have to be fully adjustable as the plants grow upward toward the lights. The lights are powerful enough to keep from having to move them as the plants grow, but they are connected to a 10-foot cord that can move up and down.
    - Constraint 3: The HMI must give the user the ability to adjust how long the lights are on per day. This must be between 2 and 6 hours, based on the current weather conditions or any other factors that may reduce UV light on the plants. The HMI is not functioning to allow for change to the lights on and off cycle but can be changed manually through the micro-USB port. 
 
 2. CO2 and NO2 Subsystem
