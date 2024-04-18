@@ -14,6 +14,30 @@
       - - Sensor code contains the WatchDog.sleep sleep mode function from the Adafruit SleepyDog library to cycle the system into sleep mode, reducing the operating current from 18mA to 6mA, every 5 minutes. The function itself only sleeps for 16 seconds, but when put into a for-loop with 19 iterations we meet our constraint of 5 minutes.
    - CO2 Constraint 3: Must alert the communications applications when above or below 400-2000 ppm to ensure proper plant growth.
       - The sensor correctly reads in the sensor data, but on a slightly higher level. For example, 400 ppm is represented as 40000 with the library we are using. That data is then checked to be above or below 40000 to 200000. If it is not within this range, a boolean true is sent over BLE. If it is within this range then the boolean remains false.
+      - An experiment was ran with 20 iterations. The experiment was ran inside of a household room at normal temperature. The expected CO2 ppm is between 300-400ppm in a household. The table below shows the data gathered.
+
+| Iterations | Carbon Dioxide (ppm) |
+|------------|----------------------|
+| 1          | 343.04               |
+| 2          | 344.14               |
+| 3          | 343.13               |
+| 4          | 344.14               |
+| 5          | 343.62               |
+| 6          | 343.11               |
+| 7          | 343.66               |
+| 8          | 342.73               |
+| 9          | 343.04               |
+| 10         | 343.44               |
+| 11         | 342.72               |
+| 12         | 343.46               |
+| 13         | 343.29               |
+| 14         | 343.04               |
+| 15         | 343.76               |
+| 16         | 342.98               |
+| 17         | 343.43               |
+| 18         | 344.12               |
+| 19         | 343.35               |
+| 20         | 343.04               |
     
    - NO2 Constraint 1: MIKROE-3700 needs between 3.3-5V to operate efficiently.
       - The MIKROE-3700's Vcc pin is connected directly to the 3.3V pin (Pin 2) on the Arduino Nano 33 IoT which supplies the 3.3V required.
