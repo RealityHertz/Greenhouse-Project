@@ -41,6 +41,7 @@
 | 18         | 344.12               |
 | 19         | 343.35               |
 | 20         | 343.04               | 
+
    - NO2 Constraint 1: MIKROE-3700 needs between 3.3-5V to operate efficiently.
       - The MIKROE-3700's Vcc pin is connected directly to the 3.3V pin (Pin 2) on the Arduino Nano 33 IoT which supplies the 3.3V required.
    - NO2 Constraint 2: Must alert when above Nitrogen Dioxide level exceeds 9 ppb.
@@ -49,70 +50,205 @@
 ### 3. Temperature and Humidity Subsystem
    - Constraint 1: The sensor shall have 2.5-5.5 V to operate correctly. The sensor is given the constant voltage of 3.3V from Pin 2 on the Arduino Nano 33 IoT
    - Constraint 2: Sensor uses 3.2mW when on, and 0 W when in sleep mode. We tested the voltage multiple times and received a voltage range of 3.2-3.4 volts every time. We also tested for current and received measurements between 1.0-1.1 mA. If we calculate power by multipling voltage by current, we see that we have a range of 3.2-3.74 mW. When it sleep mode the power uses 0 watts.
-   - Constraint 3: Temperature range of 0-50°C (32-122°F) and humidity range of 20-90%. While testing in a room temperature environment, we see a range of +- 2 degrees Celsius maximum and a range of +- 1%rH. For our testing, we were in a room that was 20 degrees Celsius and a humidity of 41 %rH. Here is the data set we got for 18 trials. 
+   - Constraint 3: Temperature range of 0-50°C (32-122°F) and humidity range of 20-90%. While testing in a room temperature environment, we see a range of +- 2 degrees Celsius maximum and a range of +- 1%rH. For our testing, we were in a room that was 20 degrees Celsius and a humidity of 41 %rH. Here is the data set we got for 18 trials.
 
-| Temperature values |
-|--------------------|
-| 19.40              |
-| 19.26              |
-| 19.56              |
-| 19.55              |
-| 20.49              |
-| 19.44              |
-| 19.80              |
-| 20.79              |
-| 21.01              |
-| 20.27              |
-| 19.11              |
-| 19.99              |
-| 19.45              |
-| 20.89              |
-| 19.75              |
-| 19.12              |
-| 19.11              |
-| 19.05              |
+![Temperature Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/TemperatureGraph.png)
+
+*Figure 2. Temperature Graph Values for DHT20 Sensor*
+
+| Iterations | Temperature values (Celsius) |
+|------------|------------------------------|
+| 1          | 19.40                        |
+| 2          | 19.26                        |
+| 3          | 19.56                        |
+| 4          | 19.55                        |
+| 5          | 20.49                        |
+| 6          | 19.44                        |
+| 7          | 19.80                        |
+| 8          | 20.79                        |
+| 9          | 21.01                        |
+| 10         | 20.27                        |
+| 11         | 19.11                        |
+| 12         | 19.99                        |
+| 13         | 19.45                        |
+| 14         | 20.89                        |
+| 15         | 19.75                        |
+| 16         | 19.12                        |
+| 17         | 19.11                        |
+| 18         | 19.05                        |
 
 
-   We find that the sum over the count is 356.04/18 which equals 19.78. Next, we will show the data gathered by the humidity sensor.
-| Humidity values |
-|-----------------|
-| 40.59           |
-| 41.58           |
-| 40.84           |
-| 41.56           |
-| 40.05           |
-| 41.94           |
-| 40.30           |
-| 40.83           |
-| 40.47           |
-| 40.47           |
-| 40.49           |
-| 41.88           |
-| 41.33           |
-| 40.42           |
-| 41.67           |
-| 41.06           |
-| 40.00           |
-| 41.18           |
+We find that the sum over the count is 356.04/18 which equals 19.78. Next, we will show the data gathered by the humidity sensor.
 
-       
+![Humidity Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/HumidityGraph.png)
+
+*Figure 3. Humidity Graph Values for DHT20 Sensor*
+
+| Iterations | Humidity values (%rH) |
+|------------|-----------------------|
+| 1          | 40.59                 |
+| 2          | 41.58                 |
+| 3          | 40.84                 |
+| 4          | 41.56                 |
+| 5          | 40.05                 |
+| 6          | 41.94                 |
+| 7          | 40.30                 |
+| 8          | 40.83                 |
+| 9          | 40.47                 |
+| 10         | 40.47                 |
+| 11         | 40.49                 |
+| 12         | 41.88                 |
+| 13         | 41.33                 |
+| 14         | 40.42                 |
+| 15         | 41.67                 |
+| 16         | 41.06                 |
+| 17         | 40.00                 |
+| 18         | 41.18                 |
+
    We find that the sum over the count is 736.66/18 which equals roughly 40.93.
      
    - Constraint 4: Sampling period of greater than or equal to 2 seconds, so it is set to be 10 seconds to allow for extra time. We added the Arduino libraries "delay()" function, which allows for input of an integer which is understood to be in milliseconds,  with a value of 10000 to allow for 10 extra seconds to achieve this.
 
 ### 4. Water Level Subsystem
    - Constraint 1:  The transfer of data between the sensors and the Arduino must be below 3 seconds for accurate and reliable monitoring of water level. After Testing we got the following data:
-        - Total time elapsed:
-             - Start time: 17:06:02.247
-             - End time: 17:08:21.110
-             - Convert both times to milliseconds:
-             - Start time in milliseconds: 61562247 ms
-             - End time in milliseconds: 61761110 ms
-             - Total time elapsed: 61761110 ms - 61562247 ms = 198863 ms
-             - Number of intervals between readings: 114 readings, so 114 - 1 = 113 intervals.
-             - Average time per reading:
-             - Average time = Total time elapsed / Number of intervals
-             - Average time = 198863 ms / 113 = 1760.56 ms
+
+![Water Level Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/WaterLevelGraph.png)
+
+*Figure 4. Water Level Graph Values for the Sensor*
+
+| Time Stamp    | Distance (cm) |
+|---------------|---------------|
+| 17:06:02.247  | 100.35        |
+| 17:06:03.464  | 100.32        |
+| 17:06:04.681  | 100.33        |
+| 17:06:05.902  | 100.56        |
+| 17:06:07.110  | 100.27        |
+| 17:06:08.320  | 100.39        |
+| 17:06:09.539  | 100.40        |
+| 17:06:10.789  | 100.20        |
+| 17:06:11.971  | 100.32        |
+| 17:06:13.192  | 100.23        |
+| 17:06:14.411  | 100.32        |
+| 17:06:15.654  | 100.44        |
+| 17:06:16.862  | 100.27        |
+| 17:06:18.075  | 100.56        |
+| 17:06:19.288  | 100.37        |
+| 17:06:20.493  | 100.50        |
+| 17:06:21.889  | 100.50        |
+| 17:06:23.102  | 100.13        |
+| 17:06:24.320  | 100.42        |
+| 17:06:25.534  | 100.56        |
+| 17:06:26.753  | 100.54        |
+| 17:06:27.972  | 100.25        |
+| 17:06:29.190  | 100.67        |
+| 17:06:30.398  | 100.49        |
+| 17:06:31.618  | 100.35        |
+| 17:06:32.820  | 100.95        |
+| 17:06:34.061  | 100.37        |
+| 17:06:35.282  | 100.39        |
+| 17:06:36.494  | 100.16        |
+| 17:06:37.713  | 100.44        |
+| 17:06:38.932  | 100.91        |
+| 17:06:40.143  | 100.35        |
+| 17:06:41.364  | 100.76        |
+| 17:06:42.577  | 100.50        |
+| 17:06:43.794  | 100.49        |
+| 17:06:45.010  | 100.27        |
+| 17:06:46.217  | 100.39        |
+| 17:06:47.430  | 100.56        |
+| 17:06:48.649  | 100.37        |
+| 17:06:49.868  | 100.50        |
+| 17:06:51.088  | 100.50        |
+| 17:06:52.307  | 100.13        |
+| 17:06:53.524  | 100.42        |
+| 17:06:54.744  | 100.56        |
+| 17:06:55.926  | 100.54        |
+| 17:06:57.168  | 100.25        |
+| 17:06:58.378  | 100.67        |
+| 17:06:59.597  | 100.49        |
+| 17:07:00.811  | 100.35        |
+| 17:07:02.029  | 100.95        |
+| 17:07:03.242  | 100.37        |
+| 17:07:04.459  | 100.39        |
+| 17:07:05.669  | 100.16        |
+| 17:07:06.888  | 100.44        |
+| 17:07:08.100  | 100.91        |
+| 17:07:09.315  | 100.35        |
+| 17:07:10.551  | 100.95        |
+| 17:07:11.750  | 100.37        |
+| 17:07:12.964  | 100.39        |
+| 17:07:14.203  | 100.16        |
+| 17:07:15.420  | 100.44        |
+| 17:07:16.646  | 100.91        |
+| 17:07:17.827  | 100.35        |
+| 17:07:19.043  | 100.88        |
+| 17:07:20.281  | 101.29        |
+| 17:07:21.477  | 101.13        |
+| 17:07:22.707  | 101.17        |
+| 17:07:23.906  | 101.10        |
+| 17:07:25.151  | 100.71        |
+| 17:07:26.363  | 101.05        |
+| 17:07:28.001  | 101.13        |
+| 17:07:29.269  | 101.17        |
+| 17:07:30.514  | 100.84        |
+| 17:07:31.751  | 101.20        |
+| 17:07:32.961  | 101.01        |
+| 17:07:34.194  | 101.25        |
+| 17:07:35.433  | 100.98        |
+| 17:07:36.686  | 101.17        |
+| 17:07:37.984  | 101.22        |
+| 17:07:39.222  | 101.17        |
+| 17:07:40.471  | 100.84        |
+| 17:07:41.753  | 101.05        |
+| 17:07:43.048  | 101.10        |
+| 17:07:44.246  | 101.12        |
+| 17:07:45.496  | 100.89        |
+| 17:07:46.785  | 100.96        |
+| 17:07:48.002  | 101.03        |
+| 17:07:49.239  | 101.07        |
+| 17:07:50.484  | 100.66        |
+| 17:07:51.708  | 100.66        |
+| 17:07:52.920  | 101.20        |
+| 17:07:54.129  | 101.17        |
+| 17:07:55.354  | 101.01        |
+| 17:07:56.604  | 101.18        |
+| 17:07:57.809  | 101.12        |
+| 17:07:59.044  | 101.00        |
+| 17:08:00.240  | 100.84        |
+| 17:08:01.467  | 101.17        |
+| 17:08:02.673  | 101.08        |
+| 17:08:03.912  | 100.86        |
+| 17:08:05.130  | 101.07        |
+| 17:08:06.325  | 101.12        |
+| 17:08:07.532  | 100.91        |
+| 17:08:08.781  | 101.07        |
+| 17:08:10.009  | 101.20        |
+| 17:08:11.347  | 101.13        |
+| 17:08:12.562  | 100.83        |
+| 17:08:13.827  | 101.00        |
+| 17:08:15.034  | 100.57        |
+| 17:08:16.258  | 101.29        |
+| 17:08:17.458  | 101.25        |
+| 17:08:18.678  | 100.79        |
+| 17:08:19.895  | 100.84        |
+| 17:08:21.110  | 100.98        |
+
+   - Total time elapsed:
+      - Start time: 17:06:02.247
+      - End time: 17:08:21.110
+      - Convert both times to milliseconds:
+      - Start time in milliseconds: 61562247 ms
+      - End time in milliseconds: 61761110 ms
+      - Total time elapsed: 61761110 ms - 61562247 ms = 198863 ms
+      - Number of intervals between readings: 114 readings, so 114 - 1 = 113 intervals.
+      - Average time per reading:
+      - Average time = Total time elapsed / Number of intervals
+      - Average time = 198863 ms / 113 = 1760.56 ms
+
+   - Average Distance
+      - Average distance = Sum of all Distances / Number of readings
+      - Average distance =  11365.74 / 113 = 100.58 cm
+      - The sensor was set to 100 cm above the ground. Therefore it was off by 0.58 cm
 
    - Constraint 2: Must be able to accurately sense when water level drops below 1/3 of the max to signal more water is needed to be added to the reservoir.
         - The sensor reads the data correctly, but struggles to change the water level distance from the ground at a consistent rate. For example, if the ground is 100 cm away and we drastically reduce the water level, the sensor does not read the change in water level accurately.
@@ -128,12 +264,37 @@
         - Sensor and translator operate with a voltage of 6V supplied from the battery pack which is well within the range of required voltages.
    - Constraint 2: Sensors must turn on every 5 minutes to provide soil NPK, pH and moisture information.
         - Sensor code contains the WatchDog.sleep sleep mode function from the Adafruit SleepyDog library to cycle the system into sleep mode, reducing the operating current from 18mA to 6mA, every 5 minutes. The function itself only sleeps for 16 seconds, but when put into a for-loop with 19 iterations we meet our constraint of 5 minutes.
+    
+![NPK Sleep Mode](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/NPK%20Sleep%20Mode.png)
+
+*Figure 5. Sleep Mode Function Code for NPK Sensor*
+
    - Constraint 3: Must accurately measure soil moisture in a range of 0-100% to allow for optimum plant growth with ±3% to ±5% accuracy.
    - Constraint 4: Must accurately measure nitrogen levels in the soil within a range of 50-300 mg/kg to allow for optimum plant growth with no more than ±10% accuracy.
    - Constraint 5: Must accurately measure phosphorus levels in the soil within a range of 5-90 mg/kg with no more than ±10% accuracy.
    - Constraint 6: Must accurately measure potassium levels in the soil within a range of 50-240 mg/kg with no more than ±10% accuracy.
    - Constraint 7: Must accurately measure soil pH levels within a range of 5-8.5pH with an accuracy of ±0.01 pH to ±0.5 pH.
         - For constraints 3 through 7, there was no datasheet and very little documentation on the sensor itself so the register addresses for the sensor values were not able to be found. Despite this limitation we used the register values of a similar sensor and were still unable to get the sensor to communicate with the arduino. The sensor will however send a constant value of 255 for all measures.
+
+![Moisture Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/MoistureGraph.png)
+
+*Figure 6. Mositure Graph Values for NPK Sensor*
+
+![Nitrogen Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/NitroGraph.png)
+
+*Figure 7. Nitrogen Graph Values for NPK Sensor*
+
+![Phosphorus Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/PhopGraph.png)
+
+*Figure 8. Phosphorus Graph Values for NPK Sensor*
+
+![Potassium Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/PotaGraph.png)
+
+*Figure 9. Potassium Graph Values for NPK Sensor*
+
+![Soil pH](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/pHGraph.png)
+
+*Figure 10. Soil pH Graph Values for NPK Sensor*
 
 ### 6. HMI Subsystem
    - Constraint 1: The HMI shall be capable of receiving and displaying sensor data from various sources within the greenhouse, including nutrient levels, humidity, temperature, CO2, and NO2 levels.
