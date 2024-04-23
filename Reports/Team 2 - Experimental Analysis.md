@@ -4,7 +4,23 @@
 
 ### 1. Lighting Subsystem
    - Constraint 1: The lights must be able to shine for a minimum of 2 hours per day.
-      - The lights are set to be on for a minimum of 2 hours per day.
+      - The lights are set to be on for a minimum of 2 hours per day. This was verfied by setting the Arduino to turn on and off every 2 minutes.
+      - There is a slight variation in the results due to human error when recording with a stopwatch.
+   
+| Iterations | Light Status | Time (minutes) |
+|------------|--------------|------|
+| 1          | ON           | 1.00  |
+| 2          | OFF          | 2.00  |
+| 3          | ON           | 3.00  |
+| 4          | OFF          | 4.00  |
+| 5          | ON           | 5.01  |
+| 6          | OFF          | 6.01  |
+| 7          | ON           | 7.01  |
+| 8          | OFF          | 8.01  |
+| 9          | ON           | 9.02  |
+| 10         | OFF          | 10.02 |
+
+
    - Constraint 2: The distance of the lights from the plants will have to be fully adjustable as the plants grow upward toward the lights.
       - The lights are powerful enough to keep from having to move them as the plants grow, but they are connected to a 10-foot cord that can move up and down.
    - Constraint 3: The HMI must give the user the ability to adjust how long the lights are on per day.
