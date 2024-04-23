@@ -21,6 +21,10 @@
 | 10         | OFF          | 10.02 |
 
 
+![Lighting Timing](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Lighitng%20Control%20Timing.png)
+
+*Figure 1. Lighitng Timing Graph*
+
    - Constraint 2: The distance of the lights from the plants will have to be fully adjustable as the plants grow upward toward the lights.
       - The lights are powerful enough to keep from having to move them as the plants grow, but they are connected to a 10-foot cord that can move up and down.
    - Constraint 3: The HMI must give the user the ability to adjust how long the lights are on per day.
@@ -37,7 +41,7 @@
     
 ![C02 Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CO2graph.png)
 
-*Figure 1. Carbon Dioxide Levels for the MH-Z19B Sensor*
+*Figure 2. Carbon Dioxide Levels for the MH-Z19B Sensor*
 
 | Iterations | Carbon Dioxide (ppm) |
 |------------|----------------------|
@@ -74,7 +78,7 @@
 
 ![Temperature Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/TemperatureGraph.png)
 
-*Figure 2. Temperature Graph Values for DHT20 Sensor*
+*Figure 3. Temperature Graph Values for DHT20 Sensor*
 
 | Iterations | Temperature values (Celsius) |
 |------------|------------------------------|
@@ -102,7 +106,7 @@ We find that the sum over the count is 356.04/18 which equals 19.78. Next, we wi
 
 ![Humidity Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/HumidityGraph.png)
 
-*Figure 3. Humidity Graph Values for DHT20 Sensor*
+*Figure 4. Humidity Graph Values for DHT20 Sensor*
 
 | Iterations | Humidity values (%rH) |
 |------------|-----------------------|
@@ -134,7 +138,7 @@ We find that the sum over the count is 356.04/18 which equals 19.78. Next, we wi
 
 ![Water Level Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/WaterLevelGraph.png)
 
-*Figure 4. Water Level Graph Values for the Sensor*
+*Figure 5. Water Level Graph Values for the Sensor*
 
 | Time Stamp    | Distance (cm) |
 |---------------|---------------|
@@ -287,7 +291,7 @@ We find that the sum over the count is 356.04/18 which equals 19.78. Next, we wi
     
 ![NPK Sleep Mode](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/NPK%20Sleep%20Mode.png)
 
-*Figure 5. Sleep Mode Function Code for NPK Sensor*
+*Figure 6. Sleep Mode Function Code for NPK Sensor*
 
    - Constraint 3: Must accurately measure soil moisture in a range of 0-100% to allow for optimum plant growth with ±3% to ±5% accuracy.
       -  The data below shows that the sensor will send moisture data for for the first few iterations and then will cease communication with the arduino.
@@ -302,23 +306,23 @@ We find that the sum over the count is 356.04/18 which equals 19.78. Next, we wi
 
 ![Moisture Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/MoistureGraph.png)
 
-*Figure 6. Mositure Graph Values for NPK Sensor*
+*Figure 7. Mositure Graph Values for NPK Sensor*
 
 ![Nitrogen Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/NitroGraph.png)
 
-*Figure 7. Nitrogen Graph Values for NPK Sensor*
+*Figure 8. Nitrogen Graph Values for NPK Sensor*
 
 ![Phosphorus Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/PhopGraph.png)
 
-*Figure 8. Phosphorus Graph Values for NPK Sensor*
+*Figure 9. Phosphorus Graph Values for NPK Sensor*
 
 ![Potassium Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/PotaGraph.png)
 
-*Figure 9. Potassium Graph Values for NPK Sensor*
+*Figure 10. Potassium Graph Values for NPK Sensor*
 
 ![Soil pH](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/pHGraph.png)
 
-*Figure 10. Soil pH Graph Values for NPK Sensor*
+*Figure 11. Soil pH Graph Values for NPK Sensor*
 
 ### 6. HMI Subsystem
    - Constraint 1: The HMI shall be capable of receiving and displaying sensor data from various sources within the greenhouse, including nutrient levels, humidity, temperature, CO2, and NO2 levels.
