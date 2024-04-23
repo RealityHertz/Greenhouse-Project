@@ -92,12 +92,16 @@
 | 14         | 3.278       |
 | 15         | 3.275       |
 
+![Voltage Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/VoltageGraph.png)
+
+*Figure 3. Voltage Values Test*
+
    - Constraint 2: Sensor uses 3.2mW when on, and 0 W when in sleep mode. We tested the voltage multiple times and received a voltage range of 3.2-3.4 volts every time. We also tested for current and received measurements between 1.0-1.1 mA. If we calculate power by multipling voltage by current, we see that we have a range of 3.2-3.74 mW. When it sleep mode the power uses 0 watts.
    - Constraint 3: Temperature range of 0-50°C (32-122°F) and humidity range of 20-90%. While testing in a room temperature environment, we see a range of +- 2 degrees Celsius maximum and a range of +- 1%rH. For our testing, we were in a room that was 20 degrees Celsius and a humidity of 41 %rH. Here is the data set we got for 18 trials.
 
 ![Temperature Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/TemperatureGraph.png)
 
-*Figure 3. Temperature Graph Values for DHT20 Sensor*
+*Figure 4. Temperature Graph Values for DHT20 Sensor*
 
 | Iterations | Temperature values (Celsius) |
 |------------|------------------------------|
@@ -125,7 +129,7 @@ We find that the sum over the count is 356.04/18 which equals 19.78. Next, we wi
 
 ![Humidity Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/HumidityGraph.png)
 
-*Figure 4. Humidity Graph Values for DHT20 Sensor*
+*Figure 5. Humidity Graph Values for DHT20 Sensor*
 
 | Iterations | Humidity values (%rH) |
 |------------|-----------------------|
@@ -157,7 +161,7 @@ We find that the sum over the count is 356.04/18 which equals 19.78. Next, we wi
 
 ![Water Level Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/WaterLevelGraph.png)
 
-*Figure 5. Water Level Graph Values for the Sensor*
+*Figure 6. Water Level Graph Values for the Sensor*
 
 | Time Stamp    | Distance (cm) |
 |---------------|---------------|
@@ -309,7 +313,7 @@ We find that the sum over the count is 356.04/18 which equals 19.78. Next, we wi
    
 ![NPK Battery Analysis](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/NPK_Battery_Supply.png)
 
-*Figure 6. Nutrient System Voltage Supply*
+*Figure 7. Nutrient System Voltage Supply*
 
 | Iterations | Voltage Supply(V) | 
 | ---------- | -------------- |
@@ -338,7 +342,7 @@ We find that the sum over the count is 356.04/18 which equals 19.78. Next, we wi
     
 ![NPK Sleep Mode](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/NPK%20Sleep%20Mode.png)
 
-*Figure 6. Sleep Mode Function Code for NPK Sensor*
+*Figure 8. Sleep Mode Function Code for NPK Sensor*
 
    - Constraint 3: Must accurately measure soil moisture in a range of 0-100% to allow for optimum plant growth with ±3% to ±5% accuracy.
       -  The data below shows that the sensor will send moisture data for for the first few iterations and then will cease communication with the arduino.
@@ -353,23 +357,23 @@ We find that the sum over the count is 356.04/18 which equals 19.78. Next, we wi
 
 ![Moisture Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/MoistureGraph.png)
 
-*Figure 7. Mositure Graph Values for NPK Sensor*
+*Figure 9. Mositure Graph Values for NPK Sensor*
 
 ![Nitrogen Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/NitroGraph.png)
 
-*Figure 8. Nitrogen Graph Values for NPK Sensor*
+*Figure 10. Nitrogen Graph Values for NPK Sensor*
 
 ![Phosphorus Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/PhopGraph.png)
 
-*Figure 9. Phosphorus Graph Values for NPK Sensor*
+*Figure 11. Phosphorus Graph Values for NPK Sensor*
 
 ![Potassium Graph](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/PotaGraph.png)
 
-*Figure 10. Potassium Graph Values for NPK Sensor*
+*Figure 12. Potassium Graph Values for NPK Sensor*
 
 ![Soil pH](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/pHGraph.png)
 
-*Figure 11. Soil pH Graph Values for NPK Sensor*
+*Figure 13. Soil pH Graph Values for NPK Sensor*
 
 ### 6. HMI Subsystem
    - Constraint 1: The HMI shall be capable of receiving and displaying sensor data from various sources within the greenhouse, including nutrient levels, humidity, temperature, CO2, and NO2 levels.
