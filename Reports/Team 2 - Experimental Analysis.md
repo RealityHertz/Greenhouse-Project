@@ -298,6 +298,7 @@ We find that the sum over the count is 356.04/18 which equals 19.78. Next, we wi
 
    - Constraint 3: Must be durable enough to continue function while wet for an indefinite amount of time.
         - Sensor is waterproof and can withstand the harsh conditions of the environment it is placed in, which in this case includes constantly being close to the water.
+        - After the sensor was exposed to water in 10 seperate trials it was still able to comunicate and send water level data.
 
    - Constraint 4: Must be cheap and easily replaceable in the chance the user requires a new sensor.
         - Sensor is $12.99, while maintaining a high quality and accuracy in a cost effective price range.
@@ -305,6 +306,33 @@ We find that the sum over the count is 356.04/18 which equals 19.78. Next, we wi
 ### 5. Nutrient Subsystem
    - Constraint 1: Must have an operational voltage between 4.5V and 30V.
         - Sensor and translator operate with a voltage of 6V supplied from the battery pack which is well within the range of required voltages.
+   
+![NPK Battery Analysis](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/NPK_Battery_Supply.png)
+
+*Figure 6. Nutrient System Voltage Supply*
+
+| Iterations | Voltage Supply(V) | 
+| ---------- | -------------- |
+| 1          | 6.261       |
+| 2          | 6.259       |
+| 3          | 6.243       |
+| 4          | 6.257       |
+| 5          | 6.250       |
+| 6          | 6.242       |
+| 7          | 6.251       |
+| 8          | 6.241       |
+| 9          | 6.237       |
+| 10         | 6.240       |
+| 11         | 6.249       |
+| 12         | 6.245       |
+| 13         | 6.236       |
+| 14         | 6.248       |
+| 15         | 6.247       |
+| 16         | 6.238       |
+| 17         | 6.231       |
+| 18         | 6.243       |
+| 19         | 6.244       |
+| 20         | 6.239       |
    - Constraint 2: Sensors must turn on every 5 minutes to provide soil NPK, pH and moisture information.
         - Sensor code contains the WatchDog.sleep sleep mode function from the Adafruit SleepyDog library to cycle the system into sleep mode, reducing the operating current from 18mA to 6mA, every 5 minutes. The function itself only sleeps for 16 seconds, but when put into a for-loop with 19 iterations we meet our constraint of 5 minutes.
     
