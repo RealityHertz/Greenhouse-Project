@@ -72,7 +72,26 @@
       - The MIKROE-3700 does alert when levels are not in the correct range. However, the NO2 sensor readings are not correct. The sensor sends data over via SPI, but then received by the Arduino, it only outputs 0 or 65535.00. It is believed that this is the sensor's way of sending the minimum or maximum value allowed. Obviously, this is not the data expected. The current MIKROE-3700 documentation is not very in depth and does not give information on how to receive the 12-bit ADC that is supposed to be sent and received. There also are no libraries for the MIKROE-3700 for the Arduino Nano 33 IoT, so we can't see how the sensor is being read this way either. 
 
 ### 3. Temperature and Humidity Subsystem
-   - Constraint 1: The sensor shall have 2.5-5.5 V to operate correctly. The sensor is given the constant voltage of 3.3V from Pin 2 on the Arduino Nano 33 IoT
+   - Constraint 1: The sensor shall have 2.5-5.5 V to operate correctly. 20 iterations were taken for the voltage. For each iteration, a voltage very close to 3.3 volts were observed. A table and graph for the voltage at each iteration is given below.
+
+| Iterations | Voltage (V) |
+|------------|-------------|
+| 1          | 3.278       |
+| 2          | 3.279       |
+| 3          | 3.265       |
+| 4          | 3.267       |
+| 5          | 3.268       |
+| 6          | 3.278       |
+| 7          | 3.278       |
+| 8          | 3.276       |
+| 9          | 3.267       |
+| 10         | 3.282       |
+| 11         | 3.278       |
+| 12         | 3.273       |
+| 13         | 3.278       |
+| 14         | 3.278       |
+| 15         | 3.275       |
+
    - Constraint 2: Sensor uses 3.2mW when on, and 0 W when in sleep mode. We tested the voltage multiple times and received a voltage range of 3.2-3.4 volts every time. We also tested for current and received measurements between 1.0-1.1 mA. If we calculate power by multipling voltage by current, we see that we have a range of 3.2-3.74 mW. When it sleep mode the power uses 0 watts.
    - Constraint 3: Temperature range of 0-50°C (32-122°F) and humidity range of 20-90%. While testing in a room temperature environment, we see a range of +- 2 degrees Celsius maximum and a range of +- 1%rH. For our testing, we were in a room that was 20 degrees Celsius and a humidity of 41 %rH. Here is the data set we got for 18 trials.
 
