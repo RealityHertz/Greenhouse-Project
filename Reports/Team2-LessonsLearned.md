@@ -35,12 +35,19 @@
 ### Jaxson Billings
 
 - What went well:
+    - What went well was the construction and overall the programming of all Arduino's. BLE advertising and receiving addresses, serviceUUIDs, CharacteristicUUIDs, Attributes, and Values all worked phenomenally with both the peripheral and central Arduino's. Wiring of the circuits, getting everything the correct voltage to each component,  and getting them on solderless breadboards also went well.
 - What did not go well:
+    - What did not go well was the interface and protocols used with most sensors. Many of the components bought had very poor documentation and not much information about use. Also, getting the PLC to recieve RS232 seemed like an easy enough task, but time ran low and we were not able to figure out the correct connection/ladder logic.
 - Problems:
+    - The problems we incountered were libraries not being compatiable with the board manager used for the Arduino Nano 33 IoT, the PLC signaling it was receiving via RS232 but not took in the data, the NO2 sensor only ever sent high or low depending on if it was receiving enough voltage, and  the Arduino's digital set pin HIGH worked a minority of the time.
 - What would you do differently?
+    - If I could do thing differently, I would make sure that 100% of the sensors bought had solid data sheets, as well as documentation and compatiable libraries with the Arduino being used. I would also think about switching away from the Arduino Nano 33 IoT because most sensors are made for other older Arduino's and are not compatiable with the SAMD Board Manager. I would better utilize the example projects given whenever a library is downloaded. I would order better solderless breadboards to allow for connections and less finicky voltages.
 - Best Practices:
+    - I've picked up some valuable practices, like thoroughly making sure code is written to be reusable and well documented, researching topics before committing to ideas, carefully reviewing datasheets or product documentation, ensuring products align with my specific requirements before making commitments, and not hesitating to ask numerous questions, even if it means reaching out to the product manufacturer.
 - Words of wisdom:
+    - Do all your research. Have full confidence in what you are buying and know before hand how it is going to be programmed, what tools may be needed, how the connections will be not only theoretically but realistically.
 - New knowledge or skills:
+    - I learned more from this class then almost every other class I have taken. It bettered my skills in C, thought me how to truly make connections on a system without relying on soldered breadboards, as well as how to use Arduino IDE.
 
 ### Bryan Rhoton
 
