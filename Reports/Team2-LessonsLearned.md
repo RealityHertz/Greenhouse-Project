@@ -5,13 +5,19 @@
 ### Noah Jones
 
 - What went well:
-    - For me, the main thing that went well was providing power to the lighting, PLC, and HMI subsystems. After realizing that using an extension cord was our best option during the building of the lighting system, it was easy to duplicate for the other two systems.
+    - For me, the main thing that went well was providing power to the lighting, PLC, and HMI subsystems. After realizing that using an extension cord was our best option during the building of the lighting system, it was easy to duplicate for the other two systems. Soldering and wiring of the systems also went well as I had previous experience doing so in previous courses.
 - What did not go well:
+    - The PLC and HMI systems did not go well due our lack of knowledge of working with them and also how little time we had to get them going. 
 - Problems:
+    - The only issue I had was finding a relay for my system. Acquiring a relay with such a low control voltage and high output voltage was much more difficult than I expected.
 - What would you do differently?
+    - If I could go back and do this course over again, the main thing that I would do differently would be to focus on using larger, more powerful LEDs from the start. I spent way too much time trying to design a system that met my previous constraints instead of just changing the constraints themselves, which overall led to a better project.
 - Best Practices:
+    - Some of the best practices I have acquired from this course happened in the last month of this year-long course. From electrical safety, to soldering, to wiring, I feel as if these are what I will always look back on and be glad I had to experience this class.
 - Words of wisdom:
+    - To future capstone groups, always read the data sheets, always. If a component you are looking to use has a bad datasheet or even not one at all, there is a reason. It is worth spending a few extra dollars on a component for which you have more information on. `
 - New knowledge or skills:
+    - The knowledge that I have gained from this course I will use for the rest of my career. These things include writing a formal and technical report, programming, working for a customer, and most importantly, how to be an engineer.
 
 ### Grant Hooper
 
