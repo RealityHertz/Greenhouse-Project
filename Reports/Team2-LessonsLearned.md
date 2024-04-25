@@ -26,12 +26,24 @@
 ### Jared Hooker
 
 - What went well:
+    - The building of each subsystem onto a soldered breadboard went very well. We were able to successfully make sure that each sensor on the breadboards were getting the correct voltage needed. Troubleshooting for many of the subsystems I did also went well, and I was able to fix a few issues that occurred by taking a strategic process of what might be the problem.
 - What did not go well:
+    - The temperature and humidity subsystem had problems reading in the correct value from the sensor, but this problem was fixed after resoldering a couple of the pins on the board.
 - Problems:
+    - One problem was that we ordered breadboards that required much more soldering than anticipated due to the each section not being connected. A few of our breadboards had to be resoldered because of this.
 - What would you do differently?
+    - I would buy better breadboards, and I would also research more on the best board to use for certain sensors.
 - Best Practices:
+    - I good practice that I obtained was double checking my work, as well as being more concise with my work.
+    -  My communication skills were improved tremendously.
+    -  I gained some experience in coding from assisting my teammates with their work, and also gained some information on how bluetooth works.
 - Words of wisdom:
+    - Teamwork is essential in order to truly have success in this class. Your team is there to help you, so it is okay if you do not know something. Everyone has different strengths and weaknesses, so do not be afraid to ever ask for assistance.
+    - Always make sure to give your best effort in everything you do in this class, and take pride in your work.
+    - Start early on every report so that you have enough time to think through everything you plan to do in this class.
 - New knowledge or skills:
+    - This class gave me a good idea of what the real world is like, and how to think like an engineer rather than a student. It allowed me to become better at problem solving and critical thinking.
+    - I was able to become a better communicator due to the amount of teamwork and meetings that were required throughout the two semesters of Capstone Design.
 
 ### Jaxson Billings
 
@@ -48,7 +60,7 @@
 - Words of wisdom:
     - Do all your research. Have full confidence in what you are buying and know before hand how it is going to be programmed, what tools may be needed, how the connections will be not only theoretically but realistically.
 - New knowledge or skills:
-    - I learned more from this class then almost every other class I have taken. It bettered my skills in C, thought me how to truly make connections on a system without relying on soldered breadboards, as well as how to use Arduino IDE.
+    - I learned more from this class than almost every other class I have taken. It bettered my skills in C, thought me how to truly make connections on a system without relying on soldered breadboards, as well as how to use Arduino IDE.
 
 ### Bryan Rhoton
 
