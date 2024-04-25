@@ -1,10 +1,11 @@
 # Team 2 Lessons Learned
 
-## Memeber and Individual Lessons Learned/Classes Applied
+## Member and Individual Lessons Learned/Classes Applied
 
 ### Noah Jones
 
 - What went well:
+    - For me, the main thing that went well was providing power to the lighting, PLC, and HMI subsystems. After realizing that using an extension cord was our best option during the building of the lighting system, it was easy to duplicate for the other two systems.
 - What did not go well:
 - Problems:
 - What would you do differently?
