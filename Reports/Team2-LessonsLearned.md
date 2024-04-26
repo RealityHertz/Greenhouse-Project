@@ -24,17 +24,18 @@
 - What went well:
     - The HMI coding itself went pretty well as well as constructing the hardware for the water level monitoring subsystem. Along with eventually getting the HMI and PLC to communicate after an ungodly amount of time fiddling with them.
 - What did not go well:
-      - The connection between the hub arduino and the PLC never did fully work even though all signed pointed to them working.
+   - The connection between the hub arduino and the PLC never did fully work even though all signed pointed to them working.
 - Problems:
-      - The arduino hub and PLC would not comminicate properly. The arudinos power out pins weren't working properly. The water sensor wasn't consistent at first.
+   - The arduino hub and PLC would not comminicate properly. The arudinos power out pins weren't working properly. The water sensor wasn't consistent at first.
 - What would you do differently?
-      - I probably would have been more "flowy" than i guess stubborn is the best way to put it. I would have been more willing to look at other options rather than try to brute force something that doesn't work.
+    - I probably would have been more "flowy" than i guess stubborn is the best way to put it. I would have been more willing to look at other options rather than try to brute force something that doesn't work.
 - Best Practices:
-      - My best practices were electrical safety with the PLC and learning to be more detail oriented. 
+    - My best practices were electrical safety with the PLC and learning to be more detail oriented. 
 - Words of wisdom:
-      - Do not just go with the first component or solution you find before finding more and comparing all options for your best result.
+    - Do not just go with the first component or solution you find before finding more and comparing all options for your best result.
 - New knowledge or skills:
-      - I learned more about building a system but espescially a PLC system and learning to code Automation direct PLC ladder logic.
+    - I learned more about building a system but espescially a PLC system and learning to code Automation direct PLC ladder logic.
+
 ### Jared Hooker
 
 - What went well:
