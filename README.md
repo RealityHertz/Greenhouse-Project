@@ -34,6 +34,40 @@ For detailed outcomes and progress on these subsystems, refer to the specific do
 
 [Demonstration Videos](https://github.com/RealityHertz/Greenhouse-Project/tree/main/Documentation/Images/Team2_Experimental_Videos)
 
+### Lighting System Images
+
+![Lighting Housing]()
+
+![Grow Lights Off]()
+
+![Grow Lights On]()
+
+![Lighting Implementation]()
+
+### PLC and HMI Images
+
+![HMI]()
+
+![PLC Ethernet Hub]()
+
+![PLC RS232 Translator]()
+
+### Water Level System Images
+
+![Water Level Image]()
+
+### CO2 and NO2 System Images
+
+![CO2 and NO2 Image]()
+
+### Temperature and Humidity System Images
+
+![Temp and Humidity Image]()
+
+### Nutrient System Images
+
+![Nutrient Image]()
+
 ## About Us
 
 ### Team
