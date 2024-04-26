@@ -53,6 +53,17 @@ The images are organized based on alphabetical order. They are used in various s
 - **WaterLevelGraph.png**
 - **Water_Level_Schematic.png**
 - **pHGraph.png**
+- **CO2_NO2_Photo.png**
+- **Grow_Lights_Off.png**
+- **Grow_Lights_On.png**
+- **HMI_Photo.png**
+- **Lighting_Housing.png**
+- **Lighting_Implementation.jpg**
+- **Nutrient Photo.jpg**
+- **PLC_HMI_Ethernet.png**
+- **PLC_RS232.png**
+- **Temp Photo.png**
+- **Water_Level_Photo.png**
 
 
 ## Usage
