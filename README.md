@@ -64,13 +64,13 @@ For detailed outcomes and progress on these subsystems, refer to the specific do
 
 ![PLC RS232 Translator](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/PLC_RS232.png) 
 
-- The image above shows the RS232 to TTL translator module that allows the PLC to communicated with the Arduino pictured to allow for sending of commands and recieving of data.
+- The image above shows the RS232 to TTL translator module that allows the PLC to communicate with the Arduino pictured to allow for sending of commands and recieving of data.
 
 ### Water Level System Images
 
 ![Water Level Image](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Water_Level_Photo.png)
 
-- Pictured above is the breadboard containing the water level sensor and the Arduino Nano 33 IoT for the water level sensor as it is being tested.
+- Pictured above is the breadboard containing the water level sensor and the Arduino Nano 33 IoT for the water level system as it is being tested.
 
 ### CO2 and NO2 System Images
 
