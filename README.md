@@ -36,21 +36,35 @@ For detailed outcomes and progress on these subsystems, refer to the specific do
 
 ### Lighting System Images
 
-![Lighting Housing]()
+![Lighting Housing](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Lighting_Housing.png)
 
-![Grow Lights Off]()
+- The above image shows the housing for the lighting system as it is closed and being tested.
 
-![Grow Lights On]()
+![Grow Lights Off](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Grow_Lights_Off.png)
 
-![Lighting Implementation]()
+- This image shows the lighting system's grow lights when they are powered off.
+
+![Grow Lights On](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Grow_Lights_On.png)
+
+- This shows the grow lights while powered on.
+
+![Lighting Implementation](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Lighting_Implementation.jpg)
+
+- This image shows the lighting system being implemented and tested within the greenhouse setting of the Hyder-Burks facility.
 
 ### PLC and HMI Images
 
-![HMI]()
+![HMI](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/HMI_Photo.png)
 
-![PLC Ethernet Hub]()
+- This shows the HMI as it rests within the PLC housing and is being tested.
 
-![PLC RS232 Translator]()
+![PLC Ethernet Hub](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/PLC_HMI_Ethernet.png)
+
+- This image shows the ethernet hub that connects the PLC and HMI to an outside source for pushing of code and testing while powered on.
+
+![PLC RS232 Translator](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/PLC_RS232.png) 
+
+- The image above shows the RS232 to TTL translator module that allows the PLC to communicated with the Arduino pictured to allow for sending of commands and recieving of data.
 
 ### Water Level System Images
 
@@ -60,15 +74,21 @@ For detailed outcomes and progress on these subsystems, refer to the specific do
 
 ### CO2 and NO2 System Images
 
-![CO2 and NO2 Image]()
+![CO2 and NO2 Image](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/CO2_NO2_Photo.png)
+
+- The above image shows the breadboard containing the carbon dioxide and nitrogen dioxide sensors for the CO2 and NO2 system as well as their connected Arduino. The nitrogen dioxide sensor is the green sensor pictured in the center of the image directly above the Arduino while the carbon dioxide sensor is the gold sensor located on the right hand side of the board.
 
 ### Temperature and Humidity System Images
 
-![Temp and Humidity Image]()
+![Temp and Humidity Image](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Temp%20Photo.png)
+
+- Pictured above is the temperature and humidity system with the transmitting Arduino pictured on the left of the board and the sensor itself pictured on the right as the small black box surrounded by wires.
 
 ### Nutrient System Images
 
-![Nutrient Image]()
+![Nutrient Image](https://github.com/RealityHertz/Greenhouse-Project/blob/main/Documentation/Images/Nutrient%20photo.jpg)
+
+- This image shows the nutrient monitoring system as it is being implemented in a pot of soil picturing the sensor placed in the soil, the Arduino for sending and recieving data and finally the MAX485 to TTL translator which is pictured on the far right of the board.
 
 ## About Us
 
