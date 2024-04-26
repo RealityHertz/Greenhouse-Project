@@ -15,7 +15,6 @@ This folder contains a collection of reports used in the Autonomous Greenhouse p
     - Jbillings42_Capstone2IndividualPresentation - Jaxson Billings' Presentation
     - Robert Jones Individual Technical Presentation
 - Experimental Analysis
-- Final PO Form
 - Final Presentation
 - Poster
 - Lessons Learned
