@@ -8,17 +8,52 @@ The images are organized based on alphabetical order. They are used in various s
 
 ### Images
 
-- **Arduino Nano 33 Schematic**
-- **Lighting Control Subsystem**
-- **Nitrogen and Carbon Dioxide Subsystem**
-- **Display Chip Schematic**
-- **Nutrient Subsystem**
-- **PPM Graph**
-- **SPI Data Out to Integer Code**
-- **Temperature and Humidity Subsystem**
-- **UART to Integer Code**
-- **Water Level Schematic**
-- **Water Level Subsystem**
+- **3D-artifact-CAPSTONE.png**
+- **3D-artifact-sensor-CAPSTONE.png**
+- **3D-artifact-topdown-CAPSTONE.png**
+- **AA-100mA.png**
+- **ArduinoNano33.png**
+- **Breaker Datasheet.png**
+- **CADHMISubsystemSchematic.jpg**
+- **CADPLCSubsystemSchematic.jpg**
+- **CADSchematicNitrogenSubsystem.jpg**
+- **CADTemperature&HumidityDrawing.jpg**
+- **CADUPDATED.png**
+- **CO2graph.png**
+- **Cad Final Update.png**
+- **Final Drawing Line.png**
+- **Final Relay Data.png**
+- **Final Relay Pic.png**
+- **HMI2DModel.PNG**
+- **HMIMountingRearView.png**
+- **HMIMountingSideView.png**
+- **HMIScrewPlacement.png**
+- **Jaxson Billings Headshot.jpg**
+- **Lighitng Control Timing.png**
+- **Mounting-Model.png**
+- **NPK Sleep Mode.png**
+- **NPK_Battery_Supply.png**
+- **Noah Jones Headshot.jpg**
+- **Nutrient_Off_Sim2.png**
+- **Nutrient_On_Sim2.png**
+- **Nutrient_Schematic_V7.png**
+- **PLC 2D Model.png**
+- **PLCPowerSupply2DCAD.PNG**
+- **PPM.png**
+- **PhopGraph.png**
+- **PotaGraph.png**
+- **Relay Datasheet.png**
+- **RelayDiagram.png**
+- **RelayPic.png**
+- **SPIDataOutToINT.png**
+- **Screenshot 2024-03-08 123324.jpg**
+- **Tx to Int Code.png**
+- **Updated paint.png**
+- **VoltageGraph.png**
+- **WaterLevelGraph.png**
+- **Water_Level_Schematic.png**
+- **pHGraph.png**
+
 
 ## Usage
 
