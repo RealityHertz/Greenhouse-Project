@@ -4,7 +4,7 @@ This folder contains a collection of 3D models used in the Autonomous Greenhouse
 
 ## Contents
 
-- Currently Empty
+- Mount for the water level monitoring system
 
 ## Usage
 
