@@ -12,7 +12,23 @@ This version of the project will be able to accurately measure the levels of nit
 
 ## Salient Outcomes
 
-Currently, there are no outcomes for the Autonomous Greenhouse project.
+### 1. Soil Moisture, pH, and Nutrient Level Detection
+- **Outcome:** Develop a system that provides real-time data on soil conditions, allowing for precise adjustments to watering schedules and nutrient applications. This could lead to optimized plant growth and reduced resource waste.
+
+### 2. Atmospheric Monitoring (CO2 and NO2 Levels)
+- **Outcome:** Implement sensors that continuously monitor and log the levels of CO2 and NO2. This data could be used to adjust ventilation, maintaining optimal air quality for plant health.
+
+### 3. Temperature and Humidity Control
+- **Outcome:** Create a responsive system that adjusts internal temperature and humidity based on preset thresholds. This could help in maintaining a stable environment that promotes plant health and productivity.
+
+### 4. Water Level Monitoring and Reservoir Refilling
+- **Outcome:** Design an automated system that detects low water levels in an external reservoir and alerts for manual intervention. This ensures a consistent water supply for the greenhouse, crucial for plant survival and growth.
+
+### 5. Adjustable Lighting System
+- **Outcome:** Implement a lighting system that can adjust the duration of grow light exposure based on Human-Machine Interface (HMI) inputs. This allows for flexible light management tailored to the growth stages and needs of different plant
+
+### Documentation and Sign-offs
+For detailed outcomes and progress on these subsystems, refer to the specific documentation and sign-offs provided in the project's [Documentation/Signoffs folder](https://github.com/RealityHertz/Greenhouse-Project/tree/main/Documentation/Signoffs). This folder contains detailed reports and approval documents that outline the performance and expectations for each subsystem.
 
 ## Project Demonstration & Images
 
